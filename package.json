@@ -1,0 +1,64 @@
+{
+  "name": "@flybondi/ramda-land",
+  "version": "1.0.0",
+  "description": "A collection of reusable functions for ramda",
+  "keywords": [
+    "ramda",
+    "function",
+    "fuctions",
+    "functional",
+    "fp",
+    "flybondi",
+    "lambda",
+    "land",
+    "toolbox",
+    "utils"
+  ],
+  "homepage": "https://github.com/flybondi/toolbox/packages/ramda-land#readme",
+  "bugs": {
+    "url": "https://github.com/flybondi/toolbox/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flybondi/toolbox"
+  },
+  "license": "UNLICENSED",
+  "author": "Flybondi <dev@flybondi.com> (https://flybondi.com)",
+  "files": [
+    "index.js",
+    "src/"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"No build step required\" && exit 0",
+    "lint": "eslint index.js src/",
+    "prettier": "prettier --write src/ index.js",
+    "test": "jest --env=node --colors --bail --detectOpenHandles --errorOnDeprecated --noStackTrace src/",
+    "test.coverage": "run-s test --coverage --coverageDirectory .coverage",
+    "test.watch": "run-s test --watchAll"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-ramda": "^2.5.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.2",
+    "ramda": "^0.26.1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "peerDependencies": {
+    "ramda": "^0.26.1"
+  },
+  "dependencies": {
+    "yn": "^3.0.0"
+  }
+}
