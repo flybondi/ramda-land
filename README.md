@@ -26,8 +26,32 @@ defaultToLife(null); // -> { life: 42 }
 defaultToLife({ foo: 'bar' }); // -> { foo: 'bar' }
 ```
 
+## Ramda overlap
+
+[`curry`][curry], [`curryN`][curry-n] and [`nAry`][n-ary] functions are exported by both `@flybondi/ramda-land` and `ramda`. They behave in the exact same way, except that `@flybondi/ramda-land` counterparts **retain wrapped function names** after currying. This is useful for **debugging** and **error tracing** purposes as the name of the original function passed to any of the aforementioned functions will now appear on stack traces and debuggers (instead of an anonymous or sometimes arbitrarily named, internal `ramda` function).
+
+> This change was already proposed to the Ramda team and a [PR is pending approval](https://github.com/ramda/ramda/pull/2782).
+
+```sh
+> curry(function foo(x, y) { return x + y; });
+[Function: foo]
+> curry(function foo(x, y) { return x + y; })(1)
+[Function: foo]
+
+> curryN(2, function foo(x, y) { return x + y; })
+[Function: foo]
+> curryN(2, function foo(x, y) { return x + y; })(1)
+[Function: foo]
+
+> nAry(3, function foo(x, y) { return x + y; })
+[Function: foo]
+```
+
 [View on Github][github].
 
 [ramda]: https://ramdajs.com
 [flybondi]: https://www.flybondi.com
+[curry]: https://ramdajs.com/docs/#curry
+[curry-n]: https://ramdajs.com/docs/#curryN
+[n-ary]: https://ramdajs.com/docs/#nAry
 [github]: https://github.com/flybondi/toolbox/packages/lambda-land
