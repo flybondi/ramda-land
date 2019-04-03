@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.1.0...@flybondi/ramda-land@1.2.0) (2019-04-03)
+
+
+### Features
+
+* **ramda:** nil number prop ([#19](https://github.com/flybondi/toolbox/issues/19)) ([ec5305b](https://github.com/flybondi/toolbox/commit/ec5305b))
+
+
+
+
+
 # 1.1.0 (2019-03-27)
 
 
