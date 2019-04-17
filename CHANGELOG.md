@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.2.0...@flybondi/ramda-land@1.3.0) (2019-04-17)
+
+
+### Features
+
+* **ramda:** add isOneOf, allToLower and allToUpper ([#21](https://github.com/flybondi/toolbox/issues/21)) ([37ff5df](https://github.com/flybondi/toolbox/commit/37ff5df))
+
+
+
+
+
 # [1.2.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.1.0...@flybondi/ramda-land@1.2.0) (2019-04-03)
 
 
