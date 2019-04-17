@@ -10,6 +10,7 @@ const { booleanProp, booleanPropOr } = require('./src/boolean-prop');
 const { isNilOrEmpty, isNotNilOrEmpty } = require('./src/is-nil-empty');
 const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
 const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
+const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
 const mergeInto = require('./src/merge-into');
 const castArray = require('./src/cast-array');
 const mapKeys = require('./src/map-keys');
@@ -19,11 +20,15 @@ const alwaysNew = require('./src/always-new');
 const nAry = require('./src/n-ary');
 const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
+const isOneOf = require('./src/is-one-of');
 
 module.exports = {
   curry,
   curryN,
   nAry,
+  isOneOf,
+  allToLower,
+  allToUpper,
   alwaysNew,
   booleanProp,
   booleanPropOr,
