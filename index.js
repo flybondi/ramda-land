@@ -18,6 +18,8 @@ const renameKeys = require('./src/rename-keys');
 const spreadProp = require('./src/spread-prop');
 const alwaysNew = require('./src/always-new');
 const nAry = require('./src/n-ary');
+const capitalize = require('./src/capitalize');
+const capitalizeWords = require('./src/capitalize-words');
 const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
 const isOneOf = require('./src/is-one-of');
@@ -35,6 +37,8 @@ module.exports = {
   isNilOrEmpty,
   isNotNilOrEmpty,
   castArray,
+  capitalize,
+  capitalizeWords,
   mapKeys,
   renameKeys,
   rejectNil,
