@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.3.0...@flybondi/ramda-land@1.4.0) (2019-04-24)
+
+
+### Features
+
+* capitalize and capitalizeWords ([#24](https://github.com/flybondi/toolbox/issues/24)) ([51af775](https://github.com/flybondi/toolbox/commit/51af775))
+
+
+
+
+
 # [1.3.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.2.0...@flybondi/ramda-land@1.3.0) (2019-04-17)
 
 
