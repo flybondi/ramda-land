@@ -1,6 +1,7 @@
 'use strict';
-const { map, merge, curry, pick, lensProp, over, unless, propSatisfies, isNil } = require('ramda');
+const { map, merge, pick, lensProp, over, unless, propSatisfies, isNil } = require('ramda');
 const castArray = require('./cast-array');
+const curry = require('./curry');
 
 /**
  * Given an object containing an array move selected properties outside the

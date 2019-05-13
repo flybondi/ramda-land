@@ -1,5 +1,6 @@
 'use strict';
-const { curry, fromPairs, toPairs, map, adjust } = require('ramda');
+const { fromPairs, toPairs, map, adjust } = require('ramda');
+const curry = require('./curry');
 
 /**
  * Map keys on an objects by running a mapping function to each one.
