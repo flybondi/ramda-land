@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.4.0...@flybondi/ramda-land@1.5.0) (2019-05-13)
+
+
+### Features
+
+* **ramda:** add joinFrom function ([#29](https://github.com/flybondi/toolbox/issues/29)) ([40d412b](https://github.com/flybondi/toolbox/commit/40d412b))
+
+
+
+
+
 # [1.4.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.3.0...@flybondi/ramda-land@1.4.0) (2019-04-24)
 
 
