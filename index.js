@@ -23,6 +23,7 @@ const capitalizeWords = require('./src/capitalize-words');
 const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
 const isOneOf = require('./src/is-one-of');
+const joinFrom = require('./src/join-from');
 
 module.exports = {
   curry,
@@ -48,5 +49,6 @@ module.exports = {
   spreadProp,
   numberProp,
   numberPropOr,
-  mergeInto
+  mergeInto,
+  joinFrom
 };
