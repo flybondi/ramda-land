@@ -1,5 +1,16 @@
 'use strict';
-const { map, merge, pick, lensProp, over, unless, propSatisfies, isNil } = require('ramda');
+const {
+  map,
+  merge,
+  pick,
+  lensProp,
+  over,
+  unless,
+  propSatisfies,
+  isNil,
+  ifElse,
+  is
+} = require('ramda');
 const castArray = require('./cast-array');
 const curry = require('./curry');
 
@@ -22,9 +33,10 @@ const curry = require('./curry');
  */
 const mergeInto = curry((propNames, arrayPropName, obj) => {
   const outerProps = pick(castArray(propNames), obj);
+  const mergeOuterProps = merge(outerProps);
   return unless(
     propSatisfies(isNil, arrayPropName),
-    over(lensProp(arrayPropName), map(merge(outerProps))),
+    over(lensProp(arrayPropName), ifElse(is(Array), map(mergeOuterProps), mergeOuterProps)),
     obj
   );
 });
