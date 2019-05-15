@@ -58,3 +58,10 @@ test('should ignore missing properties outside the array when merging', () => {
     items: [{ id: 1, foo: 'bar' }, { id: 2, foo: 'bar' }]
   });
 });
+
+test('should behave like a simple merge when property to merge does not point to an array', () => {
+  expect(mergeInto(['foo', 'life'], 'items', { foo: 'bar', items: { id: 1 } })).toEqual({
+    foo: 'bar',
+    items: { id: 1, foo: 'bar' }
+  });
+});

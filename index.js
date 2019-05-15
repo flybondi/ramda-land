@@ -24,6 +24,10 @@ const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
 const isOneOf = require('./src/is-one-of');
 const joinFrom = require('./src/join-from');
+const lowerEquals = require('./src/lower-equals');
+const lowerPath = require('./src/lower-path');
+const lowerPathSatisfies = require('./src/lower-path-satisfies');
+const lowerTrim = require('./src/lower-trim');
 
 module.exports = {
   curry,
@@ -50,5 +54,9 @@ module.exports = {
   numberProp,
   numberPropOr,
   mergeInto,
-  joinFrom
+  joinFrom,
+  lowerTrim,
+  lowerPath,
+  lowerPathSatisfies,
+  lowerEquals
 };
