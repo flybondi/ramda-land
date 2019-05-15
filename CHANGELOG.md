@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.5.0...@flybondi/ramda-land@1.6.0) (2019-05-15)
+
+
+### Features
+
+* add lowerTrim, lowerPath, lowerPathSatisfies and lowerEquals ([#31](https://github.com/flybondi/toolbox/issues/31)) ([fe96f18](https://github.com/flybondi/toolbox/commit/fe96f18))
+* **ramda:** let mergeInto handle single objects ([#32](https://github.com/flybondi/toolbox/issues/32)) ([26aa973](https://github.com/flybondi/toolbox/commit/26aa973))
+
+
+
+
+
 # [1.5.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.4.0...@flybondi/ramda-land@1.5.0) (2019-05-13)
 
 
