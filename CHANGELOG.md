@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.6.0...@flybondi/ramda-land@2.0.0) (2019-06-28)
+
+
+### Features
+
+* **ramda:** add applySpec and mergeSpec functions ([#39](https://github.com/flybondi/toolbox/issues/39)) ([ac51180](https://github.com/flybondi/toolbox/commit/ac51180))
+
+
+### BREAKING CHANGES
+
+* **ramda:** peer dependency requirement for date-fns up to latest beta
+
+* chore(ramda): remove ramda leftover jsdoc
+
+* chore(package): update eslint versions on ssr-core
+
+* chore(eslint): resolve eslint issues with latest prettier
+
+* chore(eslint): extend prettier/standard where missing
+
+
+
+
+
 # [1.6.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.5.0...@flybondi/ramda-land@1.6.0) (2019-05-15)
 
 
