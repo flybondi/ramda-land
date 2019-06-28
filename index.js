@@ -28,6 +28,8 @@ const lowerEquals = require('./src/lower-equals');
 const lowerPath = require('./src/lower-path');
 const lowerPathSatisfies = require('./src/lower-path-satisfies');
 const lowerTrim = require('./src/lower-trim');
+const mergeSpec = require('./src/merge-spec');
+const applySpec = require('./src/apply-spec');
 
 module.exports = {
   curry,
@@ -58,5 +60,7 @@ module.exports = {
   lowerTrim,
   lowerPath,
   lowerPathSatisfies,
-  lowerEquals
+  lowerEquals,
+  mergeSpec,
+  applySpec
 };
