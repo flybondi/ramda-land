@@ -1,15 +1,17 @@
 'use strict';
 const _curry1 = require('./utils/_curry1');
 const curryN = require('./curry-n');
-const { apply, max, pluck, reduce, keys, values, always, map } = require('ramda');
+const { apply, max, pluck, reduce, keys, values, always } = require('ramda');
 
 // Use custom mapValues function to avoid issues with specs that include a "map" key and R.map
 // delegating calls to .map
 function mapValues(fn, obj) {
-  return keys(obj).reduce(function(acc, key) {
-    acc[key] = fn(obj[key]);
-    return acc;
-  }, {});
+  return Array.isArray(obj)
+    ? obj.map(fn)
+    : keys(obj).reduce(function(acc, key) {
+        acc[key] = fn(obj[key]);
+        return acc;
+      }, {});
 }
 
 /**
@@ -17,7 +19,7 @@ function mapValues(fn, obj) {
  * function producing an object of the same structure, by mapping each property
  * to the result of calling its associated function with the supplied arguments.
  *
- * @func
+ * @function
  * @param {Object|Array} spec a list or object recursively mapping properties or elements to functions for
  *  producing corresponding values.
  * @return {Function} A function that returns an object of the same structure
@@ -34,16 +36,14 @@ function mapValues(fn, obj) {
  *      getMetrics(2, 4); // => {  list: [6, 'value'], sum: 6, some: 'value', nested: { mul: 8, any: 'value' } }
  */
 const applySpec = _curry1(function applySpec(spec) {
-  const isArraySpec = Array.isArray(spec);
-  const recursiveSpec = v => {
-    return typeof v === 'function' ? v : typeof v === 'object' ? applySpec(v) : always(v);
-  };
-  spec = isArraySpec ? map(recursiveSpec, spec) : mapValues(recursiveSpec, spec);
+  spec = mapValues(
+    v => (typeof v === 'function' ? v : typeof v === 'object' ? applySpec(v) : always(v)),
+    spec
+  );
 
   return curryN(reduce(max, 0, pluck('length', values(spec))), function applySpec() {
     const args = arguments;
-    const applyArgs = f => apply(f, args);
-    return isArraySpec ? map(applyArgs, spec) : mapValues(applyArgs, spec);
+    return mapValues(f => apply(f, args), spec);
   });
 });
 
