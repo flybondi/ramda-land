@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@2.0.0...@flybondi/ramda-land@3.0.0) (2019-07-16)
+
+
+### Features
+
+* **ramda:** add multiple utility functions ([#42](https://github.com/flybondi/toolbox/issues/42)) ([f3df8b9](https://github.com/flybondi/toolbox/commit/f3df8b9))
+* **ramda:** make mergeSpec use deep merge ([#43](https://github.com/flybondi/toolbox/issues/43)) ([3756aa7](https://github.com/flybondi/toolbox/commit/3756aa7))
+
+
+### BREAKING CHANGES
+
+* **ramda:** mergeSpec no longer shallow merges props and may generate new properties in existing applications as a result
+
+
+
+
+
 # [2.0.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@1.6.0...@flybondi/ramda-land@2.0.0) (2019-06-28)
 
 
