@@ -5,8 +5,23 @@ test('should retain properties on the original object', () => {
   expect(mergeSpec({ bar: o => o.foo }, { foo: 'bar' })).toMatchObject({ foo: 'bar' });
 });
 
+test('should retain nested properties on the original object', () => {
+  expect(mergeSpec({ bar: o => o.foo }, { foo: 'bar', more: { value: 42 } })).toMatchObject({
+    foo: 'bar',
+    more: { value: 42 }
+  });
+});
+
 test('should return properties generated from applying the given spec', () => {
   expect(mergeSpec({ bar: o => 'foo' + o.foo }, { foo: 'bar' })).toMatchObject({ bar: 'foobar' });
+});
+
+test('should merge nested properties generated from applying the given spec', () => {
+  expect(
+    mergeSpec({ foo: { more: o => 'foo' + o.foo.value } }, { foo: { value: 'bar' } })
+  ).toMatchObject({
+    foo: { more: 'foobar', value: 'bar' }
+  });
 });
 
 test('should return a curried function', () => {
