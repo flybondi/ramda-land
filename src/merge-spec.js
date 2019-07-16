@@ -1,5 +1,5 @@
 'use strict';
-const { applyTo, compose, mergeRight } = require('ramda');
+const { applyTo, compose, mergeDeepRight } = require('ramda');
 const _curry2 = require('./utils/_curry2');
 const applySpec = require('./apply-spec');
 
@@ -28,7 +28,7 @@ const mergeSpec = _curry2(function mergeSpec(spec, obj) {
   return applyTo(
     obj,
     compose(
-      mergeRight(obj),
+      mergeDeepRight(obj),
       applySpec(spec)
     )
   );

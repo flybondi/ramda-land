@@ -20,4 +20,9 @@ const { isNil, either, isEmpty, complement } = require('ramda');
  */
 const isNilOrEmpty = either(isEmpty, isNil);
 
-module.exports = { isNilOrEmpty, isNotNilOrEmpty: complement(isNilOrEmpty) };
+module.exports = {
+  isNilOrEmpty,
+  isNotNilOrEmpty: complement(isNilOrEmpty),
+  isNotNil: complement(isNil),
+  isNotEmpty: complement(isEmpty)
+};

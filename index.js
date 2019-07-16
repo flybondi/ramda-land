@@ -5,21 +5,12 @@
  *
  * @module @flybondi/ramda-land
  */
-const { numberProp, numberPropOr } = require('./src/number-prop');
-const { booleanProp, booleanPropOr } = require('./src/boolean-prop');
-const { isNilOrEmpty, isNotNilOrEmpty } = require('./src/is-nil-empty');
-const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
-const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
-const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
-const mergeInto = require('./src/merge-into');
-const castArray = require('./src/cast-array');
-const mapKeys = require('./src/map-keys');
-const renameKeys = require('./src/rename-keys');
-const spreadProp = require('./src/spread-prop');
 const alwaysNew = require('./src/always-new');
-const nAry = require('./src/n-ary');
+const applySpec = require('./src/apply-spec');
 const capitalize = require('./src/capitalize');
 const capitalizeWords = require('./src/capitalize-words');
+const castArray = require('./src/cast-array');
+const compact = require('./src/compact');
 const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
 const isOneOf = require('./src/is-one-of');
@@ -28,39 +19,58 @@ const lowerEquals = require('./src/lower-equals');
 const lowerPath = require('./src/lower-path');
 const lowerPathSatisfies = require('./src/lower-path-satisfies');
 const lowerTrim = require('./src/lower-trim');
+const mapKeys = require('./src/map-keys');
+const mergeInto = require('./src/merge-into');
 const mergeSpec = require('./src/merge-spec');
-const applySpec = require('./src/apply-spec');
+const nAry = require('./src/n-ary');
+const renameKeys = require('./src/rename-keys');
+const spreadProp = require('./src/spread-prop');
+const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
+const { arrayPath, compactPath } = require('./src/array-path');
+const { arrayProp, compactProp } = require('./src/array-prop');
+const { booleanProp, booleanPropOr } = require('./src/boolean-prop');
+const { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } = require('./src/is-nil-empty');
+const { numberProp, numberPropOr } = require('./src/number-prop');
+const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
+const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
 
 module.exports = {
-  curry,
-  curryN,
-  nAry,
-  isOneOf,
   allToLower,
   allToUpper,
   alwaysNew,
+  applySpec,
+  arrayPath,
+  arrayProp,
   booleanProp,
   booleanPropOr,
-  isNilOrEmpty,
-  isNotNilOrEmpty,
-  castArray,
   capitalize,
   capitalizeWords,
-  mapKeys,
-  renameKeys,
-  rejectNil,
-  rejectNilOrEmpty,
-  thenThrowErrorWith,
-  throwErrorWith,
-  spreadProp,
-  numberProp,
-  numberPropOr,
-  mergeInto,
+  castArray,
+  compact,
+  compactPath,
+  compactProp,
+  curry,
+  curryN,
+  isNilOrEmpty,
+  isNotEmpty,
+  isNotNil,
+  isNotNilOrEmpty,
+  isOneOf,
   joinFrom,
-  lowerTrim,
+  lowerEquals,
   lowerPath,
   lowerPathSatisfies,
-  lowerEquals,
+  lowerTrim,
+  mapKeys,
+  mergeInto,
   mergeSpec,
-  applySpec
+  nAry,
+  numberProp,
+  numberPropOr,
+  rejectNil,
+  rejectNilOrEmpty,
+  renameKeys,
+  spreadProp,
+  thenThrowErrorWith,
+  throwErrorWith
 };
