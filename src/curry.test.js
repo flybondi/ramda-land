@@ -119,7 +119,6 @@ test('supports @@functional/placeholder', function() {
 
 test('forwards extra arguments', function() {
   const f = function(a, b, c) {
-    void c;
     return Array.prototype.slice.call(arguments);
   };
   const g = curry(f);
