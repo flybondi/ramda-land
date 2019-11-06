@@ -1,7 +1,8 @@
 // @flow strict
 'use strict';
 const { always, applyTo, applySpec, compose, isEmpty, when } = require('ramda');
-const { curry, rejectNilOrEmpty } = require('@flybondi/ramda-land');
+const { rejectNilOrEmpty } = require('./reject-nil');
+const curry = require('./curry');
 
 /**
  * Given a spec object recursively mapping properties to functions, creates a function

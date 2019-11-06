@@ -10,7 +10,9 @@ const applySpec = require('./src/apply-spec');
 const capitalize = require('./src/capitalize');
 const capitalizeWords = require('./src/capitalize-words');
 const castArray = require('./src/cast-array');
+const coalesce = require('./src/coalesce');
 const compact = require('./src/compact');
+const compactSpec = require('./src/compact-spec');
 const curry = require('./src/curry');
 const curryN = require('./src/curry-n');
 const isOneOf = require('./src/is-one-of');
@@ -25,6 +27,7 @@ const mergeSpec = require('./src/merge-spec');
 const nAry = require('./src/n-ary');
 const renameKeys = require('./src/rename-keys');
 const spreadProp = require('./src/spread-prop');
+const truncate = require('./src/truncate');
 const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
 const { arrayPath, compactPath } = require('./src/array-path');
 const { arrayProp, compactProp } = require('./src/array-prop');
@@ -46,9 +49,11 @@ module.exports = {
   capitalize,
   capitalizeWords,
   castArray,
+  coalesce,
   compact,
   compactPath,
   compactProp,
+  compactSpec,
   curry,
   curryN,
   isNilOrEmpty,
@@ -72,5 +77,6 @@ module.exports = {
   renameKeys,
   spreadProp,
   thenThrowErrorWith,
-  throwErrorWith
+  throwErrorWith,
+  truncate
 };
