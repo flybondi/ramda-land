@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.1.0...@flybondi/ramda-land@3.1.1) (2019-11-06)
+
+
+### Bug Fixes
+
+* **ramda:** export missing functions ([#54](https://github.com/flybondi/toolbox/issues/54)) ([d2815de](https://github.com/flybondi/toolbox/commit/d2815de))
+
+
+
+
+
 # [3.1.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.0.0...@flybondi/ramda-land@3.1.0) (2019-11-06)
 
 
