@@ -1,5 +1,6 @@
 'use strict';
-const { curry, isNotNilOrEmpty } = require('@flybondi/ramda-land');
+const curry = require('./curry');
+const { isNotNilOrEmpty } = require('./is-nil-empty');
 const { take, when, compose, trim } = require('ramda');
 
 /**

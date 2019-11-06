@@ -1,6 +1,6 @@
 'use strict';
 const { compose, reduce, either, F, map, max, length } = require('ramda');
-const { curry } = require('@flybondi/ramda-land');
+const curry = require('./curry');
 
 const _coalesce = reduce(either, F);
 
