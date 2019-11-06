@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.0.0...@flybondi/ramda-land@3.1.0) (2019-11-06)
+
+
+### Features
+
+* **ramda:** add coalesce, compactSpec and truncate ([#53](https://github.com/flybondi/toolbox/issues/53)) ([d6818eb](https://github.com/flybondi/toolbox/commit/d6818eb))
+
+
+
+
+
 # [3.0.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@2.0.0...@flybondi/ramda-land@3.0.0) (2019-07-16)
 
 
