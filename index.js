@@ -28,6 +28,7 @@ const nAry = require('./src/n-ary');
 const renameKeys = require('./src/rename-keys');
 const spreadProp = require('./src/spread-prop');
 const truncate = require('./src/truncate');
+const interpolate = require('./src/interpolate');
 const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
 const { arrayPath, compactPath } = require('./src/array-path');
 const { arrayProp, compactProp } = require('./src/array-prop');
@@ -56,6 +57,7 @@ module.exports = {
   compactSpec,
   curry,
   curryN,
+  interpolate,
   isNilOrEmpty,
   isNotEmpty,
   isNotNil,

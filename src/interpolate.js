@@ -5,7 +5,7 @@ const { compose, values, mapObjIndexed, reduce, replace, flip, call } = require(
 
 const replacer = compose(
   values,
-  mapObjIndexed((value, key) => replace(`{${key}}`, value)),
+  mapObjIndexed((value, key) => replace(new RegExp(`{${key}}`, 'g'), value)),
   rejectNil
 );
 

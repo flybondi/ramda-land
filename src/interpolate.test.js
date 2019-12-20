@@ -10,6 +10,14 @@ test('should replace variables present in the `context` from the `template`', ()
   ).toBe('I am selling these fine leather jackets!');
 });
 
+test('should replace all instances of variables present in the `template`', () => {
+  expect(
+    interpolate('I am selling these {description} {description} jackets!', {
+      description: 'fine'
+    })
+  ).toBe('I am selling these fine fine jackets!');
+});
+
 test('should ignore all `null` or `undefined` values on the `context`', () => {
   expect(
     interpolate('I am selling these {description} {material} jackets!', {
