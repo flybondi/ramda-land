@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.1.1...@flybondi/ramda-land@3.2.0) (2019-12-27)
+
+
+### Bug Fixes
+
+* **ramda:** replace all interpolation occurrences ([#58](https://github.com/flybondi/toolbox/issues/58)) ([2cbdcbb](https://github.com/flybondi/toolbox/commit/2cbdcbb))
+
+
+### Features
+
+* **ramda:** add interpolate function ([#57](https://github.com/flybondi/toolbox/issues/57)) ([6671d40](https://github.com/flybondi/toolbox/commit/6671d40))
+* **ramda:** add numberPath and numberPathOr ([#59](https://github.com/flybondi/toolbox/issues/59)) ([13f99f9](https://github.com/flybondi/toolbox/commit/13f99f9))
+
+
+
+
+
 ## [3.1.1](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.1.0...@flybondi/ramda-land@3.1.1) (2019-11-06)
 
 
