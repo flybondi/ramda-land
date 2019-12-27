@@ -34,7 +34,7 @@ const { arrayPath, compactPath } = require('./src/array-path');
 const { arrayProp, compactProp } = require('./src/array-prop');
 const { booleanProp, booleanPropOr } = require('./src/boolean-prop');
 const { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } = require('./src/is-nil-empty');
-const { numberProp, numberPropOr } = require('./src/number-prop');
+const { numberProp, numberPropOr, numberPath, numberPathOr } = require('./src/number-prop');
 const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
 const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
 
@@ -74,6 +74,8 @@ module.exports = {
   nAry,
   numberProp,
   numberPropOr,
+  numberPath,
+  numberPathOr,
   rejectNil,
   rejectNilOrEmpty,
   renameKeys,
