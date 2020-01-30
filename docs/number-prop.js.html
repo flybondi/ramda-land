@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>number-prop.js - Documentation</title>
+    
+    
+    <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Flynamo"/>
+    <meta property="og:url" content="https://flybondi.github.io/ramda-land/"/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#allToLower">allToLower</a></li><li><a href="global.html#allToUpper">allToUpper</a></li><li><a href="global.html#alwaysNew">alwaysNew</a></li><li><a href="global.html#applySpec">applySpec</a></li><li><a href="global.html#arrayPath">arrayPath</a></li><li><a href="global.html#arrayProp">arrayProp</a></li><li><a href="global.html#booleanProp">booleanProp</a></li><li><a href="global.html#booleanPropOr">booleanPropOr</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#capitalizeWords">capitalizeWords</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#coalesce">coalesce</a></li><li><a href="global.html#compact">compact</a></li><li><a href="global.html#compactPath">compactPath</a></li><li><a href="global.html#compactProp">compactProp</a></li><li><a href="global.html#compactSpec">compactSpec</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#curryN">curryN</a></li><li><a href="global.html#ELLIPSIS">ELLIPSIS</a></li><li><a href="global.html#interpolate">interpolate</a></li><li><a href="global.html#isNilOrEmpty">isNilOrEmpty</a></li><li><a href="global.html#isOneOf">isOneOf</a></li><li><a href="global.html#joinFrom">joinFrom</a></li><li><a href="global.html#lowerEquals">lowerEquals</a></li><li><a href="global.html#lowerPath">lowerPath</a></li><li><a href="global.html#lowerPathSatisfies">lowerPathSatisfies</a></li><li><a href="global.html#lowerTrim">lowerTrim</a></li><li><a href="global.html#mapKeys">mapKeys</a></li><li><a href="global.html#mergeInto">mergeInto</a></li><li><a href="global.html#mergeSpec">mergeSpec</a></li><li><a href="global.html#nAry">nAry</a></li><li><a href="global.html#notEquals">notEquals</a></li><li><a href="global.html#numberPath">numberPath</a></li><li><a href="global.html#numberPathOr">numberPathOr</a></li><li><a href="global.html#numberProp">numberProp</a></li><li><a href="global.html#numberPropOr">numberPropOr</a></li><li><a href="global.html#rejectNil">rejectNil</a></li><li><a href="global.html#rejectNilOrEmpty">rejectNilOrEmpty</a></li><li><a href="global.html#renameKeys">renameKeys</a></li><li><a href="global.html#spreadProp">spreadProp</a></li><li><a href="global.html#throwErrorWith">throwErrorWith</a></li><li><a href="global.html#truncate">truncate</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">number-prop.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+const {
+  always,
+  compose,
+  either,
+  identity,
+  isEmpty,
+  isNil,
+  path,
+  prop,
+  unless,
+  useWith,
+  when
+} = require('ramda');
+const castArray = require('./cast-array');
+const curryN = require('./curry-n');
+
+const numberUnlessNilOrEmpty = compose(unless(isNil, Number), when(isEmpty, always(NaN)));
+
+const isNilOrNan = either(isNil, isNaN);
+
+/**
+ * Shorthand function to extract a property from an object and convert it to a number.
+ * Note that this behaves somewhat different to regular number parsing using `Number` constructor:
+ * if the property is `null` or `undefined` it will be returned as is; if the property is
+ * an empty string (`''`), `NaN` will be returned.
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#prop
+ * @param {String} propName Name of the property to extract.
+ * @param {Object} obj Source of the extracted property.
+ * @returns {Number} The value of `obj` at `propName` as a number or `NaN`.
+ */
+const numberProp = curryN(2, compose(numberUnlessNilOrEmpty, prop));
+
+/**
+ * Shorthand function to extract a nested property from an object and convert it to a number.
+ * Note that this behaves somewhat different to regular number parsing using `Number` constructor:
+ * if the property is `null` or `undefined` it will be returned as is; if the property is
+ * an empty string (`''`), `NaN` will be returned.
+ *
+ * @example
+ *  numberPath(['life', 'meaning'], { life: { meaning: '42' }}); // 42
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#path
+ * @param {String|Array.&lt;String>} propPath Path to the property to extract. Also accepts a
+ *  property name as a single string.
+ * @param {Object} obj Source of the extracted property.
+ * @returns {Number} The value of `obj` at `propPath` as a number or `NaN`.
+ */
+const numberPath = curryN(2, compose(numberUnlessNilOrEmpty, useWith(path, [castArray, identity])));
+
+/**
+ * Extract a property from an object and convert it to a number. If property
+ * is absent, `null`, `undefined` or cannot be coerced into a `Number`, the default
+ * value will be returned instead. Note that number coercing behaves somewhat different
+ * than using the `Number` constructor: an empty string (`''`) or `null` would return the
+ * `defaultValue` instead of `0`.
+ *
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#propOr
+ * @param {*} defaultValue The value to return if `propName` does not exist in `obj`
+ *  or is nil.
+ *  @param {String} propName Name of the property to extract.
+ * @param {Object} obj Source of the extracted property.
+ * @returns {*} The value of `obj` at `propName` as a number or `defaultValue`.
+ */
+const numberPropOr = curryN(3, function numberPropOr(defaultValue, propName, obj) {
+  const value = numberProp(propName, obj);
+  return isNilOrNan(value) ? defaultValue : value;
+});
+
+/**
+ * Extract a nested property from an object and convert it to a number. If property
+ * is absent, `null`, `undefined` or cannot be coerced into a `Number`, the default
+ * value will be returned instead. Note that number coercing behaves somewhat different
+ * than using the `Number` constructor: an empty string (`''`) or `null` would return the
+ * `defaultValue` instead of `0`.
+ *
+ * @example
+ *  numberPathOr(42, ['life', 'meaning'], { foo: 'bar' }); // 42
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#pathOr
+ * @param {*} defaultValue The value to return if `propPath` does not exist in `obj`
+ *  or its value is nil or `NaN`.
+ *  @param {String|Array.&lt;String>} propPath Path to the property to extract. Also accepts a
+ *  property name as a single string.
+ * @param {Object} obj Source of the extracted property.
+ * @returns {*} The value of `obj` at `propName` as a number or `defaultValue`.
+ */
+const numberPathOr = curryN(3, function numberPathOr(defaultValue, propPath, obj) {
+  const value = numberPath(propPath, obj);
+  return isNilOrNan(value) ? defaultValue : value;
+});
+
+module.exports = { numberProp, numberPropOr, numberPath, numberPathOr };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Jan 30 2020 23:12:49 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>
