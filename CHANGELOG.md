@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.2.0...@flybondi/ramda-land@3.3.0) (2020-01-30)
+
+
+### Features
+
+* add not equals fn to ramda land ([#61](https://github.com/flybondi/toolbox/issues/61)) ([4f8f072](https://github.com/flybondi/toolbox/commit/4f8f072))
+
+
+
+
+
 # [3.2.0](https://github.com/flybondi/toolbox/compare/@flybondi/ramda-land@3.1.1...@flybondi/ramda-land@3.2.0) (2019-12-27)
 
 
