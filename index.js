@@ -29,6 +29,7 @@ const renameKeys = require('./src/rename-keys');
 const spreadProp = require('./src/spread-prop');
 const truncate = require('./src/truncate');
 const interpolate = require('./src/interpolate');
+const notEquals = require('./src/not-equals');
 const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
 const { arrayPath, compactPath } = require('./src/array-path');
 const { arrayProp, compactProp } = require('./src/array-prop');
@@ -72,6 +73,7 @@ module.exports = {
   mergeInto,
   mergeSpec,
   nAry,
+  notEquals,
   numberProp,
   numberPropOr,
   numberPath,
