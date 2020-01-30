@@ -9,20 +9,18 @@
     "functional",
     "fp",
     "flybondi",
-    "lambda",
     "land",
-    "toolbox",
     "utils"
   ],
-  "homepage": "https://github.com/flybondi/toolbox/packages/ramda-land#readme",
+  "homepage": "https://github.com/flybondi/ramda-land#readme",
   "bugs": {
-    "url": "https://github.com/flybondi/toolbox/issues"
+    "url": "https://github.com/flybondi/ramda-land/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/flybondi/toolbox"
+    "url": "https://github.com/flybondi/ramda-land"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Flybondi <dev@flybondi.com> (https://flybondi.com)",
   "files": [
     "index.js",
@@ -50,7 +48,13 @@
     "jest": "^24.9.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "@semantic-release/commit-analyzer": "6.1.0",
+    "@semantic-release/exec": "3.3.0",
+    "@semantic-release/git": "7.0.5",
+    "@semantic-release/github": "5.2.5",
+    "@semantic-release/npm": "5.1.1",
+    "@semantic-release/release-notes-generator": "7.1.4"
   },
   "engines": {
     "node": ">=8"
@@ -60,5 +64,22 @@
   },
   "dependencies": {
     "yn": "^3.1.1"
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/npm",
+        "@semantic-release/github",
+        ["@semantic-release/git", {
+            "assets": ["package.json"],
+            "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }],
+        ["@semantic-release/exec", {
+          "successCmd": "npm dist-tag add $(jq .name package.json -r)@${nextRelease.version} next"
+        }]
+    ],
+    "preset": "angular"
   }
 }
