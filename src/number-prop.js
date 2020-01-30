@@ -15,10 +15,7 @@ const {
 const castArray = require('./cast-array');
 const curryN = require('./curry-n');
 
-const numberUnlessNilOrEmpty = compose(
-  unless(isNil, Number),
-  when(isEmpty, always(NaN))
-);
+const numberUnlessNilOrEmpty = compose(unless(isNil, Number), when(isEmpty, always(NaN)));
 
 const isNilOrNan = either(isNil, isNaN);
 
@@ -34,13 +31,7 @@ const isNilOrNan = either(isNil, isNaN);
  * @param {Object} obj Source of the extracted property.
  * @returns {Number} The value of `obj` at `propName` as a number or `NaN`.
  */
-const numberProp = curryN(
-  2,
-  compose(
-    numberUnlessNilOrEmpty,
-    prop
-  )
-);
+const numberProp = curryN(2, compose(numberUnlessNilOrEmpty, prop));
 
 /**
  * Shorthand function to extract a nested property from an object and convert it to a number.
@@ -58,13 +49,7 @@ const numberProp = curryN(
  * @param {Object} obj Source of the extracted property.
  * @returns {Number} The value of `obj` at `propPath` as a number or `NaN`.
  */
-const numberPath = curryN(
-  2,
-  compose(
-    numberUnlessNilOrEmpty,
-    useWith(path, [castArray, identity])
-  )
-);
+const numberPath = curryN(2, compose(numberUnlessNilOrEmpty, useWith(path, [castArray, identity])));
 
 /**
  * Extract a property from an object and convert it to a number. If property

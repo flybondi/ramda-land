@@ -9,13 +9,6 @@ const { compose, trim, toLower, unless, isNil } = require('ramda');
  * @param {String} value The string to trim and convert to lowercase.
  * @returns {String} The `value` after trimming and lowercasing.
  */
-const lowerTrim = unless(
-  isNil,
-  compose(
-    toLower,
-    trim,
-    String
-  )
-);
+const lowerTrim = unless(isNil, compose(toLower, trim, String));
 
 module.exports = lowerTrim;

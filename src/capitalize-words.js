@@ -17,12 +17,7 @@ const { compose, join, reject, map, isEmpty, split, isNil, unless } = require('r
  */
 const capitalizeWords = unless(
   isNil,
-  compose(
-    join(' '),
-    reject(isEmpty),
-    map(capitalize),
-    split(/\s+/g)
-  )
+  compose(join(' '), reject(isEmpty), map(capitalize), split(/\s+/g))
 );
 
 module.exports = capitalizeWords;

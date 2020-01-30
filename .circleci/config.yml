@@ -32,6 +32,9 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: Check code-style
+          command: yarn lint
+      - run:
           name: Running tests
           command: yarn test
 

@@ -25,13 +25,7 @@ const applySpec = require('./apply-spec');
  *
  */
 const mergeSpec = _curry2(function mergeSpec(spec, obj) {
-  return applyTo(
-    obj,
-    compose(
-      mergeDeepRight(obj),
-      applySpec(spec)
-    )
-  );
+  return applyTo(obj, compose(mergeDeepRight(obj), applySpec(spec)));
 });
 
 module.exports = mergeSpec;

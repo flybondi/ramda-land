@@ -4,10 +4,7 @@ const curry = require('./curry');
 
 const _coalesce = reduce(either, F);
 
-const maxLength = compose(
-  reduce(max, 0),
-  map(length)
-);
+const maxLength = compose(reduce(max, 0), map(length));
 
 /**
  * Creates a wrapping function that concatenates the result of each function

@@ -4,12 +4,7 @@ const { rejectNilOrEmpty } = require('./reject-nil');
 const castArray = require('./cast-array');
 const curryN = require('./curry-n');
 
-const compactMap = fn =>
-  compose(
-    map(fn),
-    rejectNilOrEmpty,
-    castArray
-  );
+const compactMap = fn => compose(map(fn), rejectNilOrEmpty, castArray);
 
 /**
  * Converts all elements in an array to lowercase. Each element
@@ -24,15 +19,7 @@ const compactMap = fn =>
  *  single value will be wrapped in an array.
  * @returns {Array.<String>} All the passed `values`, down cased.
  */
-const allToLower = curryN(
-  1,
-  compactMap(
-    compose(
-      toLower,
-      String
-    )
-  )
-);
+const allToLower = curryN(1, compactMap(compose(toLower, String)));
 
 /**
  * Converts all elements in an array to uppercase. Each element
@@ -47,14 +34,6 @@ const allToLower = curryN(
  *  single value will be wrapped in an array.
  * @returns {Array.<String>} All the passed `values`, upper cased.
  */
-const allToUpper = curryN(
-  1,
-  compactMap(
-    compose(
-      toUpper,
-      String
-    )
-  )
-);
+const allToUpper = curryN(1, compactMap(compose(toUpper, String)));
 
 module.exports = { allToLower, allToUpper };

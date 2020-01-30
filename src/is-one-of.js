@@ -18,13 +18,6 @@ const curryN = require('./curry-n');
  * @param {Array.<String>|String} secondSet The second set of elements (or single element) to check.
  * @returns {Boolean} `true` if at least one element on `firstSet` is present in `secondSet`.
  */
-const isOneOf = curryN(
-  2,
-  compose(
-    not,
-    isEmpty,
-    useWith(intersection, [allToLower, allToLower])
-  )
-);
+const isOneOf = curryN(2, compose(not, isEmpty, useWith(intersection, [allToLower, allToLower])));
 
 module.exports = isOneOf;

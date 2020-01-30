@@ -12,7 +12,7 @@ const replacer = compose(
 /**
  * Replaces variables in a template enclosed by `{}`.
  *
- * @examples
+ * @example
  *  interpolate('I am {name}', { name: 'Error' });
  *  // 'I am Error'
  *
