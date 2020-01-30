@@ -1,6 +1,6 @@
 {
   "name": "@flybondi/ramda-land",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "A collection of reusable functions for ramda",
   "keywords": [
     "ramda",
@@ -68,17 +68,25 @@
   "release": {
     "branch": "master",
     "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        "@semantic-release/npm",
-        "@semantic-release/github",
-        ["@semantic-release/git", {
-            "assets": ["package.json"],
-            "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }],
-        ["@semantic-release/exec", {
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
           "successCmd": "npm dist-tag add $(jq .name package.json -r)@${nextRelease.version} next"
-        }]
+        }
+      ]
     ],
     "preset": "angular"
   }
