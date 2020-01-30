@@ -80,8 +80,8 @@
       [
         "@semantic-release/exec",
         {
-          "prepare": "npx run-s generate-docs",
-          "success": "npm dist-tag add $(jq .name package.json -r)@${nextRelease.version} next"
+          "prepareCmd": "npx run-s generate-docs",
+          "successCmd": "npm dist-tag add $(jq .name package.json -r)@${nextRelease.version} next"
         }
       ],
       [
@@ -108,7 +108,7 @@
         {
           "assets": [
             "package.json",
-            "docs/"
+            "docs"
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
