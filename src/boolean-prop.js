@@ -17,13 +17,7 @@ const boolify = require('yn');
  * @param {Object} obj Source of the extracted property
  * @returns {Boolean} The value of `obj` at `propName` as a boolean.
  */
-const booleanProp = curryN(
-  2,
-  compose(
-    boolify,
-    prop
-  )
-);
+const booleanProp = curryN(2, compose(boolify, prop));
 
 /**
  * Shorthand function to extract a property from an object and convert it to a `Boolean`.

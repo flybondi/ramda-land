@@ -11,7 +11,10 @@ test('should be a curried function of arity three', () => {
 test('should merge properties into each element of an array', () => {
   expect(mergeInto('foo', 'items', { foo: 'bar', items: [{ id: 1 }, { id: 2 }] })).toEqual({
     foo: 'bar',
-    items: [{ id: 1, foo: 'bar' }, { id: 2, foo: 'bar' }]
+    items: [
+      { id: 1, foo: 'bar' },
+      { id: 2, foo: 'bar' }
+    ]
   });
 });
 
@@ -21,7 +24,10 @@ test('should support merging multiple properties into an array', () => {
   ).toEqual({
     foo: 'bar',
     life: 42,
-    items: [{ id: 1, foo: 'bar', life: 42 }, { id: 2, foo: 'bar', life: 42 }]
+    items: [
+      { id: 1, foo: 'bar', life: 42 },
+      { id: 2, foo: 'bar', life: 42 }
+    ]
   });
 });
 
@@ -55,7 +61,10 @@ test('should ignore missing properties outside the array when merging', () => {
     mergeInto(['foo', 'life'], 'items', { foo: 'bar', items: [{ id: 1 }, { id: 2 }] })
   ).toEqual({
     foo: 'bar',
-    items: [{ id: 1, foo: 'bar' }, { id: 2, foo: 'bar' }]
+    items: [
+      { id: 1, foo: 'bar' },
+      { id: 2, foo: 'bar' }
+    ]
   });
 });
 

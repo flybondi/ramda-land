@@ -12,16 +12,7 @@ const { converge, compose, toUpper, head, tail, toLower, concat, unless, isNil }
  */
 const capitalize = unless(
   isNil,
-  converge(concat, [
-    compose(
-      toUpper,
-      head
-    ),
-    compose(
-      toLower,
-      tail
-    )
-  ])
+  converge(concat, [compose(toUpper, head), compose(toLower, tail)])
 );
 
 module.exports = capitalize;

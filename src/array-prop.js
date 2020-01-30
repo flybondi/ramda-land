@@ -23,13 +23,7 @@ const compact = require('./compact');
  * @param {Object} obj Source of the extracted property
  * @returns {Array.<*>} The value of `obj` at `propName` cast as an array.
  */
-const arrayProp = curryN(
-  2,
-  compose(
-    castArray,
-    prop
-  )
-);
+const arrayProp = curryN(2, compose(castArray, prop));
 
 /**
  * Shorthand function to extract a property from an object and cast its value to an array,
@@ -54,12 +48,6 @@ const arrayProp = curryN(
  * @returns {Array.<*>} The value of `obj` at `propName` cast as an array with
  *  all falsey and empty values removed.
  */
-const compactProp = curryN(
-  2,
-  compose(
-    compact,
-    arrayProp
-  )
-);
+const compactProp = curryN(2, compose(compact, arrayProp));
 
 module.exports = { arrayProp, compactProp };
