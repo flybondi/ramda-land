@@ -244,6 +244,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# Generated JSDOCs
-docs/
