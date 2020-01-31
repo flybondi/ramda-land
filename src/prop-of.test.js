@@ -12,23 +12,23 @@ describe('propOf function', function() {
     expect(propOf(fred, 'width')).toBe(undefined);
   });
 
-  test('should returns an `undefined` when `null` is passed as object', function () {
+  test('should returns an `undefined` when `null` is passed as object', function() {
     expect(propOf(null, 'width')).toBe(undefined);
   });
 
-  test('should returns an `undefined` when `undefined` is passed as object', function () {
+  test('should returns an `undefined` when `undefined` is passed as object', function() {
     expect(propOf(undefined, 'width')).toBe(undefined);
   });
 
-  test('should returns an `undefined` when `undefined` is passed as prop object', function () {
+  test('should returns an `undefined` when `undefined` is passed as prop object', function() {
     expect(propOf(fred, undefined)).toBe(undefined);
   });
 
-  test('should returns an `undefined` when `null` is passed as prop object', function () {
+  test('should returns an `undefined` when `null` is passed as prop object', function() {
     expect(propOf(fred, null)).toBe(undefined);
   });
 
-  test('should be a curried fn', function () {
+  test('should be a curried fn', function() {
     expect(propOf(fred)('name')).toBe('Fred');
   });
 });
