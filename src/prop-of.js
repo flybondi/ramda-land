@@ -2,7 +2,7 @@
 const { flip, prop } = require('ramda');
 
 /**
- * Returns a function that when supplied a property returns the value of this, if it exists.
+ * Returns the value of `obj` at the given `propName`.
  *
  * @example
  *   propOf({ name: 'Alexander' }, 'name') //=> 'Alexander'
@@ -11,7 +11,7 @@ const { flip, prop } = require('ramda');
  * @see https://ramdajs.com/docs/#flip
  * @see https://ramdajs.com/docs/#prop
  * @param {Object} obj The object to query
- * @param {String} p The property name
+ * @param {String} propName The property name
  * @returns {*} The value at `obj.p`.
  */
 
