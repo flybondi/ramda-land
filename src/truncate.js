@@ -7,6 +7,7 @@ const { take, when, compose, trim } = require('ramda');
  * String sequence that should appear on truncated strings. The length
  * of this constant will affect the total length of the output of the truncation transformation.
  * @type {String}
+ * @ignore
  */
 const ELLIPSIS = '...';
 
