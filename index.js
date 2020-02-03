@@ -30,6 +30,7 @@ const spreadProp = require('./src/spread-prop');
 const truncate = require('./src/truncate');
 const interpolate = require('./src/interpolate');
 const notEquals = require('./src/not-equals');
+const propOf = require('./src/prop-of');
 const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
 const { arrayPath, compactPath } = require('./src/array-path');
 const { arrayProp, compactProp } = require('./src/array-prop');
@@ -73,6 +74,7 @@ module.exports = {
   mergeInto,
   mergeSpec,
   nAry,
+  propOf,
   notEquals,
   numberProp,
   numberPropOr,
