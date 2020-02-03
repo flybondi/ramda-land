@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>compact-spec.js - Documentation</title>
+    <title>prop-of.js - Documentation</title>
     
     
     <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">compact-spec.js</h1>
+    <h1 class="page-title">prop-of.js</h1>
     
 
     
@@ -50,41 +50,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>// @flow strict
-'use strict';
-const { always, applyTo, applySpec, compose, isEmpty, when } = require('ramda');
-const { rejectNilOrEmpty } = require('./reject-nil');
-const curry = require('./curry');
+            <pre class="prettyprint source linenums"><code>'use strict';
+const { flip, prop } = require('ramda');
 
 /**
- * Given a spec object recursively mapping properties to functions, creates a function
- * producing an object of the same structure, by mapping each property to the result of calling
- * its associated function with the supplied arguments.
- * If the outcome of applying the spec produces an object with all nil or empty values,
- * it returns `undefined` instead.
+ * Returns the value of `obj` at the given `propName`.
  *
  * @example
- *  compactSpec({ foo: o => o.bar }, { bar: null }); // -> undefined
- *
- * @see https://ramdajs.com/docs/#applySpec
- * @param {Object} spec An object recursively mapping properties to functions for producing the values for these properties.
- * @param {Object|Array} value An object or array to apply the spec to.
- * @returns {Object|undefined} An spec matching object, or `undefined` if all of its properties are nil or empty.
+ *   propOf({ name: 'Alexander' }, 'name') //=> 'Alexander'
+ *   propOf({ name: 'Alexander' }, 'age') //=> undefined
+ * @function
+ * @see https://ramdajs.com/docs/#flip
+ * @see https://ramdajs.com/docs/#prop
+ * @param {Object} obj The object to query
+ * @param {String} propName The property name
+ * @returns {*} The value at `obj.p`.
  */
-function compactSpec(spec, obj) {
-  return applyTo(
-    obj,
-    compose(
-      // Avoid returning an empty object when all properties
-      // are `null` or `undefined`
-      when(isEmpty, always(undefined)),
-      rejectNilOrEmpty,
-      applySpec(spec)
-    )
-  );
-}
 
-module.exports = curry(compactSpec);
+const propOf = flip(prop);
+
+module.exports = propOf;
 </code></pre>
         </article>
     </section>
