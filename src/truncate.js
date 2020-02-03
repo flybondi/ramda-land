@@ -27,10 +27,22 @@ function truncate(maxLength, value) {
   return when(
     isNotNilOrEmpty,
     compose(
-      stringToTruncate =>
-        `${take(maxLength - ELLIPSIS.length, stringToTruncate)}${
-          stringToTruncate.length > maxLength ? ELLIPSIS : ''
-        }`,
+      stringToTruncate => {
+        const maxLengthLargerThanEllipsis = maxLength > ELLIPSIS.length;
+        return maxLength < 1
+          ? // Return an empty string is the maximum requested length is 1 or less
+            ''
+          : stringToTruncate.length > maxLength
+          ? // If the input is longer than the maximum length, shorten it and append `...` at the end
+            // if it'd still be within the limits - the ellipsis (`...`) should not be returned if the `maxLength`
+            // is less than the ellipsis length itself
+            `${take(
+              maxLengthLargerThanEllipsis ? maxLength - ELLIPSIS.length : maxLength,
+              stringToTruncate
+            )}${maxLengthLargerThanEllipsis ? ELLIPSIS : ''}`
+          : // Return the input as is if its size fits within the given limit
+            stringToTruncate;
+      },
       trim,
       String
     ),
