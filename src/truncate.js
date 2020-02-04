@@ -1,7 +1,7 @@
 'use strict';
 const curry = require('./curry');
 const { isNotNilOrEmpty } = require('./is-nil-empty');
-const { take, when, compose, trim } = require('ramda');
+const { take, when, compose, trim, empty } = require('ramda');
 
 /**
  * String sequence that should appear on truncated strings. The length
@@ -10,6 +10,34 @@ const { take, when, compose, trim } = require('ramda');
  * @private
  */
 const ELLIPSIS = '...';
+
+/**
+ * @private
+ */
+const shorten = (maxLength, value) => {
+  const shouldAppendEllipsis = maxLength > ELLIPSIS.length;
+  return `${take(shouldAppendEllipsis ? maxLength - ELLIPSIS.length : maxLength, value)}${
+    shouldAppendEllipsis ? ELLIPSIS : ''
+  }`;
+};
+
+/**
+ * @private
+ */
+const truncateIfNeeded = (maxLength, value) => {
+  if (maxLength < 1) {
+    // Return an empty string is the maximum requested length is 1 or less
+    return empty(value);
+  }
+
+  return value.length > maxLength
+    ? // If the input is longer than the maximum length, shorten it and append `...` at the end
+      // if it'd still be within the limits - the ellipsis (`...`) should not be returned if the `maxLength`
+      // is less than the ellipsis length itself
+      shorten(maxLength, value)
+    : // Return the input as is if its size fits within the given limit
+      value;
+};
 
 /**
  * Truncates the given string `value` so its total length does not exceed `maxLength` length,
@@ -26,26 +54,7 @@ const ELLIPSIS = '...';
 function truncate(maxLength, value) {
   return when(
     isNotNilOrEmpty,
-    compose(
-      stringToTruncate => {
-        const maxLengthLargerThanEllipsis = maxLength > ELLIPSIS.length;
-        return maxLength < 1
-          ? // Return an empty string is the maximum requested length is 1 or less
-            ''
-          : stringToTruncate.length > maxLength
-          ? // If the input is longer than the maximum length, shorten it and append `...` at the end
-            // if it'd still be within the limits - the ellipsis (`...`) should not be returned if the `maxLength`
-            // is less than the ellipsis length itself
-            `${take(
-              maxLengthLargerThanEllipsis ? maxLength - ELLIPSIS.length : maxLength,
-              stringToTruncate
-            )}${maxLengthLargerThanEllipsis ? ELLIPSIS : ''}`
-          : // Return the input as is if its size fits within the given limit
-            stringToTruncate;
-      },
-      trim,
-      String
-    ),
+    compose(stringToTruncate => truncateIfNeeded(maxLength, stringToTruncate), trim, String),
     value
   );
 }
