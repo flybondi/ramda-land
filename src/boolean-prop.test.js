@@ -11,7 +11,7 @@ describe('the `booleanProp` function', () => {
   });
 
   test('should return null', () => {
-    expect(booleanProp('pokedex', {})).toEqual(null);
+    expect(booleanProp('pokedex', {})).toEqual(undefined);
   });
 });
 
