@@ -14,7 +14,7 @@ const _copyNameProperty = require('./copy-name');
  * @return {Function} The curried function.
  */
 function _curryN(length, received, fn) {
-  return _copyNameProperty(fn, function() {
+  return _copyNameProperty(fn, function () {
     var combined = [];
     var argsIdx = 0;
     var left = length;

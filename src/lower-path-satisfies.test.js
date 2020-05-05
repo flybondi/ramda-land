@@ -1,7 +1,7 @@
 'use strict';
 const lowerPathSatisfies = require('./lower-path-satisfies');
 
-describe('pathSatisfies', function() {
+describe('pathSatisfies', function () {
   const isPositive = n => n > 0;
 
   test('should returns true if the specified object path satisfies the given predicate', () => {
