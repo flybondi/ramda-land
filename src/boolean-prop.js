@@ -2,6 +2,21 @@
 const { always, when, equals, compose, curryN, prop, isNil } = require('ramda');
 const boolify = require('yn');
 
+/**
+ * yn wrapper that force all `undefined` values to be `null` because latest yn version treats
+ * unrecognized values as `undefined` and in order to keep retro-compatibility we have to convert it
+ * to be `null`.
+ *
+ * @example
+ *   defaultNullBoolify('y'); // -> true
+ *   defaultNullBoolify('abomasum'); // -> null
+ *   defaultNullBoolify('NO'); // -> false
+ *
+ * @function
+ * @see https://github.com/sindresorhus/yn#readme
+ * @param {*} input that should be converted.
+ * @returns {Boolean|Null}
+ */
 const defaultNullBoolify = compose(when(equals(undefined), always(null)), boolify);
 
 /**
