@@ -20,7 +20,7 @@ function _curry2(fn) {
         return _isPlaceholder(a)
           ? f2
           : _curry1(
-              _copyNameProperty(fn, function(_b) {
+              _copyNameProperty(fn, function (_b) {
                 return fn(a, _b);
               })
             );
@@ -29,13 +29,13 @@ function _curry2(fn) {
           ? f2
           : _isPlaceholder(a)
           ? _curry1(
-              _copyNameProperty(fn, function(_a) {
+              _copyNameProperty(fn, function (_a) {
                 return fn(_a, b);
               })
             )
           : _isPlaceholder(b)
           ? _curry1(
-              _copyNameProperty(fn, function(_b) {
+              _copyNameProperty(fn, function (_b) {
                 return fn(a, _b);
               })
             )
