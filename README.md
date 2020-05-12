@@ -54,4 +54,4 @@ defaultToLife({ foo: 'bar' }); // -> { foo: 'bar' }
 [curry]: https://ramdajs.com/docs/#curry
 [curry-n]: https://ramdajs.com/docs/#curryN
 [n-ary]: https://ramdajs.com/docs/#nAry
-[github]: https://github.com/flybondi/lambda-land
+[github]: https://github.com/flybondi/ramda-land
