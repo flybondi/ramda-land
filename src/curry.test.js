@@ -2,16 +2,16 @@
 const curry = require('./curry');
 const { __ } = require('ramda');
 
-test('curries a single value', function() {
-  const f = curry(function(a, b, c, d) {
+test('curries a single value', function () {
+  const f = curry(function (a, b, c, d) {
     return (a + b * c) / d;
   }); // f(12, 3, 6, 2) == 15
   const g = f(12);
   expect(g(3, 6, 2)).toBe(15);
 });
 
-test('curries multiple values', function() {
-  const f = curry(function(a, b, c, d) {
+test('curries multiple values', function () {
+  const f = curry(function (a, b, c, d) {
     return (a + b * c) / d;
   }); // f(12, 3, 6, 2) == 15
   const g = f(12, 3);
@@ -20,8 +20,8 @@ test('curries multiple values', function() {
   expect(h(2)).toBe(15);
 });
 
-test('allows further currying of a curried function', function() {
-  const f = curry(function(a, b, c, d) {
+test('allows further currying of a curried function', function () {
+  const f = curry(function (a, b, c, d) {
     return (a + b * c) / d;
   }); // f(12, 3, 6, 2) == 15
   const g = f(12);
@@ -31,8 +31,8 @@ test('allows further currying of a curried function', function() {
   expect(g(3, 6)(2)).toBe(15);
 });
 
-test('properly reports the length of the curried function', function() {
-  const f = curry(function(a, b, c, d) {
+test('properly reports the length of the curried function', function () {
+  const f = curry(function (a, b, c, d) {
     return (a + b * c) / d;
   });
   expect(f).toHaveLength(4);
@@ -43,9 +43,9 @@ test('properly reports the length of the curried function', function() {
   expect(g(3, 6)).toHaveLength(1);
 });
 
-test('preserves context', function() {
+test('preserves context', function () {
   const ctx = { x: 10 };
-  const f = function(a, b) {
+  const f = function (a, b) {
     return a + b * this.x;
   };
   const g = curry(f);
@@ -54,8 +54,8 @@ test('preserves context', function() {
   expect(g.call(ctx, 2).call(ctx, 4)).toBe(42);
 });
 
-test('supports R.__ placeholder', function() {
-  const f = function(a, b, c) {
+test('supports R.__ placeholder', function () {
+  const f = function (a, b, c) {
     return [a, b, c];
   };
   const g = curry(f);
@@ -85,8 +85,8 @@ test('supports R.__ placeholder', function() {
   expect(g(__, __, __)(1, __, __)(__, __)(2, __)(__)(3)).toEqual([1, 2, 3]);
 });
 
-test('supports @@functional/placeholder', function() {
-  const f = function(a, b, c) {
+test('supports @@functional/placeholder', function () {
+  const f = function (a, b, c) {
     return [a, b, c];
   };
   const g = curry(f);
@@ -117,8 +117,8 @@ test('supports @@functional/placeholder', function() {
   expect(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3)).toEqual([1, 2, 3]);
 });
 
-test('forwards extra arguments', function() {
-  const f = function(a, b, c) {
+test('forwards extra arguments', function () {
+  const f = function (a, b, c) {
     return Array.prototype.slice.call(arguments);
   };
   const g = curry(f);
@@ -130,7 +130,7 @@ test('forwards extra arguments', function() {
   expect(g(1)(2)(3, 4)).toEqual([1, 2, 3, 4]);
 });
 
-it('retains original function name', function() {
+it('retains original function name', function () {
   function f(a, b, c) {
     return [a, b, c];
   }
