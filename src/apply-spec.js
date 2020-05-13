@@ -8,7 +8,7 @@ const { apply, max, pluck, reduce, keys, values, always } = require('ramda');
 function mapValues(fn, obj) {
   return Array.isArray(obj)
     ? obj.map(fn)
-    : keys(obj).reduce(function(acc, key) {
+    : keys(obj).reduce(function (acc, key) {
         acc[key] = fn(obj[key]);
         return acc;
       }, {});

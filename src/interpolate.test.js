@@ -45,3 +45,13 @@ test('should not replace values in the `template` that are not present in the `c
     })
   ).toBe('I am selling these fine {material} jackets!');
 });
+
+test('should escape symbols in the template for safe regular expression usage', () => {
+  expect(
+    interpolate('I am selling these {^it.description} {it/material$} {[it*item]}!', {
+      '^it.description': 'fine',
+      'it/material$': 'leather',
+      '[it*item]': 'jackets'
+    })
+  ).toBe('I am selling these fine leather jackets!');
+});

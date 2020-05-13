@@ -1,16 +1,31 @@
 'use strict';
+const { compose, values, mapObjIndexed, reduce, replace, flip, call, take } = require('ramda');
 const curry = require('./curry');
 const { rejectNil } = require('./reject-nil');
-const { compose, values, mapObjIndexed, reduce, replace, flip, call } = require('ramda');
+const escapeStringRegexp = require('./utils/escape-regex');
+
+/**
+ * @private
+ * @type {Number}
+ */
+const MAX_SYMBOL_LENGTH = 512;
+
+/**
+ * @private
+ * @function
+ */
+const sanitizeSymbol = compose(escapeStringRegexp, take(MAX_SYMBOL_LENGTH));
 
 const replacer = compose(
   values,
-  mapObjIndexed((value, key) => replace(new RegExp(`{${key}}`, 'g'), value)),
+  mapObjIndexed((value, key) => replace(new RegExp(`{${sanitizeSymbol(key)}}`, 'g'), value)),
   rejectNil
 );
 
 /**
- * Replaces variables in a template enclosed by `{}`.
+ * Replaces variables in a template enclosed by `{}`. Variable names
+ * will be escaped for safe regular expression usage and, for safety reasons,
+ * cannot exceed `512` characters in length.
  *
  * @example
  *  interpolate('I am {name}', { name: 'Error' });

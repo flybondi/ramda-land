@@ -6,7 +6,7 @@ test('should be a curried function', () => {
   expect(spreadProp('prop')({})).toEqual({});
 });
 
-test('should return object with spreaded prop', function() {
+test('should return object with spreaded prop', function () {
   expect(spreadProp('b', { a: 1, b: { c: 3, d: 4 } })).toEqual({
     a: 1,
     c: 3,
