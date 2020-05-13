@@ -1,3 +1,5 @@
+## [3.5.1](https://github.com/flybondi/ramda-land/compare/v3.5.0...v3.5.1) (2020-05-13)
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
