@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>merge-into.js - Documentation</title>
+    
+    
+    <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Flynamo"/>
+    <meta property="og:url" content="https://flybondi.github.io/ramda-land/"/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#allToLower">allToLower</a></li><li><a href="global.html#allToUpper">allToUpper</a></li><li><a href="global.html#alwaysNew">alwaysNew</a></li><li><a href="global.html#applySpec">applySpec</a></li><li><a href="global.html#arrayPath">arrayPath</a></li><li><a href="global.html#arrayProp">arrayProp</a></li><li><a href="global.html#booleanProp">booleanProp</a></li><li><a href="global.html#booleanPropOr">booleanPropOr</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#capitalizeWords">capitalizeWords</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#coalesce">coalesce</a></li><li><a href="global.html#compact">compact</a></li><li><a href="global.html#compactPath">compactPath</a></li><li><a href="global.html#compactProp">compactProp</a></li><li><a href="global.html#compactSpec">compactSpec</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#curryN">curryN</a></li><li><a href="global.html#defaultNullBoolify">defaultNullBoolify</a></li><li><a href="global.html#interpolate">interpolate</a></li><li><a href="global.html#isNilOrEmpty">isNilOrEmpty</a></li><li><a href="global.html#isOneOf">isOneOf</a></li><li><a href="global.html#joinFrom">joinFrom</a></li><li><a href="global.html#lowerEquals">lowerEquals</a></li><li><a href="global.html#lowerPath">lowerPath</a></li><li><a href="global.html#lowerPathSatisfies">lowerPathSatisfies</a></li><li><a href="global.html#lowerTrim">lowerTrim</a></li><li><a href="global.html#mapKeys">mapKeys</a></li><li><a href="global.html#MAX_MATH_DELTA">MAX_MATH_DELTA</a></li><li><a href="global.html#mergeInto">mergeInto</a></li><li><a href="global.html#mergeSpec">mergeSpec</a></li><li><a href="global.html#MIN_MATH_DELTA">MIN_MATH_DELTA</a></li><li><a href="global.html#nAry">nAry</a></li><li><a href="global.html#notEquals">notEquals</a></li><li><a href="global.html#numberPath">numberPath</a></li><li><a href="global.html#numberPathOr">numberPathOr</a></li><li><a href="global.html#numberProp">numberProp</a></li><li><a href="global.html#numberPropOr">numberPropOr</a></li><li><a href="global.html#propOf">propOf</a></li><li><a href="global.html#rejectNil">rejectNil</a></li><li><a href="global.html#rejectNilOrEmpty">rejectNilOrEmpty</a></li><li><a href="global.html#renameKeys">renameKeys</a></li><li><a href="global.html#spreadProp">spreadProp</a></li><li><a href="global.html#sumProp">sumProp</a></li><li><a href="global.html#throwErrorWith">throwErrorWith</a></li><li><a href="global.html#truncate">truncate</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">merge-into.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+const {
+  map,
+  merge,
+  pick,
+  lensProp,
+  over,
+  unless,
+  propSatisfies,
+  isNil,
+  ifElse,
+  is
+} = require('ramda');
+const castArray = require('./cast-array');
+const curry = require('./curry');
+
+/**
+ * Given an object containing an array move selected properties outside the
+ * array to each element on it.
+ *
+ * @example
+ *  const o = { foo: 'bar', items: [{ id: 1 }, { id: 2 }] };
+ *  mergeInto('foo', 'items');
+ *  // -> { foo: 'bar', items: [{ id: 1, foo: 'bar' }, { id: 2, foo: 'bar' }] }
+ *
+ * @function
+ * @param {String|Array.&lt;String>} propNames List of property names to merge
+ *  into each element in the `arrayProp` (supports sending a single name).
+ * @param {String} arrayPropName Name of the array property on `obj`.
+ * @param {Object} obj The object to apply the transformation to.
+ * @returns {Object} The object with `propNames` properties merged into elements
+ *  of `arrayPropName` array.
+ */
+const mergeInto = curry((propNames, arrayPropName, obj) => {
+  const outerProps = pick(castArray(propNames), obj);
+  const mergeOuterProps = merge(outerProps);
+  return unless(
+    propSatisfies(isNil, arrayPropName),
+    over(lensProp(arrayPropName), ifElse(is(Array), map(mergeOuterProps), mergeOuterProps)),
+    obj
+  );
+});
+
+module.exports = mergeInto;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Wed May 13 2020 17:52:57 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

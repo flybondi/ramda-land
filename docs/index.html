@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Flynamo"/>
+    <meta property="og:url" content="https://flybondi.github.io/ramda-land/"/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#allToLower">allToLower</a></li><li><a href="global.html#allToUpper">allToUpper</a></li><li><a href="global.html#alwaysNew">alwaysNew</a></li><li><a href="global.html#applySpec">applySpec</a></li><li><a href="global.html#arrayPath">arrayPath</a></li><li><a href="global.html#arrayProp">arrayProp</a></li><li><a href="global.html#booleanProp">booleanProp</a></li><li><a href="global.html#booleanPropOr">booleanPropOr</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#capitalizeWords">capitalizeWords</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#coalesce">coalesce</a></li><li><a href="global.html#compact">compact</a></li><li><a href="global.html#compactPath">compactPath</a></li><li><a href="global.html#compactProp">compactProp</a></li><li><a href="global.html#compactSpec">compactSpec</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#curryN">curryN</a></li><li><a href="global.html#defaultNullBoolify">defaultNullBoolify</a></li><li><a href="global.html#interpolate">interpolate</a></li><li><a href="global.html#isNilOrEmpty">isNilOrEmpty</a></li><li><a href="global.html#isOneOf">isOneOf</a></li><li><a href="global.html#joinFrom">joinFrom</a></li><li><a href="global.html#lowerEquals">lowerEquals</a></li><li><a href="global.html#lowerPath">lowerPath</a></li><li><a href="global.html#lowerPathSatisfies">lowerPathSatisfies</a></li><li><a href="global.html#lowerTrim">lowerTrim</a></li><li><a href="global.html#mapKeys">mapKeys</a></li><li><a href="global.html#MAX_MATH_DELTA">MAX_MATH_DELTA</a></li><li><a href="global.html#mergeInto">mergeInto</a></li><li><a href="global.html#mergeSpec">mergeSpec</a></li><li><a href="global.html#MIN_MATH_DELTA">MIN_MATH_DELTA</a></li><li><a href="global.html#nAry">nAry</a></li><li><a href="global.html#notEquals">notEquals</a></li><li><a href="global.html#numberPath">numberPath</a></li><li><a href="global.html#numberPathOr">numberPathOr</a></li><li><a href="global.html#numberProp">numberProp</a></li><li><a href="global.html#numberPropOr">numberPropOr</a></li><li><a href="global.html#propOf">propOf</a></li><li><a href="global.html#rejectNil">rejectNil</a></li><li><a href="global.html#rejectNilOrEmpty">rejectNilOrEmpty</a></li><li><a href="global.html#renameKeys">renameKeys</a></li><li><a href="global.html#spreadProp">spreadProp</a></li><li><a href="global.html#sumProp">sumProp</a></li><li><a href="global.html#throwErrorWith">throwErrorWith</a></li><li><a href="global.html#truncate">truncate</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme usertext">
+        <article><h1>@flybondi/ramda-land</h1>
+<p><a href="https://ramdajs.com"><img src="https://img.shields.io/badge/ramda-849.svg?logoWidth=20&amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAqCAMAAADCkShIAAABqlBMVEUAAADvO0LiJi3vO0LvO0LiJi3vO0LvO0LvO0LvO0LiJi3vO0LiJi3vO0LiJi3vO0LiJS3vO0LiJS3vO0LiJS3iJSzvO0LvO0LvO0LvO0LvO0LvO0LiJCzvO0LvO0LhJCzvO0LvO0LvO0LvO0LvO0LhJCvhIyvvO0LvO0LpMTjhIyvhIyvvO0LhIyvhIyrhIyrgIyrvO0LkKTDgIirvO0LgIirgIirvO0LkKDDvO0LgISnjJi7vO0LgISnvO0LvO0LiJS3gISnfISjfICjvO0LhJCvfICjfICjvO0LvO0LgIinvO0LvO0LfICffISjvO0LeHyfeHybeHibeHybvO0LeHibeHibvO0LdHSXdHSXvO0LvO0LdHSTdHSTvO0LvO0LvO0LvO0LvO0LvO0LcGyPvO0LcGyLvO0LvO0LbGSHvO0LvO0LaGB/aGCDvO0LvO0LZFx/ZFh7vO0LvO0LZFh7vO0LYFR3vO0LYFBzYFR3uOkHXExvYFBzvO0LWERnWEhrXEhrXExvYFBzfICjgISngIingIirnLjboLjboLzboMDfuOkHvOkHvO0JHr331AAAAfnRSTlMAAQICAwQGBwgJDA8QExQUISIjJCUqLS8zNjc6QUJKS0tMTlBRUmJmaWtucHBzdHZ5fX6AgIGEhY6OlJSUlp2en6Cnqamqq62usLGxs7jAwsPFx8fLzc7P1NbW2Nnb3N3f4ePk5+fp6+zu7vH29vb3+Pn5+vv7/Pz9/f3+/v4qZr0RAAABc0lEQVR42pXUVXfyUBCF4f25a93d3d3d3d2dqlCbUNf5z6WswCIwpw3P9Z6V9yYHui9x5V2T0/3N6X4wSB3cOCU6WGwKgLtvOcusO2sPgkvmBjlpw//hEjLFbg6LPsLh+wi5s2ZBF2tho7bPsPu9QkZaKRzCdthT/Tvg/Tx50jJg92OOvSUBjeTt6C+AEhas/gk4IcEg8GuTJfndJLH5I5lFs0ckqkULix5INo8ZFt2QbA9nLLogBaiLZNhnyTUpaBhjwZOyaBtVLLgnlQlEsuCKVPLwYdSXoq1PQLQvRQWwqzRfNI4XX4fMFq3/hMO/OXNFB+HQ+S2YKbJGwSVw6e0iawIgX9yR5CQBBsFr7HQp7hPhIdR58Xiu3hsvLOxwK/3KaRBEWFRFtgxAvpCLtGwoxOxKRVohlGJ3+VLaq8UfexVV4FUpF/JeLdf4iRq8qdhmeBlNKNPIqQ6mVJOuAyY1KPZqrWTXAx90EvXCJ30DkD0DFY6c2EtNX54AAAAASUVORK5CYII=" alt="ramda"></a>
+<a href="https://flybondi.com"><img src="https://img.shields.io/badge/flybondi-fdbe15.svg?logo=javascript&amp;style=flat-square&amp;logoColor=grey&amp;logoWidth=20" alt="js-flybondi"></a>
+<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a>
+<a href="https://github.com/Flet/semistandard"><img src="https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square" alt="js-semistandard-style"></a>
+<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="code style: prettier"></a></p>
+<p>A comprehensive collection of utilities for <a href="https://ramdajs.com">Ramda</a>, providing a variety of <strong>useful</strong>, <strong>well tested</strong>, <strong>reusable</strong> functions.</p>
+<pre class="prettyprint source lang-sh"><code>yarn add @flybondi/ramda-land
+yarn add ramda
+</code></pre>
+<h2>Basic usage</h2>
+<p>Mix and match <code>@flybondi/ramda-land</code> functions with common <code>ramda</code> functions.</p>
+<pre class="prettyprint source lang-js"><code>const { when } = require('ramda');
+const { isNilOrEmpty, alwaysNew } = require('@flybondi/ramda-land');
+
+const defaultToLife = when(isNilOrEmpty, alwaysNew({ life: 42 }));
+defaultToLife(null); // -> { life: 42 }
+defaultToLife({ foo: 'bar' }); // -> { foo: 'bar' }
+</code></pre>
+<h2>Ramda overlap</h2>
+<p><a href="https://ramdajs.com/docs/#curry"><code>curry</code></a>, <a href="https://ramdajs.com/docs/#curryN"><code>curryN</code></a> and <a href="https://ramdajs.com/docs/#nAry"><code>nAry</code></a> functions are exported by both <code>@flybondi/ramda-land</code> and <code>ramda</code>. They behave in the exact same way, except that <code>@flybondi/ramda-land</code> counterparts <strong>retain wrapped function names</strong> after currying. This is useful for <strong>debugging</strong> and <strong>error tracing</strong> purposes as the name of the original function passed to any of the aforementioned functions will now appear on stack traces and debuggers (instead of an anonymous or sometimes arbitrarily named, internal <code>ramda</code> function).</p>
+<blockquote>
+<p>This change was already proposed to the Ramda team and a <a href="https://github.com/ramda/ramda/pull/2782">PR is pending approval</a>.</p>
+</blockquote>
+<pre class="prettyprint source lang-sh"><code>> curry(function foo(x, y) { return x + y; });
+[Function: foo]
+> curry(function foo(x, y) { return x + y; })(1)
+[Function: foo]
+
+> curryN(2, function foo(x, y) { return x + y; })
+[Function: foo]
+> curryN(2, function foo(x, y) { return x + y; })(1)
+[Function: foo]
+
+> nAry(3, function foo(x, y) { return x + y; })
+[Function: foo]
+</code></pre>
+<p><a href="https://github.com/flybondi/ramda-land">View on Github</a>.</p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Wed May 13 2020 17:52:58 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>
