@@ -39,6 +39,7 @@ const { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } = require('./src/i
 const { numberProp, numberPropOr, numberPath, numberPathOr } = require('./src/number-prop');
 const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
 const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
+const sumProp = require('./src/sum-prop');
 
 module.exports = {
   allToLower,
@@ -84,6 +85,7 @@ module.exports = {
   rejectNilOrEmpty,
   renameKeys,
   spreadProp,
+  sumProp,
   thenThrowErrorWith,
   throwErrorWith,
   truncate
