@@ -24,7 +24,8 @@ function roundNumber(precision, value) {
       // Coerce values higher than `Number.MAX_SAFE_INTEGER` to `Infinity`
       when(lt(MAX_MATH_DELTA), always(Infinity)),
       // Coerce values between `0.0000001` and `-0.0000001` to `0`
-      when(both(gt(MIN_MATH_DELTA), lt(MIN_NEG_MATH_DELTA)), always(0))
+      when(both(gt(MIN_MATH_DELTA), lt(MIN_NEG_MATH_DELTA)), always(0)),
+      Number
     )
   );
 }
