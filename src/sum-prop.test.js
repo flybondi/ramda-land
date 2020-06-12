@@ -32,7 +32,7 @@ test('should ignore `undefined` elements in the array', () => {
   expect(sumProp(2, 'amount', [{ amount: 30 }, undefined, { amount: 12 }, undefined])).toBe(42);
 });
 
-test('should underflow total value to zero if sum is betweem `1e-7` and `-1e-7`', () => {
+test('should underflow total value to zero if sum is between `1e-7` and `-1e-7`', () => {
   expect(sumProp(2, 'foo', [{ foo: 0.00000000001 }, { foo: 0.00000000002 }])).toBe(0);
 
   expect(sumProp(2, 'foo', [{ foo: -0.00000000001 }, { foo: -0.00000000002 }])).toBe(0);
