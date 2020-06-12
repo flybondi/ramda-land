@@ -32,19 +32,16 @@ test('should ignore `undefined` elements in the array', () => {
   expect(sumProp(2, 'amount', [{ amount: 30 }, undefined, { amount: 12 }, undefined])).toBe(42);
 });
 
-test('should underflow total value to zero if sum is lower than `1e-7`', () => {
-  expect(
-    sumProp(1, 'amount', [
-      { amount: 85 },
-      { amount: -294.21 },
-      { amount: 294.21 },
-      { amount: -219.5 },
-      { amount: -85 },
-      { amount: -219.5 }
-    ])
-  ).toBe(0);
+test('should underflow total value to zero if sum is betweem `1e-7` and `-1e-7`', () => {
+  expect(sumProp(2, 'foo', [{ foo: 0.00000000001 }, { foo: 0.00000000002 }])).toBe(0);
+
+  expect(sumProp(2, 'foo', [{ foo: -0.00000000001 }, { foo: -0.00000000002 }])).toBe(0);
 });
 
-test('should overflow result to `Infinity` if sum goes above `MAX_SAFE_INTEGER`', () => {
+test('should return the sum of all negative ', () => {
   expect(sumProp(1, 'amount', [{ amount: Number.MAX_SAFE_INTEGER }, { amount: 1 }])).toBe(Infinity);
+});
+
+test('should sum all negative numerical values present at the given property in the array', () => {
+  expect(sumProp(2, 'amount', [{ amount: -10 }, { amount: -20 }, { amount: -12 }])).toBe(-42);
 });
