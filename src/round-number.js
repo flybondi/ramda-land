@@ -1,8 +1,8 @@
 'use strict';
 
-const { when, always, compose, lt, applyTo, gt } = require('ramda');
+const { when, always, compose, lt, applyTo, gt, both } = require('ramda');
 const _curry2 = require('./utils/_curry2');
-const { MAX_MATH_DELTA, MIN_MATH_DELTA } = require('./utils/_math-constants');
+const { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } = require('./utils/_math-constants');
 
 /**
  * Rounds a number to the next largest number for positives and the next smallest for negatives
@@ -23,8 +23,8 @@ function roundNumber(precision, value) {
         Number.isFinite(total) ? +(Math.round(total + `e+${precision}`) + `e-${precision}`) : total,
       // Coerce values higher than `Number.MAX_SAFE_INTEGER` to `Infinity`
       when(lt(MAX_MATH_DELTA), always(Infinity)),
-      // Coerce values lower than `0.0000001` to `0`
-      when(gt(MIN_MATH_DELTA), always(0))
+      // Coerce values between `0.0000001` and `-0.0000001` to `0`
+      when(both(gt(MIN_MATH_DELTA), lt(MIN_NEG_MATH_DELTA)), always(0))
     )
   );
 }
