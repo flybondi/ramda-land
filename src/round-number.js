@@ -18,7 +18,6 @@ function roundNumber(precision, value) {
   return applyTo(
     value,
     compose(
-      // Round to two decimal places
       total =>
         Number.isFinite(total) ? +(Math.round(total + `e+${precision}`) + `e-${precision}`) : total,
       // Coerce values higher than `Number.MAX_SAFE_INTEGER` to `Infinity`
