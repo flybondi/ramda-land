@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/flybondi/ramda-land/compare/v3.5.1...v3.6.0) (2020-06-16)
+
+
+### Features
+
+* add new round number fn ([#13](https://github.com/flybondi/ramda-land/issues/13)) ([269b292](https://github.com/flybondi/ramda-land/commit/269b2922650f10ee49927f85b11d9ecc69062d42))
+
 ## [3.5.1](https://github.com/flybondi/ramda-land/compare/v3.5.0...v3.5.1) (2020-05-13)
 
 # Change Log

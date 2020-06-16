@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>lower-path.js - Documentation</title>
+    <title>round.js - Documentation</title>
     
     
     <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">lower-path.js</h1>
+    <h1 class="page-title">round.js</h1>
     
 
     
@@ -50,27 +50,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>// @flow strict
-'use strict';
-const { path, useWith, identity } = require('ramda');
-const { allToLower } = require('./all-to-lower-upper');
-/**
- * Extracts the value of an object at the given `path`. The individual keys
- * on the path are transformed to lowercase before extracting the actual value.
- *
- * @example
- *  lowerPath(['country', 'IE'], {country: { ie: '&amp;#133662110186;' } });
- *  // -> '&amp;#133662110186;'
- *
- * @function
- * @see https://ramdajs.com/docs/#path
- * @param {Array.&lt;String>} path The path to the value (items in here will be lowercased).
- * @param {Object} obj The source of the value to extract.
- * @returns {*} The value of `obj` at `path` after lower casing keys.
- */
-const lowerPath = useWith(path, [allToLower, identity]);
+            <pre class="prettyprint source linenums"><code>'use strict';
 
-module.exports = lowerPath;
+const { when, always, compose, lt, applyTo, gt, both } = require('ramda');
+const _curry2 = require('./utils/_curry2');
+const { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } = require('./utils/_math-constants');
+
+/**
+ * Rounds a given number to the next largest number for positives and the next smallest for negatives.
+ * @example
+ * round(2, 2.151) // returns 2.15
+ * round(1, -2.63) // returns -2.7
+ * round(0, 2.8) // returns 3
+ * @param {Number} decimals number of decimals to round to
+ * @param {Number} value number to be rounded
+ * @returns {Number} rounded number
+ */
+function round(precision, value) {
+  return applyTo(
+    value,
+    compose(
+      total =>
+        Number.isFinite(total) ? +(Math.round(total + `e+${precision}`) + `e-${precision}`) : total,
+      // Coerce values higher than `Number.MAX_SAFE_INTEGER` to `Infinity`
+      when(lt(MAX_MATH_DELTA), always(Infinity)),
+      // Coerce values between `0.0000001` and `-0.0000001` to `0`
+      when(both(gt(MIN_MATH_DELTA), lt(MIN_NEG_MATH_DELTA)), always(0)),
+      Number
+    )
+  );
+}
+
+module.exports = _curry2(round);
 </code></pre>
         </article>
     </section>
