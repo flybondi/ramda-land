@@ -4,31 +4,20 @@ const {
   compose,
   applyTo,
   propOr,
-  gt,
-  lt,
-  when,
-  always,
   reduce,
   pair,
   useWith,
   identity,
-  sum
+  sum,
+  when,
+  lt,
+  always,
+  gt
 } = require('ramda');
 const curryN = require('./curry-n');
 const castArray = require('./cast-array');
 const { rejectNilOrEmpty } = require('./reject-nil');
-
-/**
- * The minimum value beneath which underflow to zero occurs.
- * @type {Number}
- */
-const MIN_MATH_DELTA = 1e-7;
-
-/**
- * The maximum value above which overflow to Infinity occurs.
- * @type {Number}
- */
-const MAX_MATH_DELTA = Number.MAX_SAFE_INTEGER - 1;
+const { MAX_MATH_DELTA, MIN_MATH_DELTA } = require('./utils/_math-constants');
 
 /**
  * Sums the values at `propName` present in each element of an array.
