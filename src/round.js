@@ -5,16 +5,16 @@ const _curry2 = require('./utils/_curry2');
 const { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } = require('./utils/_math-constants');
 
 /**
- * Rounds a number to the next largest number for positives and the next smallest for negatives
+ * Rounds a given number to the next largest number for positives and the next smallest for negatives.
  * @example
- * roundNumber(2, 2.151) // returns 2.15
- * roundNumber(1, -2.63) // returns -2.7
- * roundNumber(0, 2.8) // returns 3
+ * round(2, 2.151) // returns 2.15
+ * round(1, -2.63) // returns -2.7
+ * round(0, 2.8) // returns 3
  * @param {Number} decimals number of decimals to round to
  * @param {Number} value number to be rounded
  * @returns {Number} rounded number
  */
-function roundNumber(precision, value) {
+function round(precision, value) {
   return applyTo(
     value,
     compose(
@@ -29,4 +29,4 @@ function roundNumber(precision, value) {
   );
 }
 
-module.exports = _curry2(roundNumber);
+module.exports = _curry2(round);

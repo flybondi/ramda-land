@@ -40,6 +40,7 @@ const { numberProp, numberPropOr, numberPath, numberPathOr } = require('./src/nu
 const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
 const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
 const sumProp = require('./src/sum-prop');
+const round = require('./src/round');
 
 module.exports = {
   allToLower,
@@ -88,5 +89,6 @@ module.exports = {
   sumProp,
   thenThrowErrorWith,
   throwErrorWith,
-  truncate
+  truncate,
+  round
 };
