@@ -1,3 +1,19 @@
+# [4.0.0](https://github.com/flybondi/ramda-land/compare/v3.6.0...v4.0.0) (2020-06-19)
+
+
+### Bug Fixes
+
+* support the sum of negative numbers ([#11](https://github.com/flybondi/ramda-land/issues/11)) ([9ab73d9](https://github.com/flybondi/ramda-land/commit/9ab73d965b3a0d7859bb6e33490d4cb2d94c8f28))
+
+
+### BREAKING CHANGES
+
+* sum negative numbers
+
+* fix: support the sum of negative numbers 
+
+* test: add test for mixed amounts
+
 # [3.6.0](https://github.com/flybondi/ramda-land/compare/v3.5.1...v3.6.0) (2020-06-16)
 
 
