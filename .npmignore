@@ -1,2 +1,6 @@
+# Be aware that defininig patterns in "files" on package.json
+# will overrides ruless below (see https://github.com/yarnpkg/yarn/issues/685)
+*
+!index.js
 # Avoid including unit test files on released package
-src/**/*.test.js
+!src/**/!(*.test).js
