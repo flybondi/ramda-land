@@ -31,25 +31,34 @@
     "lib",
     "dist"
   ],
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./es/index.js",
+      "default": "./lib/index.js"
+    },
+    "./es": "./es/",
+    "./lib": "./lib"
+  },
   "scripts": {
     "clean": "rimraf es lib dist",
     "build:es": "cross-env BABEL_ENV=es babel --ignore '**/*.test.js' index.js src/ --out-dir es",
     "build:cjs": "cross-env BABEL_ENV=commonjs babel --ignore '**/*.test.js' index.js src --out-dir lib",
     "build:umd": "rollup -c",
-    "build": "run-s clean build:*",
-    "prepack": "run-s build",
+    "build": "yarn clean && yarn build:es && yarn build:cjs && yarn build:umd",
+    "prepack": "yarn build",
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint index.js src/",
     "prettier": "prettier --write src/ index.js",
     "test": "jest --env=node --colors --bail --detectOpenHandles --errorOnDeprecated --noStackTrace src/",
-    "test.coverage": "run-s test --coverage --coverageDirectory .coverage",
-    "test.watch": "run-s test --watchAll"
+    "test:coverage": "yarn test --coverage --coverageDirectory .coverage",
+    "test:watch": "yarn test --watchAll"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "run-s test"
+      "pre-push": "yarn test"
     }
   },
   "commitlint": {
