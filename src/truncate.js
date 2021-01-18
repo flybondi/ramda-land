@@ -1,12 +1,12 @@
-'use strict';
-const curry = require('./curry');
-const { isNotNilOrEmpty } = require('./is-nil-empty');
-const { take, when, compose, trim, empty } = require('ramda');
+import curry from './curry';
+import { isNotNilOrEmpty } from './is-nil-empty';
+import { take, when, compose, trim, empty } from 'ramda';
 
 /**
  * String sequence that should appear on truncated strings. The length
  * of this constant will affect the total length of the output of the truncation transformation.
- * @type {String}
+ *
+ * @constant {string}
  * @private
  */
 const ELLIPSIS = '...';
@@ -45,11 +45,11 @@ const truncateIfNeeded = (maxLength, value) => {
  *
  * @example
  *  truncate(15, 'I am selling these fine leather jackets');
- * // 'I am selling...'
+ *  // 'I am selling...'
  *
- * @param {Number} maxLength Length threshold above which `value` will be truncated.
+ * @param {number} maxLength Length threshold above which `value` will be truncated.
  * @param {*} value The text to truncate (will be coerced into a `String` and trimmed).
- * @returns {String} The truncated string containing an ellipsis (`...`) at the end.
+ * @returns {string} The truncated string containing an ellipsis (`...`) at the end.
  */
 function truncate(maxLength, value) {
   return when(
@@ -59,4 +59,4 @@ function truncate(maxLength, value) {
   );
 }
 
-module.exports = curry(truncate);
+export default curry(truncate);

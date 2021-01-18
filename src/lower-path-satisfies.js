@@ -1,7 +1,5 @@
-// @flow strict
-'use strict';
-const _curry3 = require('./utils/_curry3');
-const lowerPath = require('./lower-path');
+import _curry3 from './utils/_curry3';
+import lowerPath from './lower-path';
 
 /**
  * Returns true if the specified object property at given path satisfies the given predicate; false otherwise.
@@ -14,12 +12,12 @@ const lowerPath = require('./lower-path');
  * @function
  * @see https://ramdajs.com/docs/#pathSatisfies
  * @param {Function} pred The predicate to check the value.
- * @param {Array.<String>} path The path to the value (items in here will be lowercased).
- * @param {Object} obj The source of the value to extract.
- * @returns {Boolean} True if the object property at given path satisfies the given predicate.
+ * @param {string[]} path The path to the value (items in here will be lowercased).
+ * @param {object} obj The source of the value to extract.
+ * @returns {boolean} True if the object property at given path satisfies the given predicate.
  */
 function lowerPathSatisfies(pred, propPath, obj) {
   return propPath.length > 0 && pred(lowerPath(propPath, obj));
 }
 
-module.exports = _curry3(lowerPathSatisfies);
+export default _curry3(lowerPathSatisfies);

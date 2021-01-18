@@ -1,15 +1,14 @@
-'use strict';
-const { fromPairs, toPairs, map, adjust } = require('ramda');
-const curry = require('./curry');
+import { fromPairs, toPairs, map, adjust } from 'ramda';
+import curry from './curry';
 
 /**
  * Map keys on an objects by running a mapping function to each one.
  *
  * @function
  * @param {Function} fn Mapping function. Receives a key and must return a new key name.
- * @param {Object} obj The object to map keys from.
- * @returns {Object} The resulting object after mapping its keys.
+ * @param {object} obj The object to map keys from.
+ * @returns {object} The resulting object after mapping its keys.
  */
 const mapKeys = curry((fn, obj) => fromPairs(map(adjust(0, fn), toPairs(obj))));
 
-module.exports = mapKeys;
+export default mapKeys;

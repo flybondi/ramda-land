@@ -1,26 +1,25 @@
-'use strict';
-const _arity = require('./_arity');
-const _isPlaceholder = require('./is-placeholder');
-const _copyNameProperty = require('./copy-name');
+import _arity from './_arity';
+import _isPlaceholder from './is-placeholder';
+import _copyNameProperty from './copy-name';
 
 /**
  * Internal curryN function.
  *
  * @private
  * @category Function
- * @param {Number} length The arity of the curried function.
+ * @param {number} length The arity of the curried function.
  * @param {Array} received An array of arguments received thus far.
  * @param {Function} fn The function to curry.
  * @return {Function} The curried function.
  */
 function _curryN(length, received, fn) {
   return _copyNameProperty(fn, function () {
-    var combined = [];
-    var argsIdx = 0;
-    var left = length;
-    var combinedIdx = 0;
+    const combined = [];
+    let argsIdx = 0;
+    let left = length;
+    let combinedIdx = 0;
     while (combinedIdx < received.length || argsIdx < arguments.length) {
-      var result;
+      let result;
       if (
         combinedIdx < received.length &&
         (!_isPlaceholder(received[combinedIdx]) || argsIdx >= arguments.length)
@@ -40,4 +39,4 @@ function _curryN(length, received, fn) {
   });
 }
 
-module.exports = _curryN;
+export default _curryN;

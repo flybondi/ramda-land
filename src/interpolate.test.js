@@ -1,5 +1,4 @@
-'use strict';
-const interpolate = require('./interpolate');
+import interpolate from './interpolate';
 
 test('should replace variables present in the `context` from the `template`', () => {
   expect(

@@ -1,5 +1,4 @@
-'use strict';
-const { rejectNil, rejectNilOrEmpty } = require('./reject-nil');
+import { rejectNil, rejectNilOrEmpty } from './reject-nil';
 
 describe('the `rejectNilOrEmpty` function', () => {
   test('should remove `null` values from an array of arbitrary items', () => {

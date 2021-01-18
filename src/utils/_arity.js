@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @private
  */
@@ -10,4 +8,4 @@ function _arity(n, fn) {
   });
 }
 
-module.exports = _arity;
+export default _arity;

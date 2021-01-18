@@ -1,5 +1,4 @@
-'use strict';
-const { unless, is, of } = require('ramda');
+import { unless, is, of } from 'ramda';
 
 /**
  * Wraps any value in an `Array` if it's not already one.
@@ -17,4 +16,4 @@ const { unless, is, of } = require('ramda');
  */
 const castArray = unless(is(Array), of);
 
-module.exports = castArray;
+export default castArray;

@@ -1,6 +1,5 @@
 /* eslint-disable ramda/prefer-ramda-boolean */
-'use strict';
-const coalesce = require('./coalesce');
+import coalesce from './coalesce';
 
 test('should export a curried function of arity 1', () => {
   expect(typeof coalesce).toBe('function');

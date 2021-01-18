@@ -1,7 +1,6 @@
-'use strict';
-const { applyTo, compose, mergeDeepRight } = require('ramda');
-const _curry2 = require('./utils/_curry2');
-const applySpec = require('./apply-spec');
+import { applyTo, compose, mergeDeepRight } from 'ramda';
+import _curry2 from './utils/_curry2';
+import applySpec from './apply-spec';
 
 /**
  * Recursively applies functions on the `spec` object to produce a new
@@ -16,11 +15,11 @@ const applySpec = require('./apply-spec');
  * @function
  * @see https://ramdajs.com/docs/#applySpec
  * @see https://ramdajs.com/docs/#mergeRight
- * @param {Object} spec An object recursively mapping properties to functions for
+ * @param {object} spec An object recursively mapping properties to functions for
  *  producing corresponding values.
- * @param {Object} obj The object to apply the spec to and onto which the result
+ * @param {object} obj The object to apply the spec to and onto which the result
  *  will be merged.
- * @returns {Object} A new object containing all properties coming from applying
+ * @returns {object} A new object containing all properties coming from applying
  *  the `spec` to `obj` plus all or of `obj` own properties.
  *
  */
@@ -28,4 +27,4 @@ const mergeSpec = _curry2(function mergeSpec(spec, obj) {
   return applyTo(obj, compose(mergeDeepRight(obj), applySpec(spec)));
 });
 
-module.exports = mergeSpec;
+export default mergeSpec;

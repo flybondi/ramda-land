@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Copies the `name` property of a function to another.
  *
@@ -11,4 +10,4 @@ function copyNameProperty(fna, fnb) {
   return Object.defineProperty(fnb, 'name', { value: fna.name, configurable: true });
 }
 
-module.exports = copyNameProperty;
+export default copyNameProperty;

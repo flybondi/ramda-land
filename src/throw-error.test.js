@@ -1,5 +1,4 @@
-'use strict';
-const { thenThrowErrorWith } = require('./throw-error');
+import { thenThrowErrorWith } from './throw-error';
 
 test('should be a higher order function that returns a function', () => {
   expect(typeof thenThrowErrorWith() === 'function').toBe(true);

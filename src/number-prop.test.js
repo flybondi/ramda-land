@@ -1,5 +1,4 @@
-'use strict';
-const { numberProp, numberPath, numberPathOr, numberPropOr } = require('./number-prop');
+import { numberProp, numberPath, numberPathOr, numberPropOr } from './number-prop';
 
 describe('the `numberProp` function', () => {
   test('should return a number from numerical string property', () => {

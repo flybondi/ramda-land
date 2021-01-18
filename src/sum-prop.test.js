@@ -1,6 +1,4 @@
-// @flow strict
-'use strict';
-const sumProp = require('./sum-prop');
+import sumProp from './sum-prop';
 
 test('should sum all numerical values present at the given property in the array', () => {
   expect(sumProp(2, 'amount', [{ amount: 10 }, { amount: 20 }, { amount: 12 }])).toBe(42);

@@ -1,7 +1,6 @@
-'use strict';
-const { compose, not, isEmpty, useWith, intersection } = require('ramda');
-const { allToLower } = require('./all-to-lower-upper');
-const curryN = require('./curry-n');
+import { compose, not, isEmpty, useWith, intersection } from 'ramda';
+import { allToLower } from './all-to-lower-upper';
+import curryN from './curry-n';
 
 /**
  * Checks if a string value (or set of values) is present in another.
@@ -14,10 +13,10 @@ const curryN = require('./curry-n');
  *
  * @function
  * @see https://ramdajs.com/docs/#intersection
- * @param {Array.<String>|String} firstSet The first set of elements (or single element) to check.
- * @param {Array.<String>|String} secondSet The second set of elements (or single element) to check.
- * @returns {Boolean} `true` if at least one element on `firstSet` is present in `secondSet`.
+ * @param {string[]}|string} firstSet The first set of elements (or single element) to check.
+ * @param {string[]}|string} secondSet The second set of elements (or single element) to check.
+ * @returns {boolean} `true` if at least one element on `firstSet` is present in `secondSet`.
  */
 const isOneOf = curryN(2, compose(not, isEmpty, useWith(intersection, [allToLower, allToLower])));
 
-module.exports = isOneOf;
+export default isOneOf;

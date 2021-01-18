@@ -1,6 +1,5 @@
 /* eslint-disable ramda/prefer-ramda-boolean */
-'use strict';
-const applySpec = require('./apply-spec');
+import applySpec from './apply-spec';
 
 test('should works with empty object spec', () => {
   expect(applySpec({})(1)).toEqual({});

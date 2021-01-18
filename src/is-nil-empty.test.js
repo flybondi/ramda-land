@@ -1,5 +1,4 @@
-'use strict';
-const { isNilOrEmpty } = require('./is-nil-empty');
+import { isNilOrEmpty } from './is-nil-empty';
 
 describe('the `isNilOrEmpty` function', () => {
   test('should return `true` for a `null` value', () => {

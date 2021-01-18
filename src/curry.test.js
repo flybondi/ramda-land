@@ -1,6 +1,5 @@
-'use strict';
-const curry = require('./curry');
-const { __ } = require('ramda');
+import curry from './curry';
+import { __ } from 'ramda';
 
 test('curries a single value', function () {
   const f = curry(function (a, b, c, d) {
@@ -134,7 +133,7 @@ it('retains original function name', function () {
   function f(a, b, c) {
     return [a, b, c];
   }
-  var g = curry(f);
+  const g = curry(f);
 
   // Verify that function name is correct and
   // not just equal

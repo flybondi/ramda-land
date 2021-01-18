@@ -1,5 +1,4 @@
-'use strict';
-const castArray = require('./cast-array');
+import castArray from './cast-array';
 
 test('should return same input if already an array', () => {
   expect(castArray([1])).toEqual([1]);

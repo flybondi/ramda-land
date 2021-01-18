@@ -1,5 +1,4 @@
-'use strict';
-const escapeStringRegexp = require('./escape-regex');
+import escapeStringRegexp from './escape-regex';
 
 test('should escape special characters', () => {
   expect(escapeStringRegexp('\\ ^ $ * + ? . ( ) | { } [ ]')).toEqual(

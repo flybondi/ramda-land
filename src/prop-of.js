@@ -1,5 +1,4 @@
-'use strict';
-const { flip, prop } = require('ramda');
+import { flip, prop } from 'ramda';
 
 /**
  * Returns the value of `obj` at the given `propName`.
@@ -10,11 +9,11 @@ const { flip, prop } = require('ramda');
  * @function
  * @see https://ramdajs.com/docs/#flip
  * @see https://ramdajs.com/docs/#prop
- * @param {Object} obj The object to query
- * @param {String} propName The property name
- * @returns {*} The value at `obj.p`.
+ * @param {object} obj The object to query
+ * @param {string} propName The property name
+ * @returns {*} The value at `obj[propName]`.
  */
 
 const propOf = flip(prop);
 
-module.exports = propOf;
+export default propOf;

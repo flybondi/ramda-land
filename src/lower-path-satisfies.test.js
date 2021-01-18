@@ -1,5 +1,4 @@
-'use strict';
-const lowerPathSatisfies = require('./lower-path-satisfies');
+import lowerPathSatisfies from './lower-path-satisfies';
 
 describe('pathSatisfies', function () {
   const isPositive = n => n > 0;

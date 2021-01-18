@@ -1,5 +1,4 @@
-'use strict';
-const {
+import {
   always,
   compose,
   either,
@@ -11,12 +10,20 @@ const {
   unless,
   useWith,
   when
-} = require('ramda');
-const castArray = require('./cast-array');
-const curryN = require('./curry-n');
+} from 'ramda';
+import castArray from './cast-array';
+import curryN from './curry-n';
 
+/**
+ * @function
+ * @private
+ */
 const numberUnlessNilOrEmpty = compose(unless(isNil, Number), when(isEmpty, always(NaN)));
 
+/**
+ * @function
+ * @private
+ */
 const isNilOrNan = either(isNil, isNaN);
 
 /**
@@ -27,11 +34,11 @@ const isNilOrNan = either(isNil, isNaN);
  *
  * @function
  * @see https://ramdajs.com/docs/#prop
- * @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property.
- * @returns {Number} The value of `obj` at `propName` as a number or `NaN`.
+ * @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property.
+ * @returns {number} The value of `obj` at `propName` as a number or `NaN`.
  */
-const numberProp = curryN(2, compose(numberUnlessNilOrEmpty, prop));
+export const numberProp = curryN(2, compose(numberUnlessNilOrEmpty, prop));
 
 /**
  * Shorthand function to extract a nested property from an object and convert it to a number.
@@ -44,12 +51,15 @@ const numberProp = curryN(2, compose(numberUnlessNilOrEmpty, prop));
  *
  * @function
  * @see https://ramdajs.com/docs/#path
- * @param {String|Array.<String>} propPath Path to the property to extract. Also accepts a
+ * @param {string|{String[]}} propPath Path to the property to extract. Also accepts a
  *  property name as a single string.
- * @param {Object} obj Source of the extracted property.
- * @returns {Number} The value of `obj` at `propPath` as a number or `NaN`.
+ * @param {object} obj Source of the extracted property.
+ * @returns {number} The value of `obj` at `propPath` as a number or `NaN`.
  */
-const numberPath = curryN(2, compose(numberUnlessNilOrEmpty, useWith(path, [castArray, identity])));
+export const numberPath = curryN(
+  2,
+  compose(numberUnlessNilOrEmpty, useWith(path, [castArray, identity]))
+);
 
 /**
  * Extract a property from an object and convert it to a number. If property
@@ -63,11 +73,11 @@ const numberPath = curryN(2, compose(numberUnlessNilOrEmpty, useWith(path, [cast
  * @see https://ramdajs.com/docs/#propOr
  * @param {*} defaultValue The value to return if `propName` does not exist in `obj`
  *  or is nil.
- *  @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property.
+ *  @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property.
  * @returns {*} The value of `obj` at `propName` as a number or `defaultValue`.
  */
-const numberPropOr = curryN(3, function numberPropOr(defaultValue, propName, obj) {
+export const numberPropOr = curryN(3, function numberPropOr(defaultValue, propName, obj) {
   const value = numberProp(propName, obj);
   return isNilOrNan(value) ? defaultValue : value;
 });
@@ -86,14 +96,12 @@ const numberPropOr = curryN(3, function numberPropOr(defaultValue, propName, obj
  * @see https://ramdajs.com/docs/#pathOr
  * @param {*} defaultValue The value to return if `propPath` does not exist in `obj`
  *  or its value is nil or `NaN`.
- *  @param {String|Array.<String>} propPath Path to the property to extract. Also accepts a
+ *  @param {string|{String[]}} propPath Path to the property to extract. Also accepts a
  *  property name as a single string.
- * @param {Object} obj Source of the extracted property.
+ * @param {object} obj Source of the extracted property.
  * @returns {*} The value of `obj` at `propName` as a number or `defaultValue`.
  */
-const numberPathOr = curryN(3, function numberPathOr(defaultValue, propPath, obj) {
+export const numberPathOr = curryN(3, function numberPathOr(defaultValue, propPath, obj) {
   const value = numberPath(propPath, obj);
   return isNilOrNan(value) ? defaultValue : value;
 });
-
-module.exports = { numberProp, numberPropOr, numberPath, numberPathOr };

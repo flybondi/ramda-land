@@ -1,5 +1,4 @@
-'use strict';
-const { converge, compose, toUpper, head, tail, toLower, concat, unless, isNil } = require('ramda');
+import { converge, compose, toUpper, head, tail, toLower, concat, unless, isNil } from 'ramda';
 
 /**
  * Transforms a string so that the first letter is capitalized
@@ -7,12 +6,12 @@ const { converge, compose, toUpper, head, tail, toLower, concat, unless, isNil }
  * If the input is `null` or `undefined`, it's returned as is.
  *
  * @function
- * @param {String} str The string to capitalize
- * @returns {String} The original string with the first letter capitalized.
+ * @param {string} str The string to capitalize
+ * @returns {string} The original string with the first letter capitalized.
  */
 const capitalize = unless(
   isNil,
   converge(concat, [compose(toUpper, head), compose(toLower, tail)])
 );
 
-module.exports = capitalize;
+export default capitalize;

@@ -1,5 +1,4 @@
-'use strict';
-const { replace, compose } = require('ramda');
+import { replace, compose } from 'ramda';
 
 /**
  * Escape `RegExp` special characters.
@@ -7,8 +6,8 @@ const { replace, compose } = require('ramda');
  * @private
  * @function
  * @param {*} value Value to escape (will be coerced into a `String`).
- * @returns {String} The escaped value, sanitized to be used in a regular expression.
+ * @returns {string} The escaped value, sanitized to be used in a regular expression.
  */
 const escapeStringRegexp = compose(replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&'), String);
 
-module.exports = escapeStringRegexp;
+export default escapeStringRegexp;

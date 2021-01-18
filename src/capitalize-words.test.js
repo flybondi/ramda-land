@@ -1,5 +1,4 @@
-'use strict';
-const capitalizeWords = require('./capitalize-words');
+import capitalizeWords from './capitalize-words';
 
 describe('the `capitalizeWords` function', () => {
   test('should Capitalize The Phrase `capiTalizE THE phrase`', () => {

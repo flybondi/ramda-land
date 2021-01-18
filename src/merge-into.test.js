@@ -1,5 +1,4 @@
-'use strict';
-const mergeInto = require('./merge-into');
+import mergeInto from './merge-into';
 
 test('should be a curried function of arity three', () => {
   expect(mergeInto('foo')('bar')({ foo: 42, bar: [] })).toEqual(

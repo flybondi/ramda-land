@@ -1,5 +1,4 @@
-'use strict';
-const round = require('./round');
+import round from './round';
 
 test('should return the number rounder to 0 decimals, rounding up when it has to', () => {
   expect(round(0, 2.8)).toBe(3);

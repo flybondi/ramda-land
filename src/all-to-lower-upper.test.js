@@ -1,5 +1,4 @@
-'use strict';
-const { allToLower, allToUpper } = require('./all-to-lower-upper');
+import { allToLower, allToUpper } from './all-to-lower-upper';
 
 describe('the `allToLower` function', () => {
   test('should convert all provided values in an array to lower case', () => {

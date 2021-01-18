@@ -148,6 +148,9 @@ jspm_packages/
 # TypeScript v1 declaration files
 typings/
 
+# npm pack
+package/
+
 # Optional npm cache directory
 .npm
 
@@ -244,3 +247,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Rollup + Babel build
+dist/
+es/
+lib/
