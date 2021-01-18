@@ -9,6 +9,7 @@ import { isNotEmpty } from './is-nil-empty';
  *  compact([0, 1, false, 2, '', 3, {}]);
  *  // -> [1, 2, 3]
  *
+ * @function
  * @see https://lodash.com/docs/4.17.11#compact
  * @see https://ramdajs.com/docs/#filter
  * @param {Array.<*>} list The array to compact.
