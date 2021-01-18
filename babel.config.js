@@ -2,16 +2,21 @@
 'use strict';
 
 module.exports = ({ env }) => {
+  // Are we building CJS or ES modules?
+  const isCommonJs = env('commonjs');
+  const isEs = env('es');
+
   return {
     presets: [
       [
         '@babel/preset-env',
         {
           // Do not transpile modules to CJS if running the ES build
-          modules: env('commonjs') ? 'commonjs' : env('es') ? false : 'auto',
-          targets: env('es') ? { esmodules: true } : 'defaults'
+          modules: isCommonJs ? 'commonjs' : isEs ? false : 'auto',
+          targets: isEs ? { esmodules: true } : 'defaults'
         }
       ]
-    ]
+    ],
+    plugins: isCommonJs ? [['@babel/plugin-transform-modules-commonjs', { strict: true }]] : []
   };
 };
