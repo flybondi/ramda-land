@@ -13,8 +13,8 @@ import curryN from './curry-n';
  *
  * @function
  * @see https://ramdajs.com/docs/#intersection
- * @param {string[]}|string} firstSet The first set of elements (or single element) to check.
- * @param {string[]}|string} secondSet The second set of elements (or single element) to check.
+ * @param {string[]|string} firstSet The first set of elements (or single element) to check.
+ * @param {string[]|string} secondSet The second set of elements (or single element) to check.
  * @returns {boolean} `true` if at least one element on `firstSet` is present in `secondSet`.
  */
 const isOneOf = curryN(2, compose(not, isEmpty, useWith(intersection, [allToLower, allToLower])));

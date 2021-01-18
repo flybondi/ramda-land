@@ -14,7 +14,7 @@ const compactMap = fn => compose(map(fn), rejectNilOrEmpty, castArray);
  *  allToLower(['Foo', null, 'bAr']); // ['foo', bar']
  *
  * @function
- * @param {string[]}|string} values The values to convert to lowercase. A
+ * @param {string[]|string} values The values to convert to lowercase. A
  *  single value will be wrapped in an array.
  * @returns {string[]} All the passed `values`, down cased.
  */
@@ -29,7 +29,7 @@ export const allToLower = curryN(1, compactMap(compose(toLower, String)));
  *  allToUpper(['Foo', null, 'bAr']); // ['FOO', BAR']
  *
  * @function
- * @param {string[]}|string} values The values to convert to uppercase. A
+ * @param {string[]|string} values The values to convert to uppercase. A
  *  single value will be wrapped in an array.
  * @returns {string[]} All the passed `values`, upper cased.
  */

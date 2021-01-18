@@ -9,6 +9,13 @@ import path from 'path';
 const [, PACKAGE_NAME] = pkg.name.split('/');
 
 /**
+ * Main entry input of the `rollup` build.
+ *
+ * @constant {string}
+ */
+const ENTRY_MODULE = 'src/index.js';
+
+/**
  * Name of the directory where the built files are going to be written
  * (relative to the root of the project).
  *
@@ -51,7 +58,7 @@ const basePlugins = [
 
 export default [
   {
-    input: 'index.js',
+    input: ENTRY_MODULE,
     external: ['ramda'],
     output: [
       {
@@ -65,7 +72,7 @@ export default [
     plugins: basePlugins
   },
   {
-    input: 'index.js',
+    input: ENTRY_MODULE,
     external: ['ramda'],
     output: [
       {

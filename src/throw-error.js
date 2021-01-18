@@ -14,6 +14,7 @@ function throwError(message, data) {
  * @example
  *  throwErrorWith('boom', { code: 500 }); // Throw `new Error('boom')`
  *
+ * @function
  * @param {string} message  The error message
  * @param {object} data Additional properties to attach to the thrown error
  * @throws {Error}
@@ -28,6 +29,7 @@ export const throwErrorWith = curry(throwError);
  *  const explode = thenThrowErrorWith('boom', { code: 500 });
  *  explode(); // Throw `new Error('boom')`
  *
+ * @function
  * @param {string} message  The error message
  * @param {object} data Additional properties to attach to the thrown error
  * @throws {Error}

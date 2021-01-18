@@ -13,10 +13,15 @@ module.exports = ({ env }) => {
         {
           // Do not transpile modules to CJS if running the ES build
           modules: isCommonJs ? 'commonjs' : isEs ? false : 'auto',
-          targets: isEs ? { esmodules: true } : 'defaults'
+          targets: { node: true, esmodules: true },
+          bugfixes: true,
+          spec: true,
+          loose: true
         }
       ]
     ],
-    plugins: isCommonJs ? [['@babel/plugin-transform-modules-commonjs', { strict: true }]] : []
+    plugins: isCommonJs
+      ? [['@babel/plugin-transform-modules-commonjs', { strict: true, noInterop: true }]]
+      : []
   };
 };
