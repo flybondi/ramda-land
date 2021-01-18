@@ -17,7 +17,7 @@ const [, PACKAGE_NAME] = pkg.name.split('/');
 const OUTPUT_DIR = 'dist';
 
 /**
- * Global variable name from where `ramda-lamd` function would be accesible
+ * Global variable name from where `ramda-land` functions would be accessible
  * in the browser.
  *
  * @constant {string}
