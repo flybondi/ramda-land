@@ -15,5 +15,3 @@ export const MIN_NEG_MATH_DELTA = -1e-7;
  * @constant {number}
  */
 export const MAX_MATH_DELTA = Number.MAX_SAFE_INTEGER - 1;
-
-export default { MIN_MATH_DELTA, MIN_NEG_MATH_DELTA, MAX_MATH_DELTA };
