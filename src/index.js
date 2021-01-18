@@ -1,8 +1,6 @@
 /**
  * A comprehensive collection of utilities for ramda, providing a variety of
  * useful, well tested and reusable functions.
- *
- * @module @flybondi/ramda-land
  */
 export { default as alwaysNew } from './always-new';
 export { default as applySpec } from './apply-spec';
