@@ -1,5 +1,4 @@
-'use strict';
-const capitalize = require('./capitalize');
+import capitalize from './capitalize';
 
 test('should upper case the first letter', () => {
   expect(capitalize('noctis Lucis Caelum')[0]).toBe('N');

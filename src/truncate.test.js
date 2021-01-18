@@ -1,5 +1,4 @@
-'use strict';
-const truncate = require('./truncate');
+import truncate from './truncate';
 
 test('should export a curried function of arity two', () => {
   expect(typeof truncate).toBe('function');

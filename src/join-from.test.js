@@ -1,5 +1,4 @@
-'use strict';
-const joinFrom = require('./join-from');
+import joinFrom from './join-from';
 
 test('should export a curried function of arity three', () => {
   expect(typeof joinFrom).toBe('function');

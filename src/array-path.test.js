@@ -1,5 +1,4 @@
-'use strict';
-const { arrayPath, compactPath } = require('./array-path');
+import { arrayPath, compactPath } from './array-path';
 
 describe('the `arrayPath` function', () => {
   test('should cast the value of the property to an array if it is a boolean', () => {

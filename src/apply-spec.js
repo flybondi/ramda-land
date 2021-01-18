@@ -1,7 +1,6 @@
-'use strict';
-const _curry1 = require('./utils/_curry1');
-const curryN = require('./curry-n');
-const { apply, max, pluck, reduce, keys, values, always } = require('ramda');
+import _curry1 from './utils/_curry1';
+import curryN from './curry-n';
+import { apply, max, pluck, reduce, keys, values, always } from 'ramda';
 
 // Use custom mapValues function to avoid issues with specs that include a "map" key and R.map
 // delegating calls to .map
@@ -20,7 +19,7 @@ function mapValues(fn, obj) {
  * to the result of calling its associated function with the supplied arguments.
  *
  * @function
- * @param {Object|Array} spec a list or object recursively mapping properties or elements to functions for
+ * @param {object|Array} spec a list or object recursively mapping properties or elements to functions for
  *  producing corresponding values.
  * @return {Function} A function that returns an object of the same structure
  *  as `spec', with each property set to the value returned by calling its
@@ -47,4 +46,4 @@ const applySpec = _curry1(function applySpec(spec) {
   });
 });
 
-module.exports = applySpec;
+export default applySpec;

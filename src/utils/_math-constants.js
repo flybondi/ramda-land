@@ -1,21 +1,19 @@
-'use strict';
-
 /**
  * The minimum value beneath which underflow to zero occurs.
- * @type {Number}
+ * @constant {number}
  */
-const MIN_MATH_DELTA = 1e-7;
+export const MIN_MATH_DELTA = 1e-7;
 
 /**
  * The minimum negative value beneath which underflow to zero occurs.
- * @type {Number}
+ * @constant {number}
  */
-const MIN_NEG_MATH_DELTA = -1e-7;
+export const MIN_NEG_MATH_DELTA = -1e-7;
 
 /**
  * The maximum value above which overflow to Infinity occurs.
- * @type {Number}
+ * @constant {number}
  */
-const MAX_MATH_DELTA = Number.MAX_SAFE_INTEGER - 1;
+export const MAX_MATH_DELTA = Number.MAX_SAFE_INTEGER - 1;
 
-module.exports = { MIN_MATH_DELTA, MIN_NEG_MATH_DELTA, MAX_MATH_DELTA };
+export default { MIN_MATH_DELTA, MIN_NEG_MATH_DELTA, MAX_MATH_DELTA };

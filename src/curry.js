@@ -1,6 +1,5 @@
-'use strict';
-const _curry1 = require('./utils/_curry1');
-const curryN = require('./curry-n');
+import _curry1 from './utils/_curry1';
+import curryN from './curry-n';
 
 /**
  * Returns a curried equivalent of the provided function. The curried function
@@ -42,4 +41,4 @@ const curry = _curry1(function curry(fn) {
   return curryN(fn.length, fn);
 });
 
-module.exports = curry;
+export default curry;

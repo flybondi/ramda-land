@@ -1,8 +1,7 @@
-'use strict';
-const { compose, prop } = require('ramda');
-const curryN = require('./curry-n');
-const castArray = require('./cast-array');
-const compact = require('./compact');
+import { compose, prop } from 'ramda';
+import curryN from './curry-n';
+import castArray from './cast-array';
+import compact from './compact';
 
 /**
  * Shorthand function to extract a property from an object and cast its value to an array. If the
@@ -19,11 +18,11 @@ const compact = require('./compact');
  * @function
  * @see https://ramdajs.com/docs/#of
  * @see https://ramdajs.com/docs/#prop
- * @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property
+ * @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property
  * @returns {Array.<*>} The value of `obj` at `propName` cast as an array.
  */
-const arrayProp = curryN(2, compose(castArray, prop));
+export const arrayProp = curryN(2, compose(castArray, prop));
 
 /**
  * Shorthand function to extract a property from an object and cast its value to an array,
@@ -43,11 +42,9 @@ const arrayProp = curryN(2, compose(castArray, prop));
  * @function
  * @see https://ramdajs.com/docs/#of
  * @see https://ramdajs.com/docs/#prop
- * @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property
+ * @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property
  * @returns {Array.<*>} The value of `obj` at `propName` cast as an array with
  *  all falsey and empty values removed.
  */
-const compactProp = curryN(2, compose(compact, arrayProp));
-
-module.exports = { arrayProp, compactProp };
+export const compactProp = curryN(2, compose(compact, arrayProp));

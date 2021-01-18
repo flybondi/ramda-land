@@ -1,94 +1,42 @@
-'use strict';
 /**
  * A comprehensive collection of utilities for ramda, providing a variety of
  * useful, well tested and reusable functions.
  *
  * @module @flybondi/ramda-land
  */
-const alwaysNew = require('./src/always-new');
-const applySpec = require('./src/apply-spec');
-const capitalize = require('./src/capitalize');
-const capitalizeWords = require('./src/capitalize-words');
-const castArray = require('./src/cast-array');
-const coalesce = require('./src/coalesce');
-const compact = require('./src/compact');
-const compactSpec = require('./src/compact-spec');
-const curry = require('./src/curry');
-const curryN = require('./src/curry-n');
-const isOneOf = require('./src/is-one-of');
-const joinFrom = require('./src/join-from');
-const lowerEquals = require('./src/lower-equals');
-const lowerPath = require('./src/lower-path');
-const lowerPathSatisfies = require('./src/lower-path-satisfies');
-const lowerTrim = require('./src/lower-trim');
-const mapKeys = require('./src/map-keys');
-const mergeInto = require('./src/merge-into');
-const mergeSpec = require('./src/merge-spec');
-const nAry = require('./src/n-ary');
-const renameKeys = require('./src/rename-keys');
-const spreadProp = require('./src/spread-prop');
-const truncate = require('./src/truncate');
-const interpolate = require('./src/interpolate');
-const notEquals = require('./src/not-equals');
-const propOf = require('./src/prop-of');
-const { allToLower, allToUpper } = require('./src/all-to-lower-upper');
-const { arrayPath, compactPath } = require('./src/array-path');
-const { arrayProp, compactProp } = require('./src/array-prop');
-const { booleanProp, booleanPropOr } = require('./src/boolean-prop');
-const { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } = require('./src/is-nil-empty');
-const { numberProp, numberPropOr, numberPath, numberPathOr } = require('./src/number-prop');
-const { rejectNil, rejectNilOrEmpty } = require('./src/reject-nil');
-const { thenThrowErrorWith, throwErrorWith } = require('./src/throw-error');
-const sumProp = require('./src/sum-prop');
-const round = require('./src/round');
-
-module.exports = {
-  allToLower,
-  allToUpper,
-  alwaysNew,
-  applySpec,
-  arrayPath,
-  arrayProp,
-  booleanProp,
-  booleanPropOr,
-  capitalize,
-  capitalizeWords,
-  castArray,
-  coalesce,
-  compact,
-  compactPath,
-  compactProp,
-  compactSpec,
-  curry,
-  curryN,
-  interpolate,
-  isNilOrEmpty,
-  isNotEmpty,
-  isNotNil,
-  isNotNilOrEmpty,
-  isOneOf,
-  joinFrom,
-  lowerEquals,
-  lowerPath,
-  lowerPathSatisfies,
-  lowerTrim,
-  mapKeys,
-  mergeInto,
-  mergeSpec,
-  nAry,
-  propOf,
-  notEquals,
-  numberProp,
-  numberPropOr,
-  numberPath,
-  numberPathOr,
-  rejectNil,
-  rejectNilOrEmpty,
-  renameKeys,
-  spreadProp,
-  sumProp,
-  thenThrowErrorWith,
-  throwErrorWith,
-  truncate,
-  round
-};
+export { default as alwaysNew } from './src/always-new';
+export { default as applySpec } from './src/apply-spec';
+export { default as capitalize } from './src/capitalize';
+export { default as capitalizeWords } from './src/capitalize-words';
+export { default as castArray } from './src/cast-array';
+export { default as coalesce } from './src/coalesce';
+export { default as compact } from './src/compact';
+export { default as compactSpec } from './src/compact-spec';
+export { default as curry } from './src/curry';
+export { default as curryN } from './src/curry-n';
+export { default as isOneOf } from './src/is-one-of';
+export { default as joinFrom } from './src/join-from';
+export { default as lowerEquals } from './src/lower-equals';
+export { default as lowerPath } from './src/lower-path';
+export { default as lowerPathSatisfies } from './src/lower-path-satisfies';
+export { default as lowerTrim } from './src/lower-trim';
+export { default as mapKeys } from './src/map-keys';
+export { default as mergeInto } from './src/merge-into';
+export { default as mergeSpec } from './src/merge-spec';
+export { default as nAry } from './src/n-ary';
+export { default as renameKeys } from './src/rename-keys';
+export { default as spreadProp } from './src/spread-prop';
+export { default as truncate } from './src/truncate';
+export { default as interpolate } from './src/interpolate';
+export { default as notEquals } from './src/not-equals';
+export { default as propOf } from './src/prop-of';
+export { allToLower, allToUpper } from './src/all-to-lower-upper';
+export { arrayPath, compactPath } from './src/array-path';
+export { arrayProp, compactProp } from './src/array-prop';
+export { booleanProp, booleanPropOr } from './src/boolean-prop';
+export { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } from './src/is-nil-empty';
+export { numberProp, numberPropOr, numberPath, numberPathOr } from './src/number-prop';
+export { rejectNil, rejectNilOrEmpty } from './src/reject-nil';
+export { thenThrowErrorWith, throwErrorWith } from './src/throw-error';
+export { default as sumProp } from './src/sum-prop';
+export { default as round } from './src/round';

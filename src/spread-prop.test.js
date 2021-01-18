@@ -1,5 +1,4 @@
-'use strict';
-const spreadProp = require('./spread-prop');
+import spreadProp from './spread-prop';
 
 test('should be a curried function', () => {
   expect(spreadProp('prop', {})).toEqual({});

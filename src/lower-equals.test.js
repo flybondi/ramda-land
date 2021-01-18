@@ -1,5 +1,4 @@
-'use strict';
-const lowerEquals = require('./lower-equals');
+import lowerEquals from './lower-equals';
 
 test('should return `true` for two equal strings', () => {
   expect(lowerEquals('foo', 'foo')).toBe(true);

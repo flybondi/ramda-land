@@ -1,5 +1,4 @@
-'use strict';
-const mergeSpec = require('./merge-spec');
+import mergeSpec from './merge-spec';
 
 test('should retain properties on the original object', () => {
   expect(mergeSpec({ bar: o => o.foo }, { foo: 'bar' })).toMatchObject({ foo: 'bar' });

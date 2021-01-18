@@ -1,18 +1,6 @@
-'use strict';
-const {
-  map,
-  merge,
-  pick,
-  lensProp,
-  over,
-  unless,
-  propSatisfies,
-  isNil,
-  ifElse,
-  is
-} = require('ramda');
-const castArray = require('./cast-array');
-const curry = require('./curry');
+import { map, merge, pick, lensProp, over, unless, propSatisfies, isNil, ifElse, is } from 'ramda';
+import castArray from './cast-array';
+import curry from './curry';
 
 /**
  * Given an object containing an array move selected properties outside the
@@ -24,11 +12,11 @@ const curry = require('./curry');
  *  // -> { foo: 'bar', items: [{ id: 1, foo: 'bar' }, { id: 2, foo: 'bar' }] }
  *
  * @function
- * @param {String|Array.<String>} propNames List of property names to merge
+ * @param {string|{String[]}} propNames List of property names to merge
  *  into each element in the `arrayProp` (supports sending a single name).
- * @param {String} arrayPropName Name of the array property on `obj`.
- * @param {Object} obj The object to apply the transformation to.
- * @returns {Object} The object with `propNames` properties merged into elements
+ * @param {string} arrayPropName Name of the array property on `obj`.
+ * @param {object} obj The object to apply the transformation to.
+ * @returns {object} The object with `propNames` properties merged into elements
  *  of `arrayPropName` array.
  */
 const mergeInto = curry((propNames, arrayPropName, obj) => {
@@ -41,4 +29,4 @@ const mergeInto = curry((propNames, arrayPropName, obj) => {
   );
 });
 
-module.exports = mergeInto;
+export default mergeInto;

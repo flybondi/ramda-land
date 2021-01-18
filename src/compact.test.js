@@ -1,5 +1,4 @@
-'use strict';
-const compact = require('./compact');
+import compact from './compact';
 
 test('should return a new array after filtering', () => {
   const input = [1, 2, 3];

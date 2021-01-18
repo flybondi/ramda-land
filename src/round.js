@@ -1,8 +1,6 @@
-'use strict';
-
-const { when, always, compose, lt, applyTo, gt, both } = require('ramda');
-const _curry2 = require('./utils/_curry2');
-const { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } = require('./utils/_math-constants');
+import { when, always, compose, lt, applyTo, gt, both } from 'ramda';
+import _curry2 from './utils/_curry2';
+import { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } from './utils/_math-constants';
 
 /**
  * Rounds a given number to the next largest number for positives and the next smallest for negatives.
@@ -10,9 +8,9 @@ const { MAX_MATH_DELTA, MIN_MATH_DELTA, MIN_NEG_MATH_DELTA } = require('./utils/
  * round(2, 2.151) // returns 2.15
  * round(1, -2.63) // returns -2.7
  * round(0, 2.8) // returns 3
- * @param {Number} decimals number of decimals to round to
- * @param {Number} value number to be rounded
- * @returns {Number} rounded number
+ * @param {number} decimals number of decimals to round to
+ * @param {number} value number to be rounded
+ * @returns {number} rounded number
  */
 function round(precision, value) {
   return applyTo(
@@ -29,4 +27,4 @@ function round(precision, value) {
   );
 }
 
-module.exports = _curry2(round);
+export default _curry2(round);

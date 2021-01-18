@@ -1,5 +1,4 @@
-'use strict';
-const { arrayProp, compactProp } = require('./array-prop');
+import { arrayProp, compactProp } from './array-prop';
 
 describe('the `arrayProp` function', () => {
   test('should cast the value of the property to an array if it is a boolean', () => {

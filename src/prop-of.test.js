@@ -1,5 +1,4 @@
-'use strict';
-const propOf = require('./prop-of');
+import propOf from './prop-of';
 
 describe('propOf function', () => {
   const fred = { name: 'Fred', age: 23 };

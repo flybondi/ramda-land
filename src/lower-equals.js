@@ -1,7 +1,5 @@
-// @flow strict
-'use strict';
-const { eqBy } = require('ramda');
-const lowerTrim = require('./lower-trim');
+import { eqBy } from 'ramda';
+import lowerTrim from './lower-trim';
 
 /**
  * Compares two elements and returns `true` if they are the same after
@@ -12,9 +10,9 @@ const lowerTrim = require('./lower-trim');
  * @see https://ramdajs.com/docs/#eqBy
  * @param {*} first The first value to compare.
  * @param {*} second The second value to compare.
- * @returns {Boolean} `true` if `first` and `second` are the same value
+ * @returns {boolean} `true` if `first` and `second` are the same value
  *  after lower casing and trimming.
  */
 const lowerEquals = eqBy(lowerTrim);
 
-module.exports = lowerEquals;
+export default lowerEquals;

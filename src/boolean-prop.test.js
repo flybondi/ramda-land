@@ -1,5 +1,4 @@
-'use strict';
-const { booleanProp, booleanPropOr } = require('./boolean-prop');
+import { booleanProp, booleanPropOr } from './boolean-prop';
 
 describe('the `booleanProp` function', () => {
   test('should return true on string y', () => {

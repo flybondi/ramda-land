@@ -1,12 +1,11 @@
-'use strict';
-const { compose, values, mapObjIndexed, reduce, replace, flip, call, take } = require('ramda');
-const curry = require('./curry');
-const { rejectNil } = require('./reject-nil');
-const escapeStringRegexp = require('./utils/escape-regex');
+import { compose, values, mapObjIndexed, reduce, replace, flip, call, take } from 'ramda';
+import curry from './curry';
+import { rejectNil } from './reject-nil';
+import escapeStringRegexp from './utils/escape-regex';
 
 /**
  * @private
- * @type {Number}
+ * @type {number}
  */
 const MAX_SYMBOL_LENGTH = 512;
 
@@ -31,13 +30,13 @@ const replacer = compose(
  *  interpolate('I am {name}', { name: 'Error' });
  *  // 'I am Error'
  *
- * @param {String} template The template to interpolate.
- * @param {Object} context The values to replace in `template.
- * @returns {String} The result of resolving template interpolation
+ * @param {string} template The template to interpolate.
+ * @param {object} context The values to replace in `template.
+ * @returns {string} The result of resolving template interpolation
  *  with the given `context`.
  */
 function interpolate(template, context) {
   return reduce(flip(call), template, replacer(context));
 }
 
-module.exports = curry(interpolate);
+export default curry(interpolate);

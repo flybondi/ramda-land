@@ -1,6 +1,5 @@
-'use strict';
-const { reject, isNil, unless } = require('ramda');
-const { isNilOrEmpty } = require('./is-nil-empty');
+import { reject, isNil, unless } from 'ramda';
+import { isNilOrEmpty } from './is-nil-empty';
 
 /**
  * Iterates over a functor a removes any elements that are either `null` or
@@ -13,11 +12,11 @@ const { isNilOrEmpty } = require('./is-nil-empty');
  *
  * @function
  * @see https://ramdajs.com/docs/#reject
- * @param {Object|Array.<Object>} functor The iterable to remove nil values from.
- * @returns {Object|Array.<Object>} The original iterable without `null` or `undefined`
+ * @param {object|{object[]}} functor The iterable to remove nil values from.
+ * @returns {object|{object[]}} The original iterable without `null` or `undefined`
  *  values.
  */
-const rejectNil = unless(isNil, reject(isNil));
+export const rejectNil = unless(isNil, reject(isNil));
 
 /**
  * Iterates over a functor a removes any elements that are either `null`,
@@ -30,10 +29,8 @@ const rejectNil = unless(isNil, reject(isNil));
  *
  * @function
  * @see https://ramdajs.com/docs/#reject
- * @param {Object|Array.<Object>} functor The iterable to remove nil or empty values from.
- * @returns {Object|Array.<Object>} The original iterable without `null`, `undefined`
+ * @param {object|{object[]}} functor The iterable to remove nil or empty values from.
+ * @returns {object|{object[]}} The original iterable without `null`, `undefined`
  *  or empty values.
  */
-const rejectNilOrEmpty = unless(isNil, reject(isNilOrEmpty));
-
-module.exports = { rejectNil, rejectNilOrEmpty };
+export const rejectNilOrEmpty = unless(isNil, reject(isNilOrEmpty));

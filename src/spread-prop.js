@@ -1,5 +1,4 @@
-'use strict';
-const { curryN, converge, merge, dissoc, propOr } = require('ramda');
+import { curryN, converge, merge, dissoc, propOr } from 'ramda';
 
 /**
  * Spreads object under property onto provided object.
@@ -9,10 +8,10 @@ const { curryN, converge, merge, dissoc, propOr } = require('ramda');
  *
  * @function
  * @see https://char0n.github.io/ramda-adjunct/2.10.0/RA.html#.spreadProp
- * @param {String|Number} prop The property to spread
- * @param {Object} obj The provided object
- * @returns {Object} The result of the spread
+ * @param {string|Number} prop The property to spread
+ * @param {object} obj The provided object
+ * @returns {object} The result of the spread
  */
 const spreadProp = curryN(2, converge(merge, [dissoc, propOr({})]));
 
-module.exports = spreadProp;
+export default spreadProp;

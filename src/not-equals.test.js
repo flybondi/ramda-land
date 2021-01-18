@@ -1,5 +1,4 @@
-'use strict';
-const notEquals = require('./not-equals');
+import notEquals from './not-equals';
 
 describe('should return true when comparing objects that are not equals', () => {
   test('comparing two different objects', () => {

@@ -1,5 +1,4 @@
-'use strict';
-const { complement, equals } = require('ramda');
+import { complement, equals } from 'ramda';
 
 /**
  * Returns false if its arguments are equivalent, true otherwise. Handles cyclical data structures.
@@ -12,8 +11,8 @@ const { complement, equals } = require('ramda');
  * @see https://ramdajs.com/docs/#equals
  * @param {any} A The first object to compare
  * @param {any} B The second object to compare
- * @returns {Boolean} The result of the compare
+ * @returns {boolean} The result of the compare
  */
 const notEquals = complement(equals);
 
-module.exports = notEquals;
+export default notEquals;

@@ -1,8 +1,7 @@
-'use strict';
-const { compose, toLower, toUpper, map } = require('ramda');
-const { rejectNilOrEmpty } = require('./reject-nil');
-const castArray = require('./cast-array');
-const curryN = require('./curry-n');
+import { compose, toLower, toUpper, map } from 'ramda';
+import { rejectNilOrEmpty } from './reject-nil';
+import castArray from './cast-array';
+import curryN from './curry-n';
 
 const compactMap = fn => compose(map(fn), rejectNilOrEmpty, castArray);
 
@@ -15,11 +14,11 @@ const compactMap = fn => compose(map(fn), rejectNilOrEmpty, castArray);
  *  allToLower(['Foo', null, 'bAr']); // ['foo', bar']
  *
  * @function
- * @param {Array.<String>|String} values The values to convert to lowercase. A
+ * @param {{String[]}|String} values The values to convert to lowercase. A
  *  single value will be wrapped in an array.
- * @returns {Array.<String>} All the passed `values`, down cased.
+ * @returns {string[]} All the passed `values`, down cased.
  */
-const allToLower = curryN(1, compactMap(compose(toLower, String)));
+export const allToLower = curryN(1, compactMap(compose(toLower, String)));
 
 /**
  * Converts all elements in an array to uppercase. Each element
@@ -30,10 +29,8 @@ const allToLower = curryN(1, compactMap(compose(toLower, String)));
  *  allToUpper(['Foo', null, 'bAr']); // ['FOO', BAR']
  *
  * @function
- * @param {Array.<String>|String} values The values to convert to uppercase. A
+ * @param {{String[]}|String} values The values to convert to uppercase. A
  *  single value will be wrapped in an array.
- * @returns {Array.<String>} All the passed `values`, upper cased.
+ * @returns {string[]} All the passed `values`, upper cased.
  */
-const allToUpper = curryN(1, compactMap(compose(toUpper, String)));
-
-module.exports = { allToLower, allToUpper };
+export const allToUpper = curryN(1, compactMap(compose(toUpper, String)));

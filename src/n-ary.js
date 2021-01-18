@@ -1,6 +1,5 @@
-'use strict';
-const _curry2 = require('./utils/_curry2');
-const _copyNameProperty = require('./utils/copy-name');
+import _curry2 from './utils/_curry2';
+import _copyNameProperty from './utils/copy-name';
 
 /**
  * Wraps a function of any arity (including nullary) in a function that accepts
@@ -8,7 +7,7 @@ const _copyNameProperty = require('./utils/copy-name');
  * supplied function.
  *
  * @function
- * @param {Number} n The desired arity of the new function.
+ * @param {number} n The desired arity of the new function.
  * @param {Function} fn The function to wrap.
  * @return {Function} A new function wrapping `fn`. The new function is guaranteed to be of
  *         arity `n`.
@@ -24,7 +23,7 @@ const _copyNameProperty = require('./utils/copy-name');
  *      // Only `n` arguments are passed to the wrapped function
  *      takesOneArg(1, 2); //=> [1, undefined]
  */
-var nAry = _curry2(function nAry(n, fn) {
+const nAry = _curry2(function nAry(n, fn) {
   switch (n) {
     case 0:
       return _copyNameProperty(fn, function () {
@@ -75,4 +74,4 @@ var nAry = _curry2(function nAry(n, fn) {
   }
 });
 
-module.exports = nAry;
+export default nAry;

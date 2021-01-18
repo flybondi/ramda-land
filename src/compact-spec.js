@@ -1,8 +1,6 @@
-// @flow strict
-'use strict';
-const { always, applyTo, applySpec, compose, isEmpty, when } = require('ramda');
-const { rejectNilOrEmpty } = require('./reject-nil');
-const curry = require('./curry');
+import { always, applyTo, applySpec, compose, isEmpty, when } from 'ramda';
+import { rejectNilOrEmpty } from './reject-nil';
+import curry from './curry';
 
 /**
  * Given a spec object recursively mapping properties to functions, creates a function
@@ -15,9 +13,9 @@ const curry = require('./curry');
  *  compactSpec({ foo: o => o.bar }, { bar: null }); // -> undefined
  *
  * @see https://ramdajs.com/docs/#applySpec
- * @param {Object} spec An object recursively mapping properties to functions for producing the values for these properties.
- * @param {Object|Array} value An object or array to apply the spec to.
- * @returns {Object|undefined} An spec matching object, or `undefined` if all of its properties are nil or empty.
+ * @param {object} spec An object recursively mapping properties to functions for producing the values for these properties.
+ * @param {object|Array} value An object or array to apply the spec to.
+ * @returns {object|undefined} An spec matching object, or `undefined` if all of its properties are nil or empty.
  */
 function compactSpec(spec, obj) {
   return applyTo(
@@ -32,4 +30,4 @@ function compactSpec(spec, obj) {
   );
 }
 
-module.exports = curry(compactSpec);
+export default curry(compactSpec);

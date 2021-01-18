@@ -1,8 +1,7 @@
-'use strict';
-const { compose, path } = require('ramda');
-const curryN = require('./curry-n');
-const castArray = require('./cast-array');
-const compact = require('./compact');
+import { compose, path } from 'ramda';
+import curryN from './curry-n';
+import castArray from './cast-array';
+import compact from './compact';
 
 /**
  * Shorthand function to extract a property at a path from an object and cast its value to an array. If the
@@ -19,11 +18,11 @@ const compact = require('./compact');
  * @function
  * @see https://ramdajs.com/docs/#of
  * @see https://ramdajs.com/docs/#path
- * @param {Array.<String>} path Path to the value on `obj`
- * @param {Object} obj Source of the extracted property
+ * @param {string[]} path Path to the value on `obj`
+ * @param {object} obj Source of the extracted property
  * @returns {Array.<*>} The value of `obj` at `path` cast as an array.
  */
-const arrayPath = curryN(2, compose(castArray, path));
+export const arrayPath = curryN(2, compose(castArray, path));
 
 /**
  * Shorthand function to extract a property from an object at `path` and cast its value to an array,
@@ -43,11 +42,9 @@ const arrayPath = curryN(2, compose(castArray, path));
  * @function
  * @see https://ramdajs.com/docs/#of
  * @see https://ramdajs.com/docs/#path
- * @param {Array.<String>} path Path to the value on `obj`
- * @param {Object} obj Source of the extracted property
+ * @param {string[]} path Path to the value on `obj`
+ * @param {object} obj Source of the extracted property
  * @returns {Array.<*>} The value of `obj` at `path` cast as an array with
  *  all falsey and empty values removed.
  */
-const compactPath = curryN(2, compose(compact, arrayPath));
-
-module.exports = { arrayPath, compactPath };
+export const compactPath = curryN(2, compose(compact, arrayPath));

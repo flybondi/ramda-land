@@ -1,5 +1,4 @@
-'use strict';
-const renameKeys = require('./rename-keys');
+import renameKeys from './rename-keys';
 
 test('should rename keys on an object based on a key value map', () => {
   expect(renameKeys({ foo: 'life' }, { foo: 42 })).toEqual({ life: 42 });

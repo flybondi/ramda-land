@@ -1,8 +1,7 @@
-'use strict';
-const _arity = require('./utils/_arity');
-const _curry1 = require('./utils/_curry1');
-const _curry2 = require('./utils/_curry2');
-const _curryN = require('./utils/_curry-n');
+import _arity from './utils/_arity';
+import _curry1 from './utils/_curry1';
+import _curry2 from './utils/_curry2';
+import _curryN from './utils/_curry-n';
 
 /**
  * Returns a curried equivalent of the provided function, with the specified
@@ -29,7 +28,7 @@ const _curryN = require('./utils/_curry-n');
  *   - `g(_, 2)(_, 3)(1)`
  *
  * @function
- * @param {Number} length The arity for the returned function.
+ * @param {number} length The arity for the returned function.
  * @param {Function} fn The function to curry.
  * @return {Function} A new, curried function.
  * @example
@@ -48,4 +47,4 @@ const curryN = _curry2(function curryN(length, fn) {
   return _arity(length, _curryN(length, [], fn));
 });
 
-module.exports = curryN;
+export default curryN;

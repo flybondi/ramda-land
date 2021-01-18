@@ -1,6 +1,5 @@
-'use strict';
-const { filter, both } = require('ramda');
-const { isNotEmpty } = require('./is-nil-empty');
+import { filter, both } from 'ramda';
+import { isNotEmpty } from './is-nil-empty';
 
 /**
  * Returns a new array with all falsey and empty values removed.
@@ -17,4 +16,4 @@ const { isNotEmpty } = require('./is-nil-empty');
  */
 const compact = filter(both(Boolean, isNotEmpty));
 
-module.exports = compact;
+export default compact;

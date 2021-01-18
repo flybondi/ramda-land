@@ -1,7 +1,6 @@
-'use strict';
-const _curry1 = require('./_curry1');
-const _isPlaceholder = require('./is-placeholder');
-const _copyNameProperty = require('./copy-name');
+import _curry1 from './_curry1';
+import _isPlaceholder from './is-placeholder';
+import _copyNameProperty from './copy-name';
 
 /**
  * Optimized internal two-arity curry function.
@@ -44,4 +43,4 @@ function _curry2(fn) {
   });
 }
 
-module.exports = _curry2;
+export default _curry2;

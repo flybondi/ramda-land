@@ -1,10 +1,8 @@
-'use strict';
-
-const { compose, applyTo, propOr, reduce, pair, useWith, identity, sum } = require('ramda');
-const curryN = require('./curry-n');
-const castArray = require('./cast-array');
-const { rejectNilOrEmpty } = require('./reject-nil');
-const round = require('./round');
+import { compose, applyTo, propOr, reduce, pair, useWith, identity, sum } from 'ramda';
+import curryN from './curry-n';
+import castArray from './cast-array';
+import { rejectNilOrEmpty } from './reject-nil';
+import round from './round';
 
 /**
  * Sums the values at `propName` present in each element of an array.
@@ -14,11 +12,11 @@ const round = require('./round');
  *  sumProp(2, 'amount', [{amount:'40'}, {amount:'2'}]); // 42
  *
  * @function
- * @param {String} precision Number of decimal places used in rounding the final value.
- * @param {String} propName Name of the property to pluck values from.
- * @param {Array.<Object>} values The elements to extract the `propName` values from.
+ * @param {string} precision Number of decimal places used in rounding the final value.
+ * @param {string} propName Name of the property to pluck values from.
+ * @param {object[]} values The elements to extract the `propName` values from.
  *  Value may be either a `Number` or a numerical `String`.
- * @returns {Number} The total sum of all values at `propName`.
+ * @returns {number} The total sum of all values at `propName`.
  */
 function sumProp(precision, propName, values) {
   return applyTo(
@@ -32,4 +30,4 @@ function sumProp(precision, propName, values) {
   );
 }
 
-module.exports = curryN(3, sumProp);
+export default curryN(3, sumProp);

@@ -1,23 +1,22 @@
-'use strict';
-const { always, when, equals, compose, curryN, prop, isNil } = require('ramda');
-const boolify = require('yn');
+import { compose, curryN, prop, isNil, when, always } from 'ramda';
+import yn from 'yn';
 
 /**
- * yn wrapper that force all `undefined` values to be `null` because latest yn version treats
- * unrecognized values as `undefined` and in order to keep retro-compatibility we have to convert it
- * to be `null`.
+ * `yn` wrapper that forces all `undefined` values to be `null` to accommodate the fact that
+ * latest `yn` version treats unrecognized values as `undefined` instead of `null`. In order to keep
+ * retro-compatibility we force those values to be `null`.
  *
  * @example
- *   defaultNullBoolify('y'); // -> true
- *   defaultNullBoolify('abomasum'); // -> null
- *   defaultNullBoolify('NO'); // -> false
+ *   boolify('y'); // -> true
+ *   boolify('abomasum'); // -> null
+ *   boolify('NO'); // -> false
  *
- * @function
+ * @private
  * @see https://github.com/sindresorhus/yn#readme
- * @param {*} input that should be converted.
- * @returns {Boolean|Null}
+ * @param {*} value that should be converted.
+ * @returns {boolean?}
  */
-const defaultNullBoolify = compose(when(equals(undefined), always(null)), boolify);
+const boolify = compose(when(isNil, always(null)), yn);
 
 /**
  * Shorthand function to extract a property from an object and convert it to a boolean.
@@ -30,11 +29,11 @@ const defaultNullBoolify = compose(when(equals(undefined), always(null)), boolif
  * @function
  * @see https://github.com/sindresorhus/yn#readme
  * @see https://ramdajs.com/docs/#prop
- * @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property
- * @returns {Boolean} The value of `obj` at `propName` as a boolean.
+ * @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property
+ * @returns {boolean} The value of `obj` at `propName` as a boolean.
  */
-const booleanProp = curryN(2, compose(defaultNullBoolify, prop));
+export const booleanProp = curryN(2, compose(boolify, prop));
 
 /**
  * Shorthand function to extract a property from an object and convert it to a `Boolean`.
@@ -49,13 +48,11 @@ const booleanProp = curryN(2, compose(defaultNullBoolify, prop));
  * @see https://ramdajs.com/docs/#propOr
  * @param {*} defaultValue The value to return if `propName` does not exist in `obj`
  *  or is nil.
- *  @param {String} propName Name of the property to extract.
- * @param {Object} obj Source of the extracted property.
+ *  @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property.
  * @returns {*} The value of `obj` at `propName` as a boolean or `defaultValue`.
  */
-const booleanPropOr = curryN(3, (defaultValue, propName, obj) => {
+export const booleanPropOr = curryN(3, (defaultValue, propName, obj) => {
   const value = booleanProp(propName, obj);
   return isNil(value) ? defaultValue : value;
 });
-
-module.exports = { booleanProp, booleanPropOr };

@@ -1,5 +1,4 @@
-'use strict';
-const lowerTrim = require('./lower-trim');
+import lowerTrim from './lower-trim';
 
 test('should convert given string to lower case', () => {
   expect(lowerTrim('FOO')).toBe('foo');

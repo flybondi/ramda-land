@@ -1,5 +1,4 @@
-'use strict';
-const { thunkify, clone } = require('ramda');
+import { thunkify, clone } from 'ramda';
 
 /**
  * Returns a function that creates new instances of whatever argument
@@ -19,4 +18,4 @@ const { thunkify, clone } = require('ramda');
  */
 const alwaysNew = thunkify(clone);
 
-module.exports = alwaysNew;
+export default alwaysNew;

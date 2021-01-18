@@ -1,5 +1,4 @@
-'use strict';
-const mapKeys = require('./map-keys');
+import mapKeys from './map-keys';
 
 test('should be a curried function', () => {
   expect(typeof mapKeys(x => x)).toBe('function');

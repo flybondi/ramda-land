@@ -1,5 +1,4 @@
-'use strict';
-const compactSpec = require('./compact-spec');
+import compactSpec from './compact-spec';
 
 test('should export a curried function of arity 2', () => {
   expect(typeof compactSpec).toBe('function');
