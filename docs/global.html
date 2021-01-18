@@ -123,228 +123,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="compact"><span class="type-signature">(constant) </span>compact<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="compact.js.html">compact.js</a>, <a href="compact.js.html#line17">line 17</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://lodash.com/docs/4.17.11#compact">https://lodash.com/docs/4.17.11#compact</a></li>
-        
-            <li><a href="https://ramdajs.com/docs/#filter">https://ramdajs.com/docs/#filter</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Returns a new array with all falsey and empty values removed.
-The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty.</p>
-</div>
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>compact([0, 1, false, 2, '', 3, {}]);
- // -> [1, 2, 3]</code></pre>
-
-
-
-        
-            
-<h4 class="name" id="thenThrowErrorWith"><span class="type-signature">(constant) </span>thenThrowErrorWith<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="throw-error.js.html">throw-error.js</a>, <a href="throw-error.js.html#line35">line 35</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Returns a function that, when invoked, throws an <code>Error</code> with the given <code>message</code> extended with
-additional properties on <code>data</code>.</p>
-</div>
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const explode = thenThrowErrorWith('boom', { code: 500 });
- explode(); // Throw `new Error('boom')`</code></pre>
-
-
-
-        
-            
-<h4 class="name" id="throwErrorWith"><span class="type-signature">(constant) </span>throwErrorWith<span class="type-signature"></span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="throw-error.js.html">throw-error.js</a>, <a href="throw-error.js.html#line21">line 21</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Immediately throws an <code>Error</code> with the given <code>message</code> extended with
-additional properties on <code>data</code>.</p>
-</div>
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>throwErrorWith('boom', { code: 500 }); // Throw `new Error('boom')`</code></pre>
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -354,7 +132,7 @@ additional properties on <code>data</code>.</p>
 
     
 
-    <h4 class="name" id="allToLower"><span class="type-signature"></span>allToLower<span class="signature">(|string})</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+    <h4 class="name" id="allToLower"><span class="type-signature"></span>allToLower<span class="signature">(values)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
 
     
 
@@ -451,13 +229,16 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 
         <tr>
             
-                <td class="name"><code>|string}</code></td>
+                <td class="name"><code>values</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Array.&lt;string></span>
+|
+
+<span class="param-type">string</span>
 
 
             
@@ -467,7 +248,7 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 
             
 
-            <td class="description last"><p>values The values to convert to lowercase. A
+            <td class="description last"><p>The values to convert to lowercase. A
 single value will be wrapped in an array.</p></td>
         </tr>
 
@@ -520,7 +301,7 @@ single value will be wrapped in an array.</p></td>
 
     
 
-    <h4 class="name" id="allToUpper"><span class="type-signature"></span>allToUpper<span class="signature">(|string})</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+    <h4 class="name" id="allToUpper"><span class="type-signature"></span>allToUpper<span class="signature">(values)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
 
     
 
@@ -617,13 +398,16 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 
         <tr>
             
-                <td class="name"><code>|string}</code></td>
+                <td class="name"><code>values</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Array.&lt;string></span>
+|
+
+<span class="param-type">string</span>
 
 
             
@@ -633,7 +417,7 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 
             
 
-            <td class="description last"><p>values The values to convert to uppercase. A
+            <td class="description last"><p>The values to convert to uppercase. A
 single value will be wrapped in an array.</p></td>
         </tr>
 
@@ -2509,6 +2293,180 @@ matches the arity of the function in <code>fns</code> with the largest number of
     <dd>
         
 <span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="compact"><span class="type-signature"></span>compact<span class="signature">(list)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="compact.js.html">compact.js</a>, <a href="compact.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://lodash.com/docs/4.17.11#compact">https://lodash.com/docs/4.17.11#compact</a></li>
+        
+            <li><a href="https://ramdajs.com/docs/#filter">https://ramdajs.com/docs/#filter</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns a new array with all falsey and empty values removed.
+The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>compact([0, 1, false, 2, '', 3, {}]);
+ // -> [1, 2, 3]</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>list</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;*></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array to compact.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Returns the new array of filtered values.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;*></span>
 
 
     </dd>
@@ -4432,7 +4390,7 @@ with the given <code>context</code>.</p>
 
     
 
-    <h4 class="name" id="isOneOf"><span class="type-signature"></span>isOneOf<span class="signature">(|string}, |string})</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="isOneOf"><span class="type-signature"></span>isOneOf<span class="signature">(firstSet, secondSet)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
 
@@ -4537,13 +4495,16 @@ The comparison between elements is case insensitive. <code>null</code> and
 
         <tr>
             
-                <td class="name"><code>|string}</code></td>
+                <td class="name"><code>firstSet</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Array.&lt;string></span>
+|
+
+<span class="param-type">string</span>
 
 
             
@@ -4553,20 +4514,23 @@ The comparison between elements is case insensitive. <code>null</code> and
 
             
 
-            <td class="description last"><p>firstSet The first set of elements (or single element) to check.</p></td>
+            <td class="description last"><p>The first set of elements (or single element) to check.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>|string}</code></td>
+                <td class="name"><code>secondSet</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Array.&lt;string></span>
+|
+
+<span class="param-type">string</span>
 
 
             
@@ -4576,7 +4540,7 @@ The comparison between elements is case insensitive. <code>null</code> and
 
             
 
-            <td class="description last"><p>secondSet The second set of elements (or single element) to check.</p></td>
+            <td class="description last"><p>The second set of elements (or single element) to check.</p></td>
         </tr>
 
     
@@ -8776,6 +8740,367 @@ Value may be either a <code>Number</code> or a numerical <code>String</code>.</p
 
     
 
+    <h4 class="name" id="thenThrowErrorWith"><span class="type-signature"></span>thenThrowErrorWith<span class="signature">(message, data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="throw-error.js.html">throw-error.js</a>, <a href="throw-error.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns a function that, when invoked, throws an <code>Error</code> with the given <code>message</code> extended with
+additional properties on <code>data</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const explode = thenThrowErrorWith('boom', { code: 500 });
+ explode(); // Throw `new Error('boom')`</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error message</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional properties to attach to the thrown error</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc usertext">
+    
+        
+<span class="param-type">Error</span>
+
+
+    
+    </div>
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="throwErrorWith"><span class="type-signature"></span>throwErrorWith<span class="signature">(message, data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="throw-error.js.html">throw-error.js</a>, <a href="throw-error.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Immediately throws an <code>Error</code> with the given <code>message</code> extended with
+additional properties on <code>data</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>throwErrorWith('boom', { code: 500 }); // Throw `new Error('boom')`</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error message</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional properties to attach to the thrown error</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc usertext">
+    
+        
+<span class="param-type">Error</span>
+
+
+    
+    </div>
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="truncate"><span class="type-signature"></span>truncate<span class="signature">(maxLength, value)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
@@ -8979,7 +9304,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jan 18 2021 12:47:59 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Jan 18 2021 18:37:29 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,3 +1,10 @@
+## [4.0.6](https://github.com/flybondi/ramda-land/compare/v4.0.5...v4.0.6) (2021-01-18)
+
+
+### Bug Fixes
+
+* resolve bad imports after build ([#21](https://github.com/flybondi/ramda-land/issues/21)) ([44831ae](https://github.com/flybondi/ramda-land/commit/44831ae64c687e8929ce36bd9ed203fefb176be4))
+
 ## [4.0.5](https://github.com/flybondi/ramda-land/compare/v4.0.4...v4.0.5) (2021-01-18)
 
 ## [4.0.4](https://github.com/flybondi/ramda-land/compare/v4.0.3...v4.0.4) (2020-12-22)
