@@ -14,9 +14,22 @@ function mapValues(fn, obj) {
 }
 
 /**
+ * Checks if `value` is object-like.
+ * A value is object-like if it's not `null` and has a `typeof` result of `'object'`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if value is object-like, else false.
+ */
+const isObjectLike = value => typeof value === 'object' && value !== null;
+
+/**
  * Given a spec object recursively mapping properties to functions, creates a
  * function producing an object of the same structure, by mapping each property
  * to the result of calling its associated function with the supplied arguments.
+ *
+ * The difference between `R.applySpec` and this implementation is that it also
+ * accepts literal values as part of the spec (e.g. `applySpec({ value: 42 });`).
  *
  * @function
  * @param {object|Array} spec a list or object recursively mapping properties or elements to functions for
@@ -26,7 +39,7 @@ function mapValues(fn, obj) {
  *  associated function with the supplied arguments.
  * @example
  *
- *      const getMetrics = R.applySpec({
+ *      const getMetrics = applySpec({
  *        list: [R.add, 'value']
  *        sum: R.add,
  *        some: 'value',
@@ -36,7 +49,7 @@ function mapValues(fn, obj) {
  */
 const applySpec = _curry1(function applySpec(spec) {
   spec = mapValues(
-    v => (typeof v === 'function' ? v : typeof v === 'object' ? applySpec(v) : always(v)),
+    v => (typeof v === 'function' ? v : isObjectLike(v) ? applySpec(v) : always(v)),
     spec
   );
 

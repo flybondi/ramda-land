@@ -252,3 +252,7 @@ $RECYCLE.BIN/
 dist/
 es/
 lib/
+
+# Husky
+.husky/_
+.husky/.gitignore

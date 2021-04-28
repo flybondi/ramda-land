@@ -48,6 +48,11 @@ test('should retain literal values on the spec', () => {
   });
 });
 
+test('should retain `null` values on the spec', () => {
+  expect(applySpec({ v: null, u: 'bar' })(2)).toEqual({ v: null, u: 'bar' });
+  expect(applySpec([null, 'bar'])(2)).toEqual([null, 'bar']);
+});
+
 test('should support mixing literal values and spec functions', () => {
   expect(applySpec({ v: [x => x + 40, 'foo'], u: 'bar', w: x => x ** 2 })(2)).toEqual({
     v: [42, 'foo'],
