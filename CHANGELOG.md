@@ -1,3 +1,10 @@
+## [4.0.7](https://github.com/flybondi/ramda-land/compare/v4.0.6...v4.0.7) (2021-04-28)
+
+
+### Bug Fixes
+
+* support null values on applySpec ([#23](https://github.com/flybondi/ramda-land/issues/23)) ([e64f0e7](https://github.com/flybondi/ramda-land/commit/e64f0e7b264c5de455c3198add46e9b7778dca72))
+
 ## [4.0.6](https://github.com/flybondi/ramda-land/compare/v4.0.5...v4.0.6) (2021-01-18)
 
 
