@@ -72,17 +72,13 @@ describe('the `compactProp` function', () => {
 
   test('should remove all `undefined` values from an array', () => {
     expect(compactProp('foo', { foo: [1, undefined, 2, undefined, 3, undefined] })).toEqual([
-      1,
-      2,
-      3
+      1, 2, 3
     ]);
   });
 
   test('should work with a combination of falsey and empty values', () => {
     expect(compactProp('foo', { foo: [1, undefined, 2, null, 3, {}, 0, '', false] })).toEqual([
-      1,
-      2,
-      3
+      1, 2, 3
     ]);
   });
 
