@@ -1,3 +1,5 @@
+## [4.0.10](https://github.com/flybondi/ramda-land/compare/v4.0.9...v4.0.10) (2021-08-12)
+
 ## [4.0.9](https://github.com/flybondi/ramda-land/compare/v4.0.8...v4.0.9) (2021-08-12)
 
 ## [4.0.8](https://github.com/flybondi/ramda-land/compare/v4.0.7...v4.0.8) (2021-06-09)
