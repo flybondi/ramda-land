@@ -115,7 +115,7 @@
     "tsd-jsdoc": "^2.5.0"
   },
   "peerDependencies": {
-    "ramda": ">=0.28.0"
+    "ramda": ">=0.26.1"
   },
   "engines": {
     "node": ">=12"
