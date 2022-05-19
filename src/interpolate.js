@@ -1,30 +1,16 @@
-import { compose, values, mapObjIndexed, reduce, replace, flip, call, take } from 'ramda';
+import { replace } from 'ramda';
 import curry from './curry';
-import { rejectNil } from './reject-nil';
-import escapeStringRegexp from './utils/escape-regex';
 
 /**
- * @private
- * @type {number}
+ * Regular expression used to detect and replace
+ * interpolation `{tokens}` within templates.
+ *
+ * @constant {RegExp}
  */
-const MAX_SYMBOL_LENGTH = 512;
+const INTERPOLATE_SYNTAX_REGEXP = /{\s*([^}]+?)\s*}/g;
 
 /**
- * @private
- * @function
- */
-const sanitizeSymbol = compose(escapeStringRegexp, take(MAX_SYMBOL_LENGTH));
-
-const replacer = compose(
-  values,
-  mapObjIndexed((value, key) => replace(new RegExp(`{${sanitizeSymbol(key)}}`, 'g'), value)),
-  rejectNil
-);
-
-/**
- * Replaces variables in a template enclosed by `{}`. Variable names
- * will be escaped for safe regular expression usage and, for safety reasons,
- * cannot exceed `512` characters in length.
+ * Replaces variables in a template enclosed by `{}`.
  *
  * @example
  *  interpolate('I am {name}', { name: 'Error' });
@@ -36,7 +22,7 @@ const replacer = compose(
  *  with the given `context`.
  */
 function interpolate(template, context) {
-  return reduce(flip(call), template, replacer(context));
+  return replace(INTERPOLATE_SYNTAX_REGEXP, (token, key) => context[key] ?? token, template);
 }
 
 export default curry(interpolate);
