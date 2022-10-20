@@ -46,7 +46,7 @@
     "build": "yarn clean && yarn build:es && yarn build:cjs && yarn build:umd",
     "build:cjs": "cross-env BABEL_ENV=commonjs babel --ignore '**/*.test.js' src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel --ignore '**/*.test.js' src/ --out-dir es",
-    "build:umd": "rollup -c",
+    "build:umd": "rollup -c --bundleConfigAsCjs",
     "clean": "rimraf es lib dist",
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint src/",
