@@ -6,6 +6,7 @@ import curry from './curry';
  * interpolation `{tokens}` within templates.
  *
  * @constant {RegExp}
+ * @private
  */
 const INTERPOLATE_SYNTAX_REGEXP = /{\s*([^}]+?)\s*}/g;
 
