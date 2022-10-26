@@ -1,3 +1,10 @@
+## [4.0.15](https://github.com/flybondi/ramda-land/compare/v4.0.14...v4.0.15) (2022-10-26)
+
+
+### Performance Improvements
+
+* rewrite and simplify interpolate ([#33](https://github.com/flybondi/ramda-land/issues/33)) ([ac6ec35](https://github.com/flybondi/ramda-land/commit/ac6ec3505d408c7b21d7b48fc370c6de8c33a4f2))
+
 ## [4.0.14](https://github.com/flybondi/ramda-land/compare/v4.0.13...v4.0.14) (2021-09-21)
 
 ## [4.0.13](https://github.com/flybondi/ramda-land/compare/v4.0.12...v4.0.13) (2021-09-17)
