@@ -1,4 +1,15 @@
-import { map, merge, pick, lensProp, over, unless, propSatisfies, isNil, ifElse, is } from 'ramda';
+import {
+  map,
+  mergeRight,
+  pick,
+  lensProp,
+  over,
+  unless,
+  propSatisfies,
+  isNil,
+  ifElse,
+  is
+} from 'ramda';
 import castArray from './cast-array';
 import curry from './curry';
 
@@ -21,7 +32,7 @@ import curry from './curry';
  */
 const mergeInto = curry((propNames, arrayPropName, obj) => {
   const outerProps = pick(castArray(propNames), obj);
-  const mergeOuterProps = merge(outerProps);
+  const mergeOuterProps = mergeRight(outerProps);
   return unless(
     propSatisfies(isNil, arrayPropName),
     over(lensProp(arrayPropName), ifElse(is(Array), map(mergeOuterProps), mergeOuterProps)),
