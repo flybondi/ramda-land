@@ -1,4 +1,4 @@
-import { curryN, converge, merge, dissoc, propOr } from 'ramda';
+import { curryN, converge, mergeRight, dissoc, propOr } from 'ramda';
 
 /**
  * Spreads object under property onto provided object.
@@ -12,6 +12,6 @@ import { curryN, converge, merge, dissoc, propOr } from 'ramda';
  * @param {object} obj The provided object
  * @returns {object} The result of the spread
  */
-const spreadProp = curryN(2, converge(merge, [dissoc, propOr({})]));
+const spreadProp = curryN(2, converge(mergeRight, [dissoc, propOr({})]));
 
 export default spreadProp;
