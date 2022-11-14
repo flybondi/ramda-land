@@ -73,7 +73,7 @@
     ]
   },
   "dependencies": {
-    "yn": "^4.0.0"
+    "yn": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
