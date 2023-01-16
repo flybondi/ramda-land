@@ -86,7 +86,7 @@
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/jest": "^29.2.5",
-    "@types/ramda": "^0.28.20",
+    "@types/ramda": "^0.28.21",
     "cross-env": "^7.0.3",
     "docdash": "^2.0.1",
     "eslint": "^8.32.0",
