@@ -19,11 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --pure-lockfile
       - name: Jest
-        uses: mattallty/jest-github-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          test-command: yarn test
+        run: yarn test
 
   eslint:
     name: Lint
