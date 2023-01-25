@@ -20,6 +20,7 @@
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
     <script src="scripts/nav.js" defer></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -35,7 +36,9 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
+    
     <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#allToLower">allToLower</a></li><li><a href="global.html#allToUpper">allToUpper</a></li><li><a href="global.html#alwaysNew">alwaysNew</a></li><li><a href="global.html#applySpec">applySpec</a></li><li><a href="global.html#arrayPath">arrayPath</a></li><li><a href="global.html#arrayProp">arrayProp</a></li><li><a href="global.html#booleanProp">booleanProp</a></li><li><a href="global.html#booleanPropOr">booleanPropOr</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#capitalizeWords">capitalizeWords</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#coalesce">coalesce</a></li><li><a href="global.html#compact">compact</a></li><li><a href="global.html#compactPath">compactPath</a></li><li><a href="global.html#compactProp">compactProp</a></li><li><a href="global.html#compactSpec">compactSpec</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#curryN">curryN</a></li><li><a href="global.html#interpolate">interpolate</a></li><li><a href="global.html#isNilOrEmpty">isNilOrEmpty</a></li><li><a href="global.html#isNotEmpty">isNotEmpty</a></li><li><a href="global.html#isNotNil">isNotNil</a></li><li><a href="global.html#isNotNilOrEmpty">isNotNilOrEmpty</a></li><li><a href="global.html#isOneOf">isOneOf</a></li><li><a href="global.html#joinFrom">joinFrom</a></li><li><a href="global.html#lowerEquals">lowerEquals</a></li><li><a href="global.html#lowerPath">lowerPath</a></li><li><a href="global.html#lowerPathSatisfies">lowerPathSatisfies</a></li><li><a href="global.html#lowerTrim">lowerTrim</a></li><li><a href="global.html#mapKeys">mapKeys</a></li><li><a href="global.html#mergeInto">mergeInto</a></li><li><a href="global.html#mergeSpec">mergeSpec</a></li><li><a href="global.html#nAry">nAry</a></li><li><a href="global.html#notEquals">notEquals</a></li><li><a href="global.html#numberPath">numberPath</a></li><li><a href="global.html#numberPathOr">numberPathOr</a></li><li><a href="global.html#numberProp">numberProp</a></li><li><a href="global.html#numberPropOr">numberPropOr</a></li><li><a href="global.html#propOf">propOf</a></li><li><a href="global.html#rejectNil">rejectNil</a></li><li><a href="global.html#rejectNilOrEmpty">rejectNilOrEmpty</a></li><li><a href="global.html#renameKeys">renameKeys</a></li><li><a href="global.html#round">round</a></li><li><a href="global.html#spreadProp">spreadProp</a></li><li><a href="global.html#sumProp">sumProp</a></li><li><a href="global.html#thenThrowErrorWith">thenThrowErrorWith</a></li><li><a href="global.html#throwErrorWith">throwErrorWith</a></li><li><a href="global.html#truncate">truncate</a></li></ul>
+    
 </nav>
 
 <div id="main">
@@ -54,6 +57,8 @@
     
         <h2>
         
+            
+        
         </h2>
         
     
@@ -66,6 +71,7 @@
             
 
 <dl class="details">
+    
 
     
 
@@ -140,6 +146,12 @@
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Converts all elements in an array to lowercase. Each element
+is coerced into a <code>String</code>, if it's not already one. All <code>undefined</code> and
+<code>null</code> values will be removed from the output.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -183,28 +195,20 @@
 
 
 
-<div class="description usertext">
-    <p>Converts all elements in an array to lowercase. Each element
-is coerced into a <code>String</code>, if it's not already one. All <code>undefined</code> and
-<code>null</code> values will be removed from the output.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>allToLower(['Foo', null, 'bAr']); // ['foo', bar']</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -241,6 +245,7 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -271,7 +276,7 @@ single value will be wrapped in an array.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -287,6 +292,7 @@ single value will be wrapped in an array.</p></td>
     <dd>
         
 <span class="param-type">Array.&lt;string></span>
+
 
 
     </dd>
@@ -309,6 +315,12 @@ single value will be wrapped in an array.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Converts all elements in an array to uppercase. Each element
+is coerced into a <code>String</code>, if it's not already one. All <code>undefined</code>,
+<code>null</code> or empty values will be removed from the output.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -352,28 +364,20 @@ single value will be wrapped in an array.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Converts all elements in an array to uppercase. Each element
-is coerced into a <code>String</code>, if it's not already one. All <code>undefined</code>,
-<code>null</code> or empty values will be removed from the output.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>allToUpper(['Foo', null, 'bAr']); // ['FOO', BAR']</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -410,6 +414,7 @@ is coerced into a <code>String</code>, if it's not already one. All <code>undefi
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -440,7 +445,7 @@ single value will be wrapped in an array.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -456,6 +461,7 @@ single value will be wrapped in an array.</p></td>
     <dd>
         
 <span class="param-type">Array.&lt;string></span>
+
 
 
     </dd>
@@ -478,6 +484,11 @@ single value will be wrapped in an array.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a function that creates new instances of whatever argument
+is passed in each time it's called.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -521,20 +532,13 @@ single value will be wrapped in an array.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Returns a function that creates new instances of whatever argument
-is passed in each time it's called.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const alwaysNewArray = alwaysNew([]);
  const a = alwaysNewArray(); // -> []
@@ -544,7 +548,7 @@ is passed in each time it's called.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -578,6 +582,7 @@ is passed in each time it's called.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -607,7 +612,7 @@ is passed in each time it's called.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -624,6 +629,7 @@ is passed in each time it's called.</p>
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -646,6 +652,14 @@ is passed in each time it's called.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Given a spec object recursively mapping properties to functions, creates a
+function producing an object of the same structure, by mapping each property
+to the result of calling its associated function with the supplied arguments.</p>
+<p>The difference between <code>R.applySpec</code> and this implementation is that it also
+accepts literal values as part of the spec (e.g. <code>applySpec({ value: 42 });</code>).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -689,23 +703,13 @@ is passed in each time it's called.</p>
 
 
 
-<div class="description usertext">
-    <p>Given a spec object recursively mapping properties to functions, creates a
-function producing an object of the same structure, by mapping each property
-to the result of calling its associated function with the supplied arguments.</p>
-<p>The difference between <code>R.applySpec</code> and this implementation is that it also
-accepts literal values as part of the spec (e.g. <code>applySpec({ value: 42 });</code>).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const getMetrics = applySpec({
        list: [R.add, 'value']
@@ -718,7 +722,7 @@ accepts literal values as part of the spec (e.g. <code>applySpec({ value: 42 });
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -755,6 +759,7 @@ accepts literal values as part of the spec (e.g. <code>applySpec({ value: 42 });
 <span class="param-type">Array</span>
 
 
+
             
             </td>
 
@@ -785,7 +790,7 @@ producing corresponding values.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -803,6 +808,7 @@ associated function with the supplied arguments.</p>
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -825,6 +831,14 @@ associated function with the supplied arguments.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property at a path from an object and cast its value to an array. If the
+value is already an array, it will be returned as is. Note that this function ensures that the
+returned value is always an <code>Array</code> - so <code>null</code> and <code>undefined</code> property values at <code>path</code>
+will return <code>[null]</code> and <code>[undefined]</code> respectively. Use <code>compactPath</code> instead if you need all
+falsey and empty values removed.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -877,23 +891,13 @@ associated function with the supplied arguments.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property at a path from an object and cast its value to an array. If the
-value is already an array, it will be returned as is. Note that this function ensures that the
-returned value is always an <code>Array</code> - so <code>null</code> and <code>undefined</code> property values at <code>path</code>
-will return <code>[null]</code> and <code>[undefined]</code> respectively. Use <code>compactPath</code> instead if you need all
-falsey and empty values removed.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>arrayPath(['foo', 'bar'], { foo: { bar: 'baz' } }); // -> ['baz']
  arrayPath(['foo'], { foo: [1, 2, 3] }); // -> [1, 2, 3]
@@ -902,7 +906,7 @@ falsey and empty values removed.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -936,6 +940,7 @@ falsey and empty values removed.</p>
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -957,6 +962,7 @@ falsey and empty values removed.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -988,7 +994,7 @@ falsey and empty values removed.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1004,6 +1010,7 @@ falsey and empty values removed.</p>
     <dd>
         
 <span class="param-type">Array.&lt;*></span>
+
 
 
     </dd>
@@ -1026,6 +1033,14 @@ falsey and empty values removed.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object and cast its value to an array. If the
+value is already an array, it will be returned as is. Note that this function ensures that the
+returned value is always an <code>Array</code> - so <code>null</code> and <code>undefined</code> properties
+will return <code>[null]</code> and <code>[undefined]</code> respectively. Use <code>compactProp</code> instead if you need all
+falsey and empty values removed.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1078,23 +1093,13 @@ falsey and empty values removed.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object and cast its value to an array. If the
-value is already an array, it will be returned as is. Note that this function ensures that the
-returned value is always an <code>Array</code> - so <code>null</code> and <code>undefined</code> properties
-will return <code>[null]</code> and <code>[undefined]</code> respectively. Use <code>compactProp</code> instead if you need all
-falsey and empty values removed.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>arrayProp('foo', { foo: 'bar' }); // -> ['bar']
  arrayProp('foo', { foo: [1, 2, 3] }); // -> [1, 2, 3]
@@ -1103,7 +1108,7 @@ falsey and empty values removed.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1137,6 +1142,7 @@ falsey and empty values removed.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1158,6 +1164,7 @@ falsey and empty values removed.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -1189,7 +1196,7 @@ falsey and empty values removed.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1205,6 +1212,7 @@ falsey and empty values removed.</p>
     <dd>
         
 <span class="param-type">Array.&lt;*></span>
+
 
 
     </dd>
@@ -1227,6 +1235,11 @@ falsey and empty values removed.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object and convert it to a boolean.
+Parsing of values to boolean follows <code>yn</code> logic.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1279,20 +1292,13 @@ falsey and empty values removed.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object and convert it to a boolean.
-Parsing of values to boolean follows <code>yn</code> logic.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>booleanProp('foo', { foo: 'y' }); // -> true
  booleanProp('foo', { foo: 0 }); // -> false</code></pre>
@@ -1300,7 +1306,7 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1334,6 +1340,7 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1355,6 +1362,7 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -1386,7 +1394,7 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1402,6 +1410,7 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -1424,6 +1433,11 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object and convert it to a <code>Boolean</code>.
+If boolean conversion would return <code>null</code> or <code>undefined</code>, it returns <code>defaultValue</code>, instead.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1476,20 +1490,13 @@ Parsing of values to boolean follows <code>yn</code> logic.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object and convert it to a <code>Boolean</code>.
-If boolean conversion would return <code>null</code> or <code>undefined</code>, it returns <code>defaultValue</code>, instead.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>booleanPropOr(true, 'foo', { bar: 42 }); // -> true
  booleanPropOr(false, 'foo', { foo: 'y' }); // -> true</code></pre>
@@ -1497,7 +1504,7 @@ If boolean conversion would return <code>null</code> or <code>undefined</code>, 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1531,6 +1538,7 @@ If boolean conversion would return <code>null</code> or <code>undefined</code>, 
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -1555,6 +1563,7 @@ or is nil.</p></td>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1576,6 +1585,7 @@ or is nil.</p></td>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -1607,7 +1617,7 @@ or is nil.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1623,6 +1633,7 @@ or is nil.</p></td>
     <dd>
         
 <span class="param-type">*</span>
+
 
 
     </dd>
@@ -1645,6 +1656,12 @@ or is nil.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Transforms a string so that the first letter is capitalized
+and the rest is lowercased (i.e.: 'uNibROw' -&gt; 'Unibrow').
+If the input is <code>null</code> or <code>undefined</code>, it's returned as is.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1688,11 +1705,6 @@ or is nil.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Transforms a string so that the first letter is capitalized
-and the rest is lowercased (i.e.: 'uNibROw' -&gt; 'Unibrow').
-If the input is <code>null</code> or <code>undefined</code>, it's returned as is.</p>
-</div>
 
 
 
@@ -1701,10 +1713,7 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1738,6 +1747,7 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1767,7 +1777,7 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1783,6 +1793,7 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -1805,6 +1816,11 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Capitalizes each word in a sentence. A &quot;word&quot; is considered any
+token between space characters.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1848,20 +1864,13 @@ If the input is <code>null</code> or <code>undefined</code>, it's returned as is
 
 
 
-<div class="description usertext">
-    <p>Capitalizes each word in a sentence. A &quot;word&quot; is considered any
-token between space characters.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>capitalizeWords('I am selling these fine leather jackets');
  // I am Selling These Fine Leather Jackets</code></pre>
@@ -1869,7 +1878,7 @@ token between space characters.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1903,6 +1912,7 @@ token between space characters.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1932,7 +1942,7 @@ token between space characters.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1948,6 +1958,7 @@ token between space characters.</p>
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -1970,6 +1981,10 @@ token between space characters.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Wraps any value in an <code>Array</code> if it's not already one.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2020,19 +2035,13 @@ token between space characters.</p>
 
 
 
-<div class="description usertext">
-    <p>Wraps any value in an <code>Array</code> if it's not already one.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>castArray(42); // -> [42]
  castArray([42]); // -> [42]
@@ -2041,7 +2050,7 @@ token between space characters.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -2075,6 +2084,7 @@ token between space characters.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -2104,7 +2114,7 @@ token between space characters.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2121,6 +2131,7 @@ or the same input if it was already an <code>Array</code>.</p>
     <dd>
         
 <span class="param-type">Array</span>
+
 
 
     </dd>
@@ -2143,6 +2154,12 @@ or the same input if it was already an <code>Array</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates a wrapping function that concatenates the result of each function
+in <code>fns</code> with an <code>||</code> operator, returning the first truthy value. This works
+as a falsy-coalescing operator.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2193,28 +2210,20 @@ or the same input if it was already an <code>Array</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Creates a wrapping function that concatenates the result of each function
-in <code>fns</code> with an <code>||</code> operator, returning the first truthy value. This works
-as a falsy-coalescing operator.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>coalesce([prop('foo'), prop('bar'), prop('baz')])({ bar: 42 }); // -> 42</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -2248,6 +2257,7 @@ as a falsy-coalescing operator.</p>
 <span class="param-type">Array.&lt;function()></span>
 
 
+
             
             </td>
 
@@ -2278,7 +2288,7 @@ an <code>||</code> operator returning the result of the first truthy value after
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2295,6 +2305,7 @@ matches the arity of the function in <code>fns</code> with the largest number of
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -2317,6 +2328,11 @@ matches the arity of the function in <code>fns</code> with the largest number of
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a new array with all falsey and empty values removed.
+The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2369,20 +2385,13 @@ matches the arity of the function in <code>fns</code> with the largest number of
 
 
 
-<div class="description usertext">
-    <p>Returns a new array with all falsey and empty values removed.
-The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>compact([0, 1, false, 2, '', 3, {}]);
  // -> [1, 2, 3]</code></pre>
@@ -2390,7 +2399,7 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -2424,6 +2433,7 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
 <span class="param-type">Array.&lt;*></span>
 
 
+
             
             </td>
 
@@ -2453,7 +2463,7 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2469,6 +2479,7 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
     <dd>
         
 <span class="param-type">Array.&lt;*></span>
+
 
 
     </dd>
@@ -2491,6 +2502,15 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object at <code>path</code> and cast its value to an array,
+removing all falsey and empty values from it. The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>,
+<code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty. If the value is
+already an array, this function behaves like calling <code>compact</code> with that same value.
+Note that this function ensures that the returned value is always an <code>Array</code> - so <code>null</code>
+and <code>undefined</code> properties will both  return <code>[]</code> (an empty array).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2543,24 +2563,13 @@ The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&q
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object at <code>path</code> and cast its value to an array,
-removing all falsey and empty values from it. The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>,
-<code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty. If the value is
-already an array, this function behaves like calling <code>compact</code> with that same value.
-Note that this function ensures that the returned value is always an <code>Array</code> - so <code>null</code>
-and <code>undefined</code> properties will both  return <code>[]</code> (an empty array).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>compactPath(['foo'. 'bar'], { foo: { bar: 'baz' } }); // -> ['baz']
  compactPath(['foo'], { foo: [0, 1, 2, 3, null] }); // -> [1, 2, 3]
@@ -2571,7 +2580,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -2605,6 +2614,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -2626,6 +2636,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -2657,7 +2668,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2674,6 +2685,7 @@ all falsey and empty values removed.</p>
     <dd>
         
 <span class="param-type">Array.&lt;*></span>
+
 
 
     </dd>
@@ -2696,6 +2708,15 @@ all falsey and empty values removed.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object and cast its value to an array,
+removing all falsey and empty values from it. The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>,
+<code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty. If the value is
+already an array, this function behaves like calling <code>compact</code> with that same value.
+Note that this function ensures that the returned value is always an <code>Array</code> - so <code>null</code>
+and <code>undefined</code> properties will both  return <code>[]</code> (an empty array).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2748,24 +2769,13 @@ all falsey and empty values removed.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object and cast its value to an array,
-removing all falsey and empty values from it. The values <code>false</code>, <code>null</code>, <code>0</code>, <code>&quot;&quot;</code>,
-<code>undefined</code>, and <code>NaN</code> are falsey. <code>[]</code> and <code>{}</code> are considered empty. If the value is
-already an array, this function behaves like calling <code>compact</code> with that same value.
-Note that this function ensures that the returned value is always an <code>Array</code> - so <code>null</code>
-and <code>undefined</code> properties will both  return <code>[]</code> (an empty array).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>compactProp('foo', { foo: 'bar' }); // -> ['bar']
  compactProp('foo', { foo: [0, 1, 2, 3, null] }); // -> [1, 2, 3]
@@ -2776,7 +2786,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -2810,6 +2820,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -2831,6 +2842,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -2862,7 +2874,7 @@ and <code>undefined</code> properties will both  return <code>[]</code> (an empt
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2879,6 +2891,7 @@ all falsey and empty values removed.</p>
     <dd>
         
 <span class="param-type">Array.&lt;*></span>
+
 
 
     </dd>
@@ -2901,6 +2914,14 @@ all falsey and empty values removed.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Given a spec object recursively mapping properties to functions, creates a function
+producing an object of the same structure, by mapping each property to the result of calling
+its associated function with the supplied arguments.
+If the outcome of applying the spec produces an object with all nil or empty values,
+it returns <code>undefined</code> instead.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2951,30 +2972,20 @@ all falsey and empty values removed.</p>
 
 
 
-<div class="description usertext">
-    <p>Given a spec object recursively mapping properties to functions, creates a function
-producing an object of the same structure, by mapping each property to the result of calling
-its associated function with the supplied arguments.
-If the outcome of applying the spec produces an object with all nil or empty values,
-it returns <code>undefined</code> instead.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>compactSpec({ foo: o => o.bar }, { bar: null }); // -> undefined</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3008,6 +3019,7 @@ it returns <code>undefined</code> instead.</p>
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -3032,6 +3044,7 @@ it returns <code>undefined</code> instead.</p>
 |
 
 <span class="param-type">Array</span>
+
 
 
             
@@ -3063,7 +3076,7 @@ it returns <code>undefined</code> instead.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -3082,6 +3095,7 @@ it returns <code>undefined</code> instead.</p>
 |
 
 <span class="param-type">undefined</span>
+
 
 
     </dd>
@@ -3104,6 +3118,32 @@ it returns <code>undefined</code> instead.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a curried equivalent of the provided function. The curried function
+has two unusual capabilities. First, its arguments needn't be provided one
+at a time. If <code>f</code> is a ternary function and <code>g</code> is <code>curry(f)</code>, the
+following are equivalent:</p>
+<ul>
+<li><code>g(1)(2)(3)</code></li>
+<li><code>g(1)(2, 3)</code></li>
+<li><code>g(1, 2)(3)</code></li>
+<li><code>g(1, 2, 3)</code></li>
+</ul>
+<p>Secondly, the special placeholder value <code>R.__</code> (exported by <code>ramda</code>) may be used
+to specify &quot;gaps&quot;, allowing partial application of any combination of arguments,
+regardless of their positions. If <code>g</code> is as above and <code>_</code> is <code>R.__</code>,
+the following are equivalent:</p>
+<ul>
+<li><code>g(1, 2, 3)</code></li>
+<li><code>g(_, 2, 3)(1)</code></li>
+<li><code>g(_, _, 3)(1)(2)</code></li>
+<li><code>g(_, _, 3)(1, 2)</code></li>
+<li><code>g(_, 2)(1)(3)</code></li>
+<li><code>g(_, 2)(1, 3)</code></li>
+<li><code>g(_, 2)(_, 3)(1)</code></li>
+</ul></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -3147,41 +3187,13 @@ it returns <code>undefined</code> instead.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns a curried equivalent of the provided function. The curried function
-has two unusual capabilities. First, its arguments needn't be provided one
-at a time. If <code>f</code> is a ternary function and <code>g</code> is <code>curry(f)</code>, the
-following are equivalent:</p>
-<ul>
-<li><code>g(1)(2)(3)</code></li>
-<li><code>g(1)(2, 3)</code></li>
-<li><code>g(1, 2)(3)</code></li>
-<li><code>g(1, 2, 3)</code></li>
-</ul>
-<p>Secondly, the special placeholder value <code>R.__</code> (exported by <code>ramda</code>) may be used
-to specify &quot;gaps&quot;, allowing partial application of any combination of arguments,
-regardless of their positions. If <code>g</code> is as above and <code>_</code> is <code>R.__</code>,
-the following are equivalent:</p>
-<ul>
-<li><code>g(1, 2, 3)</code></li>
-<li><code>g(_, 2, 3)(1)</code></li>
-<li><code>g(_, _, 3)(1)(2)</code></li>
-<li><code>g(_, _, 3)(1, 2)</code></li>
-<li><code>g(_, 2)(1)(3)</code></li>
-<li><code>g(_, 2)(1, 3)</code></li>
-<li><code>g(_, 2)(_, 3)(1)</code></li>
-</ul>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const addFourNumbers = (a, b, c, d) => a + b + c + d;
 
@@ -3193,7 +3205,7 @@ the following are equivalent:</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3227,6 +3239,7 @@ the following are equivalent:</p>
 <span class="param-type">function</span>
 
 
+
             
             </td>
 
@@ -3256,7 +3269,7 @@ the following are equivalent:</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -3272,6 +3285,7 @@ the following are equivalent:</p>
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -3294,6 +3308,32 @@ the following are equivalent:</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a curried equivalent of the provided function, with the specified
+arity. The curried function has two unusual capabilities. First, its
+arguments needn't be provided one at a time. If <code>g</code> is <code>R.curryN(3, f)</code>, the
+following are equivalent:</p>
+<ul>
+<li><code>g(1)(2)(3)</code></li>
+<li><code>g(1)(2, 3)</code></li>
+<li><code>g(1, 2)(3)</code></li>
+<li><code>g(1, 2, 3)</code></li>
+</ul>
+<p>Secondly, the special placeholder value <a href="#__"><code>R.__</code></a> may be used to specify
+&quot;gaps&quot;, allowing partial application of any combination of arguments,
+regardless of their positions. If <code>g</code> is as above and <code>_</code> is <a href="#__"><code>R.__</code></a>,
+the following are equivalent:</p>
+<ul>
+<li><code>g(1, 2, 3)</code></li>
+<li><code>g(_, 2, 3)(1)</code></li>
+<li><code>g(_, _, 3)(1)(2)</code></li>
+<li><code>g(_, _, 3)(1, 2)</code></li>
+<li><code>g(_, 2)(1)(3)</code></li>
+<li><code>g(_, 2)(1, 3)</code></li>
+<li><code>g(_, 2)(_, 3)(1)</code></li>
+</ul></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -3337,41 +3377,13 @@ the following are equivalent:</p>
 
 
 
-<div class="description usertext">
-    <p>Returns a curried equivalent of the provided function, with the specified
-arity. The curried function has two unusual capabilities. First, its
-arguments needn't be provided one at a time. If <code>g</code> is <code>R.curryN(3, f)</code>, the
-following are equivalent:</p>
-<ul>
-<li><code>g(1)(2)(3)</code></li>
-<li><code>g(1)(2, 3)</code></li>
-<li><code>g(1, 2)(3)</code></li>
-<li><code>g(1, 2, 3)</code></li>
-</ul>
-<p>Secondly, the special placeholder value <a href="#__"><code>R.__</code></a> may be used to specify
-&quot;gaps&quot;, allowing partial application of any combination of arguments,
-regardless of their positions. If <code>g</code> is as above and <code>_</code> is <a href="#__"><code>R.__</code></a>,
-the following are equivalent:</p>
-<ul>
-<li><code>g(1, 2, 3)</code></li>
-<li><code>g(_, 2, 3)(1)</code></li>
-<li><code>g(_, _, 3)(1)(2)</code></li>
-<li><code>g(_, _, 3)(1, 2)</code></li>
-<li><code>g(_, 2)(1)(3)</code></li>
-<li><code>g(_, 2)(1, 3)</code></li>
-<li><code>g(_, 2)(_, 3)(1)</code></li>
-</ul>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const sumArgs = (...args) => R.sum(args);
 
@@ -3383,7 +3395,7 @@ the following are equivalent:</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3417,6 +3429,7 @@ the following are equivalent:</p>
 <span class="param-type">number</span>
 
 
+
             
             </td>
 
@@ -3438,6 +3451,7 @@ the following are equivalent:</p>
             
                 
 <span class="param-type">function</span>
+
 
 
             
@@ -3469,7 +3483,7 @@ the following are equivalent:</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -3485,6 +3499,7 @@ the following are equivalent:</p>
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -3507,6 +3522,10 @@ the following are equivalent:</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Replaces variables in a template enclosed by <code>{}</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -3550,19 +3569,13 @@ the following are equivalent:</p>
 
 
 
-<div class="description usertext">
-    <p>Replaces variables in a template enclosed by <code>{}</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>interpolate('I am {name}', { name: 'Error' });
  // 'I am Error'</code></pre>
@@ -3570,7 +3583,7 @@ the following are equivalent:</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3604,6 +3617,7 @@ the following are equivalent:</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -3625,6 +3639,7 @@ the following are equivalent:</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -3656,7 +3671,7 @@ the following are equivalent:</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -3673,6 +3688,7 @@ with the given <code>context</code>.</p>
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -3695,6 +3711,11 @@ with the given <code>context</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Checks whether the given <code>value</code> is <code>null</code>, <code>undefined</code> or empty (definition of
+&quot;empty&quot; is type dependant).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -3747,20 +3768,13 @@ with the given <code>context</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Checks whether the given <code>value</code> is <code>null</code>, <code>undefined</code> or empty (definition of
-&quot;empty&quot; is type dependant).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>isNilOrEmpty({}); // -> true
  isNilOrEmpty(null); // -> true
@@ -3770,7 +3784,7 @@ with the given <code>context</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3804,6 +3818,7 @@ with the given <code>context</code>.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -3833,7 +3848,7 @@ with the given <code>context</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -3850,6 +3865,7 @@ with the given <code>context</code>.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -3872,6 +3888,11 @@ with the given <code>context</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Checks whether the given <code>value</code> is not empty or not (definition of
+&quot;empty&quot; is type dependant).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -3922,20 +3943,13 @@ with the given <code>context</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Checks whether the given <code>value</code> is not empty or not (definition of
-&quot;empty&quot; is type dependant).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>isNotEmpty({}); // -> false
  isNotEmpty(null); // -> true
@@ -3946,7 +3960,7 @@ with the given <code>context</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -3980,6 +3994,7 @@ with the given <code>context</code>.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -4009,7 +4024,7 @@ with the given <code>context</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4026,6 +4041,7 @@ with the given <code>context</code>.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -4048,6 +4064,10 @@ with the given <code>context</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Checks whether the given <code>value</code> is neither <code>null</code>, nor <code>undefined</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -4098,19 +4118,13 @@ with the given <code>context</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Checks whether the given <code>value</code> is neither <code>null</code>, nor <code>undefined</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>isNotNil({}); // -> true
  isNotNil(null); // -> false
@@ -4120,7 +4134,7 @@ with the given <code>context</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -4154,6 +4168,7 @@ with the given <code>context</code>.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -4183,7 +4198,7 @@ with the given <code>context</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4199,6 +4214,7 @@ with the given <code>context</code>.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -4221,6 +4237,11 @@ with the given <code>context</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Checks whether the given <code>value</code> is neither <code>null</code>, <code>undefined</code> nor empty (definition of
+&quot;empty&quot; is type dependant).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -4273,20 +4294,13 @@ with the given <code>context</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Checks whether the given <code>value</code> is neither <code>null</code>, <code>undefined</code> nor empty (definition of
-&quot;empty&quot; is type dependant).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>isNotNilOrEmpty({}); // -> false
  isNotNilOrEmpty(null); // -> false
@@ -4296,7 +4310,7 @@ with the given <code>context</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -4330,6 +4344,7 @@ with the given <code>context</code>.</p>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -4359,7 +4374,7 @@ with the given <code>context</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4376,6 +4391,7 @@ with the given <code>context</code>.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -4398,6 +4414,12 @@ with the given <code>context</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Checks if a string value (or set of values) is present in another.
+The comparison between elements is case insensitive. <code>null</code> and
+<code>undefined</code> values are ignored.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -4448,21 +4470,13 @@ with the given <code>context</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Checks if a string value (or set of values) is present in another.
-The comparison between elements is case insensitive. <code>null</code> and
-<code>undefined</code> values are ignored.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const isVeggie = isOneOf(['carrot', 'cucumber', 'parsnip']);
  isVeggie('tuna'); // false</code></pre>
@@ -4470,7 +4484,7 @@ The comparison between elements is case insensitive. <code>null</code> and
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -4507,6 +4521,7 @@ The comparison between elements is case insensitive. <code>null</code> and
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -4531,6 +4546,7 @@ The comparison between elements is case insensitive. <code>null</code> and
 |
 
 <span class="param-type">string</span>
+
 
 
             
@@ -4562,7 +4578,7 @@ The comparison between elements is case insensitive. <code>null</code> and
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4578,6 +4594,7 @@ The comparison between elements is case insensitive. <code>null</code> and
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -4600,6 +4617,11 @@ The comparison between elements is case insensitive. <code>null</code> and
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Joins together using a <code>separator</code> strings returned from an array
+of <code>fns</code> functions that are applied to an <code>obj</code> element.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -4643,20 +4665,13 @@ The comparison between elements is case insensitive. <code>null</code> and
 
 
 
-<div class="description usertext">
-    <p>Joins together using a <code>separator</code> strings returned from an array
-of <code>fns</code> functions that are applied to an <code>obj</code> element.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>joinFrom('-', [prop('firstName'), prop('lastName')], {
    firstName: 'Fred',
@@ -4666,7 +4681,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -4700,6 +4715,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -4723,6 +4739,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 <span class="param-type">Array.&lt;function()></span>
 
 
+
             
             </td>
 
@@ -4744,6 +4761,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
             
                 
 <span class="param-type">*</span>
+
 
 
             
@@ -4775,7 +4793,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4792,6 +4810,7 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -4814,6 +4833,12 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Compares two elements and returns <code>true</code> if they are the same after
+transforming their stringified value to lower case and trimming spaces;
+<code>false</code> otherwise.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -4864,11 +4889,6 @@ of <code>fns</code> functions that are applied to an <code>obj</code> element.</
 
 
 
-<div class="description usertext">
-    <p>Compares two elements and returns <code>true</code> if they are the same after
-transforming their stringified value to lower case and trimming spaces;
-<code>false</code> otherwise.</p>
-</div>
 
 
 
@@ -4877,10 +4897,7 @@ transforming their stringified value to lower case and trimming spaces;
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -4914,6 +4931,7 @@ transforming their stringified value to lower case and trimming spaces;
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -4935,6 +4953,7 @@ transforming their stringified value to lower case and trimming spaces;
             
                 
 <span class="param-type">*</span>
+
 
 
             
@@ -4966,7 +4985,7 @@ transforming their stringified value to lower case and trimming spaces;
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -4983,6 +5002,7 @@ after lower casing and trimming.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -5005,6 +5025,11 @@ after lower casing and trimming.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Extracts the value of an object at the given <code>path</code>. The individual keys
+on the path are transformed to lowercase before extracting the actual value.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -5055,20 +5080,13 @@ after lower casing and trimming.</p>
 
 
 
-<div class="description usertext">
-    <p>Extracts the value of an object at the given <code>path</code>. The individual keys
-on the path are transformed to lowercase before extracting the actual value.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>lowerPath(['country', 'IE'], {country: { ie: '&amp;#133662110186;' } });
  // -> '&amp;#133662110186;'</code></pre>
@@ -5076,7 +5094,7 @@ on the path are transformed to lowercase before extracting the actual value.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -5110,6 +5128,7 @@ on the path are transformed to lowercase before extracting the actual value.</p>
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -5131,6 +5150,7 @@ on the path are transformed to lowercase before extracting the actual value.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -5162,7 +5182,7 @@ on the path are transformed to lowercase before extracting the actual value.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -5178,6 +5198,7 @@ on the path are transformed to lowercase before extracting the actual value.</p>
     <dd>
         
 <span class="param-type">*</span>
+
 
 
     </dd>
@@ -5200,6 +5221,11 @@ on the path are transformed to lowercase before extracting the actual value.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns true if the specified object property at given path satisfies the given predicate; false otherwise.
+The individual keys  on the path are transformed to lowercase before checking the actual value.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -5250,20 +5276,13 @@ on the path are transformed to lowercase before extracting the actual value.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns true if the specified object property at given path satisfies the given predicate; false otherwise.
-The individual keys  on the path are transformed to lowercase before checking the actual value.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>lowerPathSatisfies(isNil, ['country', 'IE'], {country: { ie: '&amp;#133662110186;' } });
  // -> false</code></pre>
@@ -5271,7 +5290,7 @@ The individual keys  on the path are transformed to lowercase before checking th
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -5305,6 +5324,7 @@ The individual keys  on the path are transformed to lowercase before checking th
 <span class="param-type">function</span>
 
 
+
             
             </td>
 
@@ -5328,6 +5348,7 @@ The individual keys  on the path are transformed to lowercase before checking th
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -5349,6 +5370,7 @@ The individual keys  on the path are transformed to lowercase before checking th
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -5380,7 +5402,7 @@ The individual keys  on the path are transformed to lowercase before checking th
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -5396,6 +5418,7 @@ The individual keys  on the path are transformed to lowercase before checking th
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -5418,6 +5441,11 @@ The individual keys  on the path are transformed to lowercase before checking th
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Trims and transforms text to lower case. <code>null</code> and <code>undefined</code> values
+are returned as is.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -5461,10 +5489,6 @@ The individual keys  on the path are transformed to lowercase before checking th
 
 
 
-<div class="description usertext">
-    <p>Trims and transforms text to lower case. <code>null</code> and <code>undefined</code> values
-are returned as is.</p>
-</div>
 
 
 
@@ -5473,10 +5497,7 @@ are returned as is.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -5510,6 +5531,7 @@ are returned as is.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -5539,7 +5561,7 @@ are returned as is.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -5555,6 +5577,7 @@ are returned as is.</p>
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -5577,6 +5600,10 @@ are returned as is.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Map keys on an objects by running a mapping function to each one.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -5620,9 +5647,6 @@ are returned as is.</p>
 
 
 
-<div class="description usertext">
-    <p>Map keys on an objects by running a mapping function to each one.</p>
-</div>
 
 
 
@@ -5631,10 +5655,7 @@ are returned as is.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -5668,6 +5689,7 @@ are returned as is.</p>
 <span class="param-type">function</span>
 
 
+
             
             </td>
 
@@ -5689,6 +5711,7 @@ are returned as is.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -5720,7 +5743,7 @@ are returned as is.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -5736,6 +5759,7 @@ are returned as is.</p>
     <dd>
         
 <span class="param-type">object</span>
+
 
 
     </dd>
@@ -5758,6 +5782,11 @@ are returned as is.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Given an object containing an array move selected properties outside the
+array to each element on it.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -5801,20 +5830,13 @@ are returned as is.</p>
 
 
 
-<div class="description usertext">
-    <p>Given an object containing an array move selected properties outside the
-array to each element on it.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const o = { foo: 'bar', items: [{ id: 1 }, { id: 2 }] };
  mergeInto('foo', 'items');
@@ -5823,7 +5845,7 @@ array to each element on it.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -5860,6 +5882,7 @@ array to each element on it.</p>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -5884,6 +5907,7 @@ into each element in the <code>arrayProp</code> (supports sending a single name)
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -5905,6 +5929,7 @@ into each element in the <code>arrayProp</code> (supports sending a single name)
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -5936,7 +5961,7 @@ into each element in the <code>arrayProp</code> (supports sending a single name)
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -5953,6 +5978,7 @@ of <code>arrayPropName</code> array.</p>
     <dd>
         
 <span class="param-type">object</span>
+
 
 
     </dd>
@@ -5975,6 +6001,13 @@ of <code>arrayPropName</code> array.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Recursively applies functions on the <code>spec</code> object to produce a new
+object matching its definition, which is then merged with the original
+object. If a key exists in both objects, the value from the result of
+applying the <code>spec</code> will take precedence.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -6027,22 +6060,13 @@ of <code>arrayPropName</code> array.</p>
 
 
 
-<div class="description usertext">
-    <p>Recursively applies functions on the <code>spec</code> object to produce a new
-object matching its definition, which is then merged with the original
-object. If a key exists in both objects, the value from the result of
-applying the <code>spec</code> will take precedence.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>mergeSpec({ bar: o => o.num + 40 }, { num: 2 });
  // -> { bar: 42, num: 2 }</code></pre>
@@ -6050,7 +6074,7 @@ applying the <code>spec</code> will take precedence.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -6084,6 +6108,7 @@ applying the <code>spec</code> will take precedence.</p>
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -6106,6 +6131,7 @@ producing corresponding values.</p></td>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -6138,7 +6164,7 @@ will be merged.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -6155,6 +6181,7 @@ the <code>spec</code> to <code>obj</code> plus all or of <code>obj</code> own pr
     <dd>
         
 <span class="param-type">object</span>
+
 
 
     </dd>
@@ -6177,6 +6204,12 @@ the <code>spec</code> to <code>obj</code> plus all or of <code>obj</code> own pr
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Wraps a function of any arity (including nullary) in a function that accepts
+exactly <code>n</code> parameters. Any extraneous parameters will not be passed to the
+supplied function.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -6220,21 +6253,13 @@ the <code>spec</code> to <code>obj</code> plus all or of <code>obj</code> own pr
 
 
 
-<div class="description usertext">
-    <p>Wraps a function of any arity (including nullary) in a function that accepts
-exactly <code>n</code> parameters. Any extraneous parameters will not be passed to the
-supplied function.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const takesTwoArgs = (a, b) => [a, b];
 
@@ -6249,7 +6274,7 @@ supplied function.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -6283,6 +6308,7 @@ supplied function.</p>
 <span class="param-type">number</span>
 
 
+
             
             </td>
 
@@ -6304,6 +6330,7 @@ supplied function.</p>
             
                 
 <span class="param-type">function</span>
+
 
 
             
@@ -6335,7 +6362,7 @@ supplied function.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -6352,6 +6379,7 @@ arity <code>n</code>.</p>
     <dd>
         
 <span class="param-type">function</span>
+
 
 
     </dd>
@@ -6374,6 +6402,10 @@ arity <code>n</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns false if its arguments are equivalent, true otherwise. Handles cyclical data structures.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -6426,19 +6458,13 @@ arity <code>n</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns false if its arguments are equivalent, true otherwise. Handles cyclical data structures.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>notEquals(1, 2) //=> true
   notEquals({ a: 1 }, { a: 1 }) //=> false</code></pre>
@@ -6446,7 +6472,7 @@ arity <code>n</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -6480,6 +6506,7 @@ arity <code>n</code>.</p>
 <span class="param-type">any</span>
 
 
+
             
             </td>
 
@@ -6501,6 +6528,7 @@ arity <code>n</code>.</p>
             
                 
 <span class="param-type">any</span>
+
 
 
             
@@ -6532,7 +6560,7 @@ arity <code>n</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -6548,6 +6576,7 @@ arity <code>n</code>.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
 
 
     </dd>
@@ -6570,6 +6599,13 @@ arity <code>n</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a nested property from an object and convert it to a number.
+Note that this behaves somewhat different to regular number parsing using <code>Number</code> constructor:
+if the property is <code>null</code> or <code>undefined</code> it will be returned as is; if the property is
+an empty string (<code>''</code>), <code>NaN</code> will be returned.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -6620,29 +6656,20 @@ arity <code>n</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a nested property from an object and convert it to a number.
-Note that this behaves somewhat different to regular number parsing using <code>Number</code> constructor:
-if the property is <code>null</code> or <code>undefined</code> it will be returned as is; if the property is
-an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>numberPath(['life', 'meaning'], { life: { meaning: '42' }}); // 42</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -6679,6 +6706,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -6701,6 +6729,7 @@ property name as a single string.</p></td>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -6732,7 +6761,7 @@ property name as a single string.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -6748,6 +6777,7 @@ property name as a single string.</p></td>
     <dd>
         
 <span class="param-type">number</span>
+
 
 
     </dd>
@@ -6770,6 +6800,14 @@ property name as a single string.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Extract a nested property from an object and convert it to a number. If property
+is absent, <code>null</code>, <code>undefined</code> or cannot be coerced into a <code>Number</code>, the default
+value will be returned instead. Note that number coercing behaves somewhat different
+than using the <code>Number</code> constructor: an empty string (<code>''</code>) or <code>null</code> would return the
+<code>defaultValue</code> instead of <code>0</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -6820,30 +6858,20 @@ property name as a single string.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Extract a nested property from an object and convert it to a number. If property
-is absent, <code>null</code>, <code>undefined</code> or cannot be coerced into a <code>Number</code>, the default
-value will be returned instead. Note that number coercing behaves somewhat different
-than using the <code>Number</code> constructor: an empty string (<code>''</code>) or <code>null</code> would return the
-<code>defaultValue</code> instead of <code>0</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>numberPathOr(42, ['life', 'meaning'], { foo: 'bar' }); // 42</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -6877,6 +6905,7 @@ than using the <code>Number</code> constructor: an empty string (<code>''</code>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -6904,6 +6933,7 @@ or its value is nil or <code>NaN</code>.</p></td>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -6926,6 +6956,7 @@ property name as a single string.</p></td>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -6957,7 +6988,7 @@ property name as a single string.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -6973,6 +7004,7 @@ property name as a single string.</p></td>
     <dd>
         
 <span class="param-type">*</span>
+
 
 
     </dd>
@@ -6995,6 +7027,13 @@ property name as a single string.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Shorthand function to extract a property from an object and convert it to a number.
+Note that this behaves somewhat different to regular number parsing using <code>Number</code> constructor:
+if the property is <code>null</code> or <code>undefined</code> it will be returned as is; if the property is
+an empty string (<code>''</code>), <code>NaN</code> will be returned.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -7045,12 +7084,6 @@ property name as a single string.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Shorthand function to extract a property from an object and convert it to a number.
-Note that this behaves somewhat different to regular number parsing using <code>Number</code> constructor:
-if the property is <code>null</code> or <code>undefined</code> it will be returned as is; if the property is
-an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
-</div>
 
 
 
@@ -7059,10 +7092,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -7096,6 +7126,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -7117,6 +7148,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -7148,7 +7180,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -7164,6 +7196,7 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
     <dd>
         
 <span class="param-type">number</span>
+
 
 
     </dd>
@@ -7186,6 +7219,14 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Extract a property from an object and convert it to a number. If property
+is absent, <code>null</code>, <code>undefined</code> or cannot be coerced into a <code>Number</code>, the default
+value will be returned instead. Note that number coercing behaves somewhat different
+than using the <code>Number</code> constructor: an empty string (<code>''</code>) or <code>null</code> would return the
+<code>defaultValue</code> instead of <code>0</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -7236,13 +7277,6 @@ an empty string (<code>''</code>), <code>NaN</code> will be returned.</p>
 
 
 
-<div class="description usertext">
-    <p>Extract a property from an object and convert it to a number. If property
-is absent, <code>null</code>, <code>undefined</code> or cannot be coerced into a <code>Number</code>, the default
-value will be returned instead. Note that number coercing behaves somewhat different
-than using the <code>Number</code> constructor: an empty string (<code>''</code>) or <code>null</code> would return the
-<code>defaultValue</code> instead of <code>0</code>.</p>
-</div>
 
 
 
@@ -7251,10 +7285,7 @@ than using the <code>Number</code> constructor: an empty string (<code>''</code>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -7288,6 +7319,7 @@ than using the <code>Number</code> constructor: an empty string (<code>''</code>
 <span class="param-type">*</span>
 
 
+
             
             </td>
 
@@ -7312,6 +7344,7 @@ or is nil.</p></td>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -7333,6 +7366,7 @@ or is nil.</p></td>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -7364,7 +7398,7 @@ or is nil.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -7380,6 +7414,7 @@ or is nil.</p></td>
     <dd>
         
 <span class="param-type">*</span>
+
 
 
     </dd>
@@ -7402,6 +7437,10 @@ or is nil.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns the value of <code>obj</code> at the given <code>propName</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -7454,19 +7493,13 @@ or is nil.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Returns the value of <code>obj</code> at the given <code>propName</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>propOf({ name: 'Alexander' }, 'name') //=> 'Alexander'
   propOf({ name: 'Alexander' }, 'age') //=> undefined</code></pre>
@@ -7474,7 +7507,7 @@ or is nil.</p></td>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -7508,6 +7541,7 @@ or is nil.</p></td>
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -7529,6 +7563,7 @@ or is nil.</p></td>
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -7560,7 +7595,7 @@ or is nil.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -7576,6 +7611,7 @@ or is nil.</p></td>
     <dd>
         
 <span class="param-type">*</span>
+
 
 
     </dd>
@@ -7598,6 +7634,11 @@ or is nil.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Iterates over a functor a removes any elements that are either <code>null</code> or
+<code>undefined</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -7648,20 +7689,13 @@ or is nil.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Iterates over a functor a removes any elements that are either <code>null</code> or
-<code>undefined</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>rejectNil(null); // -> null
  rejectNil([42, undefined, 'life']); // -> [42, 'life']
@@ -7670,7 +7704,7 @@ or is nil.</p></td>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -7707,6 +7741,7 @@ or is nil.</p></td>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -7736,7 +7771,7 @@ or is nil.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -7756,6 +7791,7 @@ values.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
     </dd>
@@ -7778,6 +7814,11 @@ values.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Iterates over a functor a removes any elements that are either <code>null</code>,
+<code>undefined</code>. or empty ([], {}).</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -7828,20 +7869,13 @@ values.</p>
 
 
 
-<div class="description usertext">
-    <p>Iterates over a functor a removes any elements that are either <code>null</code>,
-<code>undefined</code>. or empty ([], {}).</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>rejectNilOrEmpty(null); // -> null
  rejectNilOrEmpty([42, undefined, {}, 'life']); // -> [42, 'life']
@@ -7850,7 +7884,7 @@ values.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -7887,6 +7921,7 @@ values.</p>
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -7916,7 +7951,7 @@ values.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -7936,6 +7971,7 @@ or empty values.</p>
 |
 
 <span class="param-type">Object</span>
+
 
 
     </dd>
@@ -7958,6 +7994,12 @@ or empty values.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates a new object with the own properties of the provided object, but the
+keys renamed according to the keysMap object as <code>{oldKey: newKey}</code>.
+When some key is not found in the keysMap, then it's passed as-is.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8008,28 +8050,20 @@ or empty values.</p>
 
 
 
-<div class="description usertext">
-    <p>Creates a new object with the own properties of the provided object, but the
-keys renamed according to the keysMap object as <code>{oldKey: newKey}</code>.
-When some key is not found in the keysMap, then it's passed as-is.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>renameKeys({ foo: 'life' }, { foo: 42 }); // -> { life: 42 }</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -8063,6 +8097,7 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -8084,6 +8119,7 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -8115,7 +8151,7 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -8131,6 +8167,7 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
     <dd>
         
 <span class="param-type">object</span>
+
 
 
     </dd>
@@ -8153,6 +8190,10 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Rounds a given number to the next largest number for positives and the next smallest for negatives.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8196,19 +8237,13 @@ When some key is not found in the keysMap, then it's passed as-is.</p>
 
 
 
-<div class="description usertext">
-    <p>Rounds a given number to the next largest number for positives and the next smallest for negatives.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>round(2, 2.151) // returns 2.15
 round(1, -2.63) // returns -2.7
@@ -8217,7 +8252,7 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -8251,6 +8286,7 @@ round(0, 2.8) // returns 3</code></pre>
 <span class="param-type">number</span>
 
 
+
             
             </td>
 
@@ -8272,6 +8308,7 @@ round(0, 2.8) // returns 3</code></pre>
             
                 
 <span class="param-type">number</span>
+
 
 
             
@@ -8303,7 +8340,7 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -8319,6 +8356,7 @@ round(0, 2.8) // returns 3</code></pre>
     <dd>
         
 <span class="param-type">number</span>
+
 
 
     </dd>
@@ -8341,6 +8379,10 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Spreads object under property onto provided object.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8391,26 +8433,20 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 
-<div class="description usertext">
-    <p>Spreads object under property onto provided object.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>spreadProp('b', { a: 1, b: { c: 3, d: 4 } }); // => { a: 1, c: 3, d: 4 };</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -8447,6 +8483,7 @@ round(0, 2.8) // returns 3</code></pre>
 <span class="param-type">Number</span>
 
 
+
             
             </td>
 
@@ -8468,6 +8505,7 @@ round(0, 2.8) // returns 3</code></pre>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -8499,7 +8537,7 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -8515,6 +8553,7 @@ round(0, 2.8) // returns 3</code></pre>
     <dd>
         
 <span class="param-type">object</span>
+
 
 
     </dd>
@@ -8537,6 +8576,11 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Sums the values at <code>propName</code> present in each element of an array.
+Works as a single-pass version of <code>compose(sum, map(Number), pluck(propName))</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8580,27 +8624,20 @@ round(0, 2.8) // returns 3</code></pre>
 
 
 
-<div class="description usertext">
-    <p>Sums the values at <code>propName</code> present in each element of an array.
-Works as a single-pass version of <code>compose(sum, map(Number), pluck(propName))</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>sumProp(2, 'amount', [{amount:'40'}, {amount:'2'}]); // 42</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -8634,6 +8671,7 @@ Works as a single-pass version of <code>compose(sum, map(Number), pluck(propName
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -8657,6 +8695,7 @@ Works as a single-pass version of <code>compose(sum, map(Number), pluck(propName
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -8678,6 +8717,7 @@ Works as a single-pass version of <code>compose(sum, map(Number), pluck(propName
             
                 
 <span class="param-type">Array.&lt;object></span>
+
 
 
             
@@ -8710,7 +8750,7 @@ Value may be either a <code>Number</code> or a numerical <code>String</code>.</p
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -8726,6 +8766,7 @@ Value may be either a <code>Number</code> or a numerical <code>String</code>.</p
     <dd>
         
 <span class="param-type">number</span>
+
 
 
     </dd>
@@ -8748,6 +8789,11 @@ Value may be either a <code>Number</code> or a numerical <code>String</code>.</p
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a function that, when invoked, throws an <code>Error</code> with the given <code>message</code> extended with
+additional properties on <code>data</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8791,20 +8837,13 @@ Value may be either a <code>Number</code> or a numerical <code>String</code>.</p
 
 
 
-<div class="description usertext">
-    <p>Returns a function that, when invoked, throws an <code>Error</code> with the given <code>message</code> extended with
-additional properties on <code>data</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const explode = thenThrowErrorWith('boom', { code: 500 });
  explode(); // Throw `new Error('boom')`</code></pre>
@@ -8812,7 +8851,7 @@ additional properties on <code>data</code>.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -8846,6 +8885,7 @@ additional properties on <code>data</code>.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -8867,6 +8907,7 @@ additional properties on <code>data</code>.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -8896,7 +8937,7 @@ additional properties on <code>data</code>.</p>
 
 
 
-<h5>Throws:</h5>
+<h5 class="h5-throws">Throws:</h5>
 
         
 
@@ -8904,6 +8945,7 @@ additional properties on <code>data</code>.</p>
     
         
 <span class="param-type">Error</span>
+
 
 
     
@@ -8929,6 +8971,11 @@ additional properties on <code>data</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Immediately throws an <code>Error</code> with the given <code>message</code> extended with
+additional properties on <code>data</code>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -8972,27 +9019,20 @@ additional properties on <code>data</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Immediately throws an <code>Error</code> with the given <code>message</code> extended with
-additional properties on <code>data</code>.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>throwErrorWith('boom', { code: 500 }); // Throw `new Error('boom')`</code></pre>
 
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -9026,6 +9066,7 @@ additional properties on <code>data</code>.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -9047,6 +9088,7 @@ additional properties on <code>data</code>.</p>
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -9076,7 +9118,7 @@ additional properties on <code>data</code>.</p>
 
 
 
-<h5>Throws:</h5>
+<h5 class="h5-throws">Throws:</h5>
 
         
 
@@ -9084,6 +9126,7 @@ additional properties on <code>data</code>.</p>
     
         
 <span class="param-type">Error</span>
+
 
 
     
@@ -9109,6 +9152,11 @@ additional properties on <code>data</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Truncates the given string <code>value</code> so its total length does not exceed <code>maxLength</code> length,
+adding an ellipsis (<code>...</code>) at the end.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -9152,20 +9200,13 @@ additional properties on <code>data</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Truncates the given string <code>value</code> so its total length does not exceed <code>maxLength</code> length,
-adding an ellipsis (<code>...</code>) at the end.</p>
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Example</h5>
+    <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>truncate(15, 'I am selling these fine leather jackets');
  // 'I am selling...'</code></pre>
@@ -9173,7 +9214,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
 
 
 
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -9207,6 +9248,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
 <span class="param-type">number</span>
 
 
+
             
             </td>
 
@@ -9228,6 +9270,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
             
                 
 <span class="param-type">*</span>
+
 
 
             
@@ -9259,7 +9302,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -9275,6 +9318,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
     <dd>
         
 <span class="param-type">string</span>
+
 
 
     </dd>
@@ -9304,7 +9348,7 @@ adding an ellipsis (<code>...</code>) at the end.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Mon Oct 31 2022 17:51:03 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.0</a> on Wed Jan 25 2023 21:12:33 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
