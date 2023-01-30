@@ -89,7 +89,7 @@
     "@types/ramda": "^0.28.21",
     "cross-env": "^7.0.3",
     "docdash": "^2.0.1",
-    "eslint": "^8.32.0",
+    "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
