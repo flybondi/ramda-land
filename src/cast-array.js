@@ -14,6 +14,6 @@ import { unless, is, of } from 'ramda';
  * @returns {Array} An `Array` containing the given `value`
  *  or the same input if it was already an `Array`.
  */
-const castArray = unless(is(Array), of);
+const castArray = unless(is(Array), of(Array));
 
 export default castArray;

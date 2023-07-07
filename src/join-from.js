@@ -20,7 +20,7 @@ import { rejectNil } from './reject-nil';
  *  `fns` with `separator`.
  */
 const joinFrom = curry(function joinFrom(separator, fns, elem) {
-  return applyTo(elem, compose(join(separator), rejectNil, ap(fns), of));
+  return applyTo(elem, compose(join(separator), rejectNil, ap(fns), of(Array)));
 });
 
 export default joinFrom;
