@@ -7,6 +7,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   jest:
+    strategy:
+      matrix:
+        version: ['0.26.1', '0.27.0', '0.27.1', '0.27.2', '0.28']
     name: Unit test
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +21,8 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: yarn install --pure-lockfile
+      - name: Install ramda ${{ matrix.version }}
+        run: yarn add ramda@${{ matrix.version }}
       - name: Jest
         run: yarn test
 
