@@ -1,3 +1,19 @@
+# [5.0.0](https://github.com/flybondi/ramda-land/compare/v4.0.21...v5.0.0) (2023-07-13)
+
+
+### Features
+
+* update ramda dependency ([#129](https://github.com/flybondi/ramda-land/issues/129)) ([53754f6](https://github.com/flybondi/ramda-land/commit/53754f631a889677f09a59270fda16e41d2e47f6))
+
+
+### BREAKING CHANGES
+
+* drop support for older versions of ramda
+
+* feat: update ramda dependency
+
+* feat(ci): add 0.29 ramda version
+
 ## [4.0.21](https://github.com/flybondi/ramda-land/compare/v4.0.20...v4.0.21) (2023-07-11)
 
 ## [4.0.20](https://github.com/flybondi/ramda-land/compare/v4.0.19...v4.0.20) (2023-07-10)
