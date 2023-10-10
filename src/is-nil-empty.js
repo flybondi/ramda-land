@@ -8,6 +8,7 @@ import { isNil, either, isEmpty, complement } from 'ramda';
  *  isNilOrEmpty({}); // -> true
  *  isNilOrEmpty(null); // -> true
  *  isNilOrEmpty([]); // -> true
+ *  isNilOrEmpty(''); // -> true
  *  isNilOrEmpty([42]); // -> false
  *
  * @function
@@ -27,6 +28,7 @@ export const isNilOrEmpty = either(isEmpty, isNil);
  *  isNotNilOrEmpty({}); // -> false
  *  isNotNilOrEmpty(null); // -> false
  *  isNotNilOrEmpty([]); // -> false
+ *  isNotNilOrEmpty(''); // -> false
  *  isNotNilOrEmpty([42]); // -> true
  *
  * @function
@@ -46,6 +48,7 @@ export const isNotNilOrEmpty = complement(isNilOrEmpty);
  *  isNotNil(null); // -> false
  *  isNotNil([42]); // -> true
  *  isNotNil(undefined); // -> false
+ *  isNotNil(''); // -> true
  *
  * @function
  * @see https://ramdajs.com/docs/#isNil
@@ -64,6 +67,7 @@ export const isNotNil = complement(isNil);
  *  isNotEmpty(undefined); // -> true
  *  isNotEmpty([]); // -> false
  *  isNotEmpty([42]); // -> true
+ *  isNotEmpty(''); // -> false
  *
  * @function
  * @see https://ramdajs.com/docs/#isEmpty
