@@ -1,3 +1,5 @@
+## [5.0.1](https://github.com/flybondi/ramda-land/compare/v5.0.0...v5.0.1) (2023-10-10)
+
 # [5.0.0](https://github.com/flybondi/ramda-land/compare/v4.0.21...v5.0.0) (2023-07-13)
 
 
