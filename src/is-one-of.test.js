@@ -1,4 +1,4 @@
-import isOneOf from './is-one-of';
+import { isOneOf } from './is-one-of';
 
 test('should return `true` if the given value is contained in the provided set', () => {
   expect(isOneOf(['foo', 'bar'], 'foo')).toBe(true);
