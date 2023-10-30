@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/flybondi/ramda-land/compare/v5.0.1...v5.1.0) (2023-10-30)
+
+
+### Features
+
+* add is not one of ([#145](https://github.com/flybondi/ramda-land/issues/145)) ([d34dc0e](https://github.com/flybondi/ramda-land/commit/d34dc0e98d46b37bb32881c5c3309ab5320c759a))
+
 ## [5.0.1](https://github.com/flybondi/ramda-land/compare/v5.0.0...v5.0.1) (2023-10-10)
 
 # [5.0.0](https://github.com/flybondi/ramda-land/compare/v4.0.21...v5.0.0) (2023-07-13)
