@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/flybondi/ramda-land/compare/v5.1.0...v5.2.0) (2023-11-12)
+
+
+### Features
+
+* **stringProp:** add helper for when you always need a string ([#150](https://github.com/flybondi/ramda-land/issues/150)) ([d02385d](https://github.com/flybondi/ramda-land/commit/d02385d0fa343b16997cce0284c0178c5f19b072))
+
 # [5.1.0](https://github.com/flybondi/ramda-land/compare/v5.0.1...v5.1.0) (2023-10-30)
 
 

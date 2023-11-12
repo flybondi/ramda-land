@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>curry.js - Documentation</title>
+    <title>string-prop.js - Documentation</title>
     
     
     <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
@@ -43,7 +43,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">curry.js</h1>
+    <h1 class="page-title">string-prop.js</h1>
     
 
     
@@ -53,50 +53,103 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import _curry1 from './utils/_curry1';
+            <pre class="prettyprint source linenums"><code>import {
+  always,
+  compose,
+  identity,
+  isEmpty,
+  isNil,
+  path,
+  prop,
+  unless,
+  useWith,
+  when,
+  is
+} from 'ramda';
+import castArray from './cast-array';
 import curryN from './curry-n';
+import { isNilOrEmpty } from './is-nil-empty';
 
 /**
- * Returns a curried equivalent of the provided function. The curried function
- * has two unusual capabilities. First, its arguments needn't be provided one
- * at a time. If `f` is a ternary function and `g` is `curry(f)`, the
- * following are equivalent:
- *
- *   - `g(1)(2)(3)`
- *   - `g(1)(2, 3)`
- *   - `g(1, 2)(3)`
- *   - `g(1, 2, 3)`
- *
- * Secondly, the special placeholder value `R.__` (exported by `ramda`) may be used
- * to specify "gaps", allowing partial application of any combination of arguments,
- * regardless of their positions. If `g` is as above and `_` is `R.__`,
- * the following are equivalent:
- *
- *   - `g(1, 2, 3)`
- *   - `g(_, 2, 3)(1)`
- *   - `g(_, _, 3)(1)(2)`
- *   - `g(_, _, 3)(1, 2)`
- *   - `g(_, 2)(1)(3)`
- *   - `g(_, 2)(1, 3)`
- *   - `g(_, 2)(_, 3)(1)`
+ * @function
+ * @private
+ */
+const stringUnlessNilOrEmpty = compose(
+  unless(isNil, String),
+  when(isEmpty, always(null)),
+  when(is(Object), JSON.stringify)
+);
+
+/**
+ * Shorthand function to extract a property from an object and convert it to a string.
+ * If the property is `null` or `undefined` it will be returned as is; if the property is
+ * an empty string (`''`), `null` will be returned.
  *
  * @function
- * @param {Function} fn The function to curry.
- * @return {Function} A new, curried function.
- * @example
- *
- *      const addFourNumbers = (a, b, c, d) => a + b + c + d;
- *
- *      const curriedAddFourNumbers = R.curry(addFourNumbers);
- *      const f = curriedAddFourNumbers(1, 2);
- *      const g = f(3);
- *      g(4); //=> 10
+ * @see https://ramdajs.com/docs/#prop
+ * @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property.
+ * @returns {string} The value of `obj` at `propName` as a string or null string.
  */
-const curry = _curry1(function curry(fn) {
-  return curryN(fn.length, fn);
+export const stringProp = curryN(2, compose(stringUnlessNilOrEmpty, prop));
+
+/**
+ * Shorthand function to extract a nested property from an object and convert it to a string.
+ * If the property is `null` or `undefined` it will be returned as is; if the property is
+ * an empty string (`''`), `null` will be returned.
+ *
+ * @example
+ *  stringPath(['life', 'count'], { life: { count: 1 }}); // '1'
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#path
+ * @param {string|{String[]}} propPath Path to the property to extract. Also accepts a
+ *  property name as a single string.
+ * @param {object} obj Source of the extracted property.
+ * @returns {string} The value of `obj` at `propPath` as a string or `null`.
+ */
+export const stringPath = curryN(
+  2,
+  compose(stringUnlessNilOrEmpty, useWith(path, [castArray, identity]))
+);
+
+/**
+ * Extract a property from an object and convert it to a string. If property
+ * is absent, `null`, `undefined` or empty, the default value will be returned instead.
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#propOr
+ * @param {*} defaultValue The value to return if `propName` does not exist in `obj`
+ *  or is nil.
+ *  @param {string} propName Name of the property to extract.
+ * @param {object} obj Source of the extracted property.
+ * @returns {*} The value of `obj` at `propName` as a string or `defaultValue`.
+ */
+export const stringPropOr = curryN(3, function stringPropOr(defaultValue, propName, obj) {
+  const value = stringProp(propName, obj);
+  return isNilOrEmpty(value) ? defaultValue : value;
 });
 
-export default curry;
+/**
+ * Extract a nested property from an object and convert it to a string. If property
+ * is absent, `null`, `undefined` or empty, the default value will be returned instead.
+ *
+ * @example
+ *  stringPathOr('default', ['life', 'reason'], { foo: 'bar' }); // 'default'
+ *
+ * @function
+ * @see https://ramdajs.com/docs/#pathOr
+ * @param {*} defaultValue The value to return if `propPath` does not exist in `obj`
+ *  or its value is nil or empty.
+ *  @param {string|{String[]}} propPath Path to the property to extract. Also accepts a
+ *  property name as a single string.
+ * @param {object} obj Source of the extracted property.
+ * @returns {*} The value of `obj` at `propName` as a string or `defaultValue`.
+ */
+export const stringPathOr = curryN(3, function stringPathOr(defaultValue, propPath, obj) {
+  const value = stringPath(propPath, obj);
+  return isNilOrEmpty(value) ? defaultValue : value;
+});
 </code></pre>
         </article>
     </section>
