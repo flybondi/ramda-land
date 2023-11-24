@@ -4,7 +4,6 @@
  */
 export { default as alwaysNew } from './always-new';
 export { default as applySpec } from './apply-spec';
-export { default as capitalize } from './capitalize';
 export { default as capitalizeWords } from './capitalize-words';
 export { default as castArray } from './cast-array';
 export { default as coalesce } from './coalesce';
@@ -33,8 +32,11 @@ export { allToLower, allToUpper } from './all-to-lower-upper';
 export { arrayPath, compactPath } from './array-path';
 export { arrayProp, compactProp } from './array-prop';
 export { booleanProp, booleanPropOr } from './boolean-prop';
+export { capitalize, capitalizeProp, capitalizeTrimProp } from './capitalize';
 export { isNilOrEmpty, isNotNilOrEmpty, isNotEmpty, isNotNil } from './is-nil-empty';
 export { isOneOf, isNotOneOf } from './is-one-of';
 export { numberProp, numberPropOr, numberPath, numberPathOr } from './number-prop';
 export { rejectNil, rejectNilOrEmpty } from './reject-nil';
 export { thenThrowErrorWith, throwErrorWith } from './throw-error';
+export { toLowerProp, toLowerTrimProp } from './to-lower-prop';
+export { toUpperProp, toUpperTrimProp } from './to-upper-prop';
