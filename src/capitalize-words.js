@@ -1,4 +1,4 @@
-import capitalize from './capitalize';
+import { capitalize } from './capitalize';
 import { compose, join, reject, map, isEmpty, split, isNil, unless } from 'ramda';
 
 /**
