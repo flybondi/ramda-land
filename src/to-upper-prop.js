@@ -5,11 +5,9 @@ import { compose, curry, propOr, toUpper, trim } from 'ramda';
  * If the property is null or undefined, an empty string will be returned.
  * If the property has spaces in between, note that the following will be included.
  * @example
- *  toUpperProp('value')({ value: null }) //=> ''
- *  toUpperProp('value')({ value: undefined }) //=> ''
  *  toUpperProp('value')({ value: ' test ' }) //=> ' TEST '
  * @param {string} propName value
- * @returns {string} upper case value
+ * @returns {string} uppercase value or empty string
  */
 export const toUpperProp = curry(compose(toUpper, propOr('')));
 
@@ -18,10 +16,8 @@ export const toUpperProp = curry(compose(toUpper, propOr('')));
  * If the property is null or undefined, an empty string will be returned.
  * If the property has spaces in between, note that the following will be included.
  * @example
- *  toUpperTrimProp('value')({ value: null }) //=> ''
- *  toUpperTrimProp('value')({ value: undefined }) //=> ''
  *  toUpperTrimProp('value')({ value: ' test ' }) //=> 'TEST'
  * @param {string} propName value
- * @returns {string} upper case value
+ * @returns {string} uppercase value or empty string
  */
 export const toUpperTrimProp = curry(compose(trim, toUpperProp));
