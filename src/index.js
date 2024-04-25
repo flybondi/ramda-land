@@ -38,3 +38,4 @@ export { isOneOf, isNotOneOf } from './is-one-of';
 export { numberProp, numberPropOr, numberPath, numberPathOr } from './number-prop';
 export { rejectNil, rejectNilOrEmpty } from './reject-nil';
 export { thenThrowErrorWith, throwErrorWith } from './throw-error';
+export { default as omitDeep } from './omit-deep';
