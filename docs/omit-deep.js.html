@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>boolean-prop.js - Documentation</title>
+    <title>omit-deep.js - Documentation</title>
     
     
     <meta property="og:title" content="ramda-land - A comprehensive collection of utilities for Ramda"/>
@@ -43,7 +43,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">boolean-prop.js</h1>
+    <h1 class="page-title">omit-deep.js</h1>
     
 
     
@@ -53,64 +53,65 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { compose, curryN, prop, isNil, when, always } from 'ramda';
-import yn from 'yn';
+            <pre class="prettyprint source linenums"><code>import { omit, isNil } from 'ramda';
+import curry from './curry';
 
 /**
- * `yn` wrapper that forces all `undefined` values to be `null` to accommodate the fact that
- * latest `yn` version treats unrecognized values as `undefined` instead of `null`. In order to keep
- * retro-compatibility we force those values to be `null`.
- *
- * @example
- *   boolify('y'); // -> true
- *   boolify('abomasum'); // -> null
- *   boolify('NO'); // -> false
- *
+ * Checks if a value is an object.
  * @private
- * @see https://github.com/sindresorhus/yn#readme
- * @param {*} value that should be converted.
- * @returns {boolean?}
+ * @param {*} obj The value to check.
+ * @returns {boolean} Returns `true` if `obj` is an object, else `false`.
  */
-const boolify = compose(when(isNil, always(null)), yn);
+function isObject(obj) {
+  return Object.prototype.toString.call(obj) === '[object Object]';
+}
 
 /**
- * Shorthand function to extract a property from an object and convert it to a boolean.
- * Parsing of values to boolean follows `yn` logic.
- *
- * @example
- *  booleanProp('foo', { foo: 'y' }); // -> true
- *  booleanProp('foo', { foo: 0 }); // -> false
+ * Recursively omit the specified keys from an object or array of objects.
+ * The keys are omitted from the object itself and all its nested objects.
  *
  * @function
- * @see https://github.com/sindresorhus/yn#readme
- * @see https://ramdajs.com/docs/#prop
- * @param {string} propName Name of the property to extract.
- * @param {object} obj Source of the extracted property
- * @returns {boolean} The value of `obj` at `propName` as a boolean.
+ * @see https://github.com/jonschlinkert/omit-deep/tree/master
+ * @param {Object|Array} input The object or array of objects to omit keys from.
+ * @param {Array} props The list of keys to omit.
+ * @returns {Object|Array} A new object or array of objects with the specified keys omitted.
+ * @example
+ * omitDeep(['b'], { a: 1, b: 2, c: { d: 3, e: 4 } }); // returns { a: 1, c: { d: 3, e: 4 } }
  */
-export const booleanProp = curryN(2, compose(boolify, prop));
+function omitDeep(props, input) {
+  function omitDeepOnOwnProps(obj) {
+    if (typeof input === 'undefined') {
+      return input;
+    }
 
-/**
- * Shorthand function to extract a property from an object and convert it to a `Boolean`.
- * If boolean conversion would return `null` or `undefined`, it returns `defaultValue`, instead.
- *
- * @example
- *  booleanPropOr(true, 'foo', { bar: 42 }); // -> true
- *  booleanPropOr(false, 'foo', { foo: 'y' }); // -> true
- *
- * @function
- * @see https://github.com/sindresorhus/yn#readme
- * @see https://ramdajs.com/docs/#propOr
- * @param {*} defaultValue The value to return if `propName` does not exist in `obj`
- *  or is nil.
- *  @param {string} propName Name of the property to extract.
- * @param {object} obj Source of the extracted property.
- * @returns {*} The value of `obj` at `propName` as a boolean or `defaultValue`.
- */
-export const booleanPropOr = curryN(3, (defaultValue, propName, obj) => {
-  const value = booleanProp(propName, obj);
-  return isNil(value) ? defaultValue : value;
-});
+    if (!Array.isArray(obj) &amp;&amp; !isObject(obj)) {
+      return obj;
+    }
+
+    if (Array.isArray(obj)) {
+      return omitDeep(props, obj);
+    }
+
+    const o = {};
+    for (const [key, value] of Object.entries(obj)) {
+      o[key] = !isNil(value) ? omitDeep(props, value) : value;
+    }
+
+    return omit(props, o);
+  }
+
+  if (arguments.length > 2) {
+    props = Array.prototype.slice.call(arguments).slice(1);
+  }
+
+  if (Array.isArray(input)) {
+    return input.map(omitDeepOnOwnProps);
+  }
+
+  return omitDeepOnOwnProps(input);
+}
+
+export default curry(omitDeep);
 </code></pre>
         </article>
     </section>
